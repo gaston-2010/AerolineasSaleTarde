@@ -79,6 +79,8 @@
     <Compile Include="Clases\MTB_01.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Clases\Tipo Avion.vb" />
+    <Compile Include="Clases\tratamientos_especiales.vb" />
     <Compile Include="Formularios\ABM Tipo Avion.vb">
       <SubType>Form</SubType>
     </Compile>

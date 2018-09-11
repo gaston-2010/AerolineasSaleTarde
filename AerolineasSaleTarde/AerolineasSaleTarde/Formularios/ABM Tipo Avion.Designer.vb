@@ -32,7 +32,7 @@ Partial Class ABM_TipoAvion
         Me.cmd_nuevo = New System.Windows.Forms.Button()
         Me.cmd_guardar = New System.Windows.Forms.Button()
         Me.cmd_borrar = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DGV1 = New System.Windows.Forms.DataGridView()
         Me.cmb_alcance = New AerolineasSaleTarde.CMB_01()
         Me.txt_longitud = New AerolineasSaleTarde.MTB_01()
         Me.txt_capacidadKg = New AerolineasSaleTarde.MTB_01()
@@ -40,7 +40,8 @@ Partial Class ABM_TipoAvion
         Me.txt_capPasClasTur = New AerolineasSaleTarde.MTB_01()
         Me.txt_capPasAlta = New AerolineasSaleTarde.MTB_01()
         Me.txt_nombre = New AerolineasSaleTarde.MTB_01()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.txt_id_tipoAvion = New AerolineasSaleTarde.MTB_01()
+        CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -75,9 +76,9 @@ Partial Class ABM_TipoAvion
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(47, 146)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(167, 13)
+        Me.Label4.Size = New System.Drawing.Size(172, 13)
         Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Numero de salidas de emergencia"
+        Me.Label4.Text = "Cantidad de salidas de emergencia"
         '
         'Label5
         '
@@ -133,13 +134,13 @@ Partial Class ABM_TipoAvion
         Me.cmd_borrar.Text = "Borrar"
         Me.cmd_borrar.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'DGV1
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(441, 40)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(384, 251)
-        Me.DataGridView1.TabIndex = 8
+        Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV1.Location = New System.Drawing.Point(441, 40)
+        Me.DGV1.Name = "DGV1"
+        Me.DGV1.Size = New System.Drawing.Size(384, 251)
+        Me.DGV1.TabIndex = 8
         '
         'cmb_alcance
         '
@@ -150,7 +151,7 @@ Partial Class ABM_TipoAvion
         Me.cmb_alcance.nombre_campo = "Alcance Vuelo"
         Me.cmb_alcance.Size = New System.Drawing.Size(121, 21)
         Me.cmb_alcance.TabIndex = 5
-        Me.cmb_alcance.validable = False
+        Me.cmb_alcance.validable = True
         '
         'txt_longitud
         '
@@ -160,12 +161,12 @@ Partial Class ABM_TipoAvion
         Me.txt_longitud.nombre_campo = "Longitud"
         Me.txt_longitud.Size = New System.Drawing.Size(37, 20)
         Me.txt_longitud.TabIndex = 6
-        Me.txt_longitud.validable = False
+        Me.txt_longitud.validable = True
         '
         'txt_capacidadKg
         '
         Me.txt_capacidadKg.Location = New System.Drawing.Point(231, 186)
-        Me.txt_capacidadKg.Mask = "999"
+        Me.txt_capacidadKg.Mask = "99999"
         Me.txt_capacidadKg.Name = "txt_capacidadKg"
         Me.txt_capacidadKg.nombre_campo = "Capacidad de KG Equipajes"
         Me.txt_capacidadKg.Size = New System.Drawing.Size(37, 20)
@@ -197,7 +198,7 @@ Partial Class ABM_TipoAvion
         Me.txt_capPasAlta.Location = New System.Drawing.Point(231, 70)
         Me.txt_capPasAlta.Mask = "999"
         Me.txt_capPasAlta.Name = "txt_capPasAlta"
-        Me.txt_capPasAlta.nombre_campo = "CapacidadClaseAlta"
+        Me.txt_capPasAlta.nombre_campo = "Capacidad Clase Alta"
         Me.txt_capPasAlta.Size = New System.Drawing.Size(37, 20)
         Me.txt_capPasAlta.TabIndex = 1
         Me.txt_capPasAlta.validable = False
@@ -213,19 +214,30 @@ Partial Class ABM_TipoAvion
         Me.txt_nombre.validable = True
         Me.txt_nombre.ValidatingType = GetType(Integer)
         '
+        'txt_id_tipoAvion
+        '
+        Me.txt_id_tipoAvion.Location = New System.Drawing.Point(231, 286)
+        Me.txt_id_tipoAvion.Mask = "9999"
+        Me.txt_id_tipoAvion.Name = "txt_id_tipoAvion"
+        Me.txt_id_tipoAvion.nombre_campo = "Longitud"
+        Me.txt_id_tipoAvion.Size = New System.Drawing.Size(37, 20)
+        Me.txt_id_tipoAvion.TabIndex = 6
+        Me.txt_id_tipoAvion.validable = False
+        '
         'ABM_TipoAvion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(863, 390)
         Me.Controls.Add(Me.cmb_alcance)
+        Me.Controls.Add(Me.txt_id_tipoAvion)
         Me.Controls.Add(Me.txt_longitud)
         Me.Controls.Add(Me.txt_capacidadKg)
         Me.Controls.Add(Me.txt_cantsalidas)
         Me.Controls.Add(Me.txt_capPasClasTur)
         Me.Controls.Add(Me.txt_capPasAlta)
         Me.Controls.Add(Me.txt_nombre)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.cmd_borrar)
         Me.Controls.Add(Me.cmd_guardar)
         Me.Controls.Add(Me.cmd_nuevo)
@@ -239,7 +251,7 @@ Partial Class ABM_TipoAvion
         Me.Name = "ABM_TipoAvion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ABM TIPO AVION"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -255,7 +267,7 @@ Partial Class ABM_TipoAvion
     Friend WithEvents cmd_nuevo As Button
     Friend WithEvents cmd_guardar As Button
     Friend WithEvents cmd_borrar As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DGV1 As DataGridView
     Friend WithEvents txt_nombre As MTB_01
     Friend WithEvents txt_capPasAlta As MTB_01
     Friend WithEvents txt_capPasClasTur As MTB_01
@@ -263,4 +275,5 @@ Partial Class ABM_TipoAvion
     Friend WithEvents txt_capacidadKg As MTB_01
     Friend WithEvents txt_longitud As MTB_01
     Friend WithEvents cmb_alcance As CMB_01
+    Friend WithEvents txt_id_tipoAvion As MTB_01
 End Class
