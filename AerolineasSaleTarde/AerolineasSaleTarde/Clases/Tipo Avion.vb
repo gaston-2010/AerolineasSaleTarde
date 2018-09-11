@@ -86,31 +86,32 @@
                         MsgBox("El " & obj.nombre_campo & " Está vacío")
                         obj.Focus()
                         Exit Sub
+
                     End If
                 End If
                 Select Case obj.Name
                     Case "txt_nombre"
-                        _nombre = obj.text
+                        _nombre = obj.text.trim()
                     Case "txt_capPasAlta"
-                        _capacidadAlta = obj.text
+                        _capacidadAlta = obj.text.trim()
                     Case "txt_capPasClasTur"
-                        _capacidadTur = obj.text
+                        _capacidadTur = obj.text.trim()
                     Case "txt_cantsalidas"
-                        _cantidadsal = obj.text
+                        _cantidadsal = obj.text.trim()
                     Case "txt_capacidadKg"
-                        _capacidadKg = obj.text
+                        _capacidadKg = obj.text.trim()
                     Case "txt_longitud"
-                        _longitud = obj.text
+                        _longitud = obj.text.trim()
                 End Select
             End If
             If obj.GetType().Name = "CMB_01" Then
-                If obj.selectedvalue = -1 Then
+                If obj.SelectedItem = "" Then
                     MsgBox("El campo Alcance no esta seleccionado")
                     obj.focus
                     Exit Sub
                     Stop
                 End If
-                _alcance = obj.SelectedValue
+                _alcance = obj.SelectedItem
             End If
         Next
     End Sub
