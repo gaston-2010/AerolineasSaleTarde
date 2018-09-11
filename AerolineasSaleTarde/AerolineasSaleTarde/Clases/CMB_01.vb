@@ -1,6 +1,6 @@
-﻿Public Class CHB_01
+﻿Public Class CMB_01
 
-    Inherits CheckBox
+    Inherits ComboBox
 
     Public Property nombre_campo As String
     Public Property validable As Boolean

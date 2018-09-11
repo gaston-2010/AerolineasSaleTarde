@@ -72,18 +72,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\CHB_01.vb">
+    <Compile Include="Clases\CMB_01.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Clases\CONEXION_BD.vb" />
     <Compile Include="Clases\MTB_01.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Formularios\Form1.vb">
+    <Compile Include="Formularios\ABM Tipo Avion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Formularios\ABM Tipo Avion.Designer.vb">
+      <DependentUpon>ABM Tipo Avion.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -103,8 +103,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Formularios\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\ABM Tipo Avion.resx">
+      <DependentUpon>ABM Tipo Avion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
