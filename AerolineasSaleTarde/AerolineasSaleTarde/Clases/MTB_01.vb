@@ -3,7 +3,7 @@
     Inherits MaskedTextBox
 
     Public Property nombre_campo As String
-    Public Property validable As Boolean
+    Public Property validable As Boolean = True
 
 
 

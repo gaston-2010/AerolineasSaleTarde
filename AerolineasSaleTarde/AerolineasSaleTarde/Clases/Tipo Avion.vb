@@ -16,6 +16,7 @@
     Public Property capacidadKg As Integer
     Public Property alcance As String
     Public Property cantidadsal As Integer
+    Public Property validado As Boolean = False
 
     Public Function validar() As estado_validar
         Dim sql As String = ""
@@ -79,23 +80,28 @@
     End Sub
 
     Public Sub transferir(ByRef controles As Object)
-        For Each obj In controles.Controls
-            If obj.GetType().Name = "MTB_01" Then
-                If obj.validable = True Then
-                    If obj.text = "" Then
-                        MsgBox("El " & obj.nombre_campo & " Está vacío")
-                        obj.Focus()
-                        Exit Sub
 
-                    End If
-                End If
+        For Each obj In controles.Controls
+
+            If validado = True Then
+
                 Select Case obj.Name
                     Case "txt_nombre"
                         _nombre = obj.text.trim()
                     Case "txt_capPasAlta"
-                        _capacidadAlta = obj.text.trim()
+                        If obj.text = "" Then
+                            _capacidadAlta = 0
+
+                        Else
+                            _capacidadAlta = obj.text.trim()
+                        End If
                     Case "txt_capPasClasTur"
-                        _capacidadTur = obj.text.trim()
+                        If obj.text = "" Then
+                            _capacidadTur = 0
+                        Else
+                            _capacidadTur = obj.text.trim()
+                        End If
+
                     Case "txt_cantsalidas"
                         _cantidadsal = obj.text.trim()
                     Case "txt_capacidadKg"
@@ -103,16 +109,38 @@
                     Case "txt_longitud"
                         _longitud = obj.text.trim()
                 End Select
+                If obj.GetType().Name = "CMB_01" Then
+                    _alcance = obj.SelectedItem
+                End If
+            End If
+        Next
+    End Sub
+
+    Public Sub validarcampo(ByRef controles As Object)
+        For Each obj In controles.Controls
+
+            If obj.GetType().Name = "MTB_01" Then
+                If obj.validable = True Then
+                    If obj.text = "" Then
+                        MsgBox("El " & obj.nombre_campo & " Está vacío")
+                        obj.Focus()
+                        validado = False
+                        Exit Sub
+                    End If
+
+                End If
             End If
             If obj.GetType().Name = "CMB_01" Then
                 If obj.SelectedItem = "" Then
                     MsgBox("El campo Alcance no esta seleccionado")
                     obj.focus
+                    validado = False
                     Exit Sub
-                    Stop
+
                 End If
-                _alcance = obj.SelectedItem
             End If
+
         Next
+        validado = True
     End Sub
 End Class

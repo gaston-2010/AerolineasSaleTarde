@@ -30,6 +30,10 @@
     End Sub
 
     Private Sub cmd_guardar_Click(sender As Object, e As EventArgs) Handles cmd_guardar.Click
+        Me._tipoavion.validarcampo(Me)
+        If Me._tipoavion.validado = False Then
+            Exit Sub
+        End If
         Me._tipoavion.transferir(Me)
 
         If control_estado_grabacion = estado_grabacion.insertar Then
@@ -58,8 +62,12 @@
 
     Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
         Me._tipoavion.id_tipoAvion = Me.txt_id_tipoAvion.Text
-        MsgBox("DESEA ELIMINAR?", MsgBoxStyle.YesNoCancel)
+        If MsgBox("DESEA ELIMINAR?", MsgBoxStyle.YesNoCancel) = MsgBoxResult.No Then
+            Exit Sub
+
+        End If
         Me._tipoavion.borrar()
+
 
         Me.cargar_grilla()
     End Sub

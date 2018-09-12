@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ABM_Avion
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class ABM_Avion
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -31,7 +31,6 @@ Partial Class ABM_Avion
         Me.cmd_grabar = New System.Windows.Forms.Button()
         Me.cmd_borrar = New System.Windows.Forms.Button()
         Me.txt_id = New AerolineasSaleTarde.MTB_01()
-        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -56,7 +55,7 @@ Partial Class ABM_Avion
         'txt_nombre
         '
         Me.txt_nombre.Location = New System.Drawing.Point(205, 67)
-        Me.txt_nombre.Mask = "LLLLLLLLLLLLLLLLL"
+        Me.txt_nombre.Mask = "CCCCCCCCCCCCCCCCCC"
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.nombre_campo = "Nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(100, 20)
@@ -78,7 +77,7 @@ Partial Class ABM_Avion
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV1.Location = New System.Drawing.Point(376, 48)
         Me.DGV1.Name = "DGV1"
-        Me.DGV1.Size = New System.Drawing.Size(240, 150)
+        Me.DGV1.Size = New System.Drawing.Size(337, 150)
         Me.DGV1.TabIndex = 3
         '
         'cmd_nuevo
@@ -119,21 +118,11 @@ Partial Class ABM_Avion
         Me.txt_id.validable = False
         Me.txt_id.ValidatingType = GetType(Integer)
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(556, 202)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'ABM_Avion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(655, 237)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(762, 237)
         Me.Controls.Add(Me.txt_id)
         Me.Controls.Add(Me.cmd_borrar)
         Me.Controls.Add(Me.cmd_grabar)
@@ -160,5 +149,4 @@ Partial Class ABM_Avion
     Friend WithEvents cmd_grabar As Button
     Friend WithEvents cmd_borrar As Button
     Friend WithEvents txt_id As MTB_01
-    Friend WithEvents Button1 As Button
 End Class

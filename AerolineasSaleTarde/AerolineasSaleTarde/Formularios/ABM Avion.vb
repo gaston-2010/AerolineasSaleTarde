@@ -30,7 +30,18 @@
     End Sub
 
     Private Sub cmd_grabar_Click(sender As Object, e As EventArgs) Handles cmd_grabar.Click
-        Me._avion.transferir(Me)
+        If Me.txt_nombre.Text = "" Then
+            MsgBox("El Nombre esta vacio")
+            Exit Sub
+        Else
+            Me._avion.nombre = Me.txt_nombre.Text
+        End If
+        If Me.cmb_tipoavion.SelectedIndex = -1 Then
+            MsgBox("El Tipo de Avion no está seleccionado ")
+            Exit Sub
+        Else
+            Me._avion.id_TipoAvion = Me.cmb_tipoavion.SelectedValue
+        End If
 
         If control_estado_grabacion = estado_grabacion.insertar Then
 
@@ -40,6 +51,8 @@
             Me._avion.modificar()
         End If
         Me.cargar_grilla()
+        Me.TE.blanquear_objetos(Me)
+
     End Sub
 
     Private Sub DGV1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellDoubleClick
@@ -53,8 +66,7 @@
 
     Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
         Me._avion.id = Me.txt_id.Text
-        MsgBox("DESEA ELIMINAR?", MsgBoxStyle.YesNo)
-        If MsgBoxResult.No Then
+        If MsgBox("DESEA ELIMINAR?", MsgBoxStyle.YesNo) = MsgBoxResult.No Then
             Exit Sub
         End If
 
@@ -63,7 +75,5 @@
         Me.cargar_grilla()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        cargar_grilla()
-    End Sub
+
 End Class

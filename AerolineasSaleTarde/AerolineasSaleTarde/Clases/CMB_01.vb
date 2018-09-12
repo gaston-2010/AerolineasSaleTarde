@@ -3,7 +3,7 @@
     Inherits ComboBox
 
     Public Property nombre_campo As String
-    Public Property validable As Boolean
+    Public Property validable As Boolean = True
 
     Public Sub cargar(ByVal tabla As DataTable)
         Me.DataSource = tabla

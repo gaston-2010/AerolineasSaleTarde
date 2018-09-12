@@ -34,13 +34,13 @@ Partial Class ABM_TipoAvion
         Me.cmd_borrar = New System.Windows.Forms.Button()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
         Me.cmb_alcance = New AerolineasSaleTarde.CMB_01()
+        Me.txt_id_tipoAvion = New AerolineasSaleTarde.MTB_01()
         Me.txt_longitud = New AerolineasSaleTarde.MTB_01()
         Me.txt_capacidadKg = New AerolineasSaleTarde.MTB_01()
         Me.txt_cantsalidas = New AerolineasSaleTarde.MTB_01()
         Me.txt_capPasClasTur = New AerolineasSaleTarde.MTB_01()
         Me.txt_capPasAlta = New AerolineasSaleTarde.MTB_01()
         Me.txt_nombre = New AerolineasSaleTarde.MTB_01()
-        Me.txt_id_tipoAvion = New AerolineasSaleTarde.MTB_01()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -153,6 +153,16 @@ Partial Class ABM_TipoAvion
         Me.cmb_alcance.TabIndex = 5
         Me.cmb_alcance.validable = True
         '
+        'txt_id_tipoAvion
+        '
+        Me.txt_id_tipoAvion.Location = New System.Drawing.Point(231, 286)
+        Me.txt_id_tipoAvion.Mask = "9999"
+        Me.txt_id_tipoAvion.Name = "txt_id_tipoAvion"
+        Me.txt_id_tipoAvion.nombre_campo = "Longitud"
+        Me.txt_id_tipoAvion.Size = New System.Drawing.Size(37, 20)
+        Me.txt_id_tipoAvion.TabIndex = 6
+        Me.txt_id_tipoAvion.validable = False
+        '
         'txt_longitud
         '
         Me.txt_longitud.Location = New System.Drawing.Point(231, 250)
@@ -206,23 +216,13 @@ Partial Class ABM_TipoAvion
         'txt_nombre
         '
         Me.txt_nombre.Location = New System.Drawing.Point(231, 40)
-        Me.txt_nombre.Mask = "LLLLLLLLLLLLLLLL"
+        Me.txt_nombre.Mask = "CCCCCCCCCCCCCCCCCC"
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.nombre_campo = "Nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(175, 20)
         Me.txt_nombre.TabIndex = 0
         Me.txt_nombre.validable = True
         Me.txt_nombre.ValidatingType = GetType(Integer)
-        '
-        'txt_id_tipoAvion
-        '
-        Me.txt_id_tipoAvion.Location = New System.Drawing.Point(231, 286)
-        Me.txt_id_tipoAvion.Mask = "9999"
-        Me.txt_id_tipoAvion.Name = "txt_id_tipoAvion"
-        Me.txt_id_tipoAvion.nombre_campo = "Longitud"
-        Me.txt_id_tipoAvion.Size = New System.Drawing.Size(37, 20)
-        Me.txt_id_tipoAvion.TabIndex = 6
-        Me.txt_id_tipoAvion.validable = False
         '
         'ABM_TipoAvion
         '

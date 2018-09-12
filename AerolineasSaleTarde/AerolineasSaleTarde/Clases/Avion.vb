@@ -53,33 +53,6 @@
         Me.BD.INS_MOD_BOR(sql)
     End Sub
 
-    Public Sub transferir(ByRef controles As Object)
-        For Each obj In controles.Controls
-            If obj.GetType().Name = "MTB_01" Then
-                If obj.validable = True Then
-                    If obj.text = "" Then
-                        MsgBox("El " & obj.nombre_campo & " Está vacío")
-                        obj.Focus()
-                        Exit Sub
-                    End If
-                End If
-                Select Case obj.Name
-                    Case "txt_nombre"
-                        _nombre = obj.text.trim()
 
-                End Select
-            End If
-            If obj.GetType.Name = "CMB_01" Then
-                If obj.validable = True Then
-                    If obj.selectedValue = -1 Then
-                        MsgBox("El Tipo de Avion està deseleccionado")
-                        Exit Sub
-                    End If
-
-                End If
-                _id_TipoAvion = obj.selectedvalue
-            End If
-        Next
-    End Sub
 
 End Class
