@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class Escritorio
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,50 +20,57 @@ Partial Class Escritorio
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.MENUToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ABMAvionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ABMTIpoDeAvionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AvionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TipoAvionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DestinosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MENUToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'MENUToolStripMenuItem
+        'MenuToolStripMenuItem
         '
-        Me.MENUToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMToolStripMenuItem})
-        Me.MENUToolStripMenuItem.Name = "MENUToolStripMenuItem"
-        Me.MENUToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
-        Me.MENUToolStripMenuItem.Text = "MENU"
+        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMToolStripMenuItem})
+        Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
+        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
+        Me.MenuToolStripMenuItem.Text = "Menu"
         '
         'ABMToolStripMenuItem
         '
-        Me.ABMToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAvionToolStripMenuItem, Me.ABMTIpoDeAvionToolStripMenuItem})
+        Me.ABMToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AvionToolStripMenuItem, Me.TipoAvionToolStripMenuItem, Me.DestinosToolStripMenuItem})
         Me.ABMToolStripMenuItem.Name = "ABMToolStripMenuItem"
-        Me.ABMToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
+        Me.ABMToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ABMToolStripMenuItem.Text = "ABM"
         '
-        'ABMAvionToolStripMenuItem
+        'AvionToolStripMenuItem
         '
-        Me.ABMAvionToolStripMenuItem.Name = "ABMAvionToolStripMenuItem"
-        Me.ABMAvionToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
-        Me.ABMAvionToolStripMenuItem.Text = "ABM Avion"
+        Me.AvionToolStripMenuItem.Name = "AvionToolStripMenuItem"
+        Me.AvionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AvionToolStripMenuItem.Text = "Avion"
         '
-        'ABMTIpoDeAvionToolStripMenuItem
+        'TipoAvionToolStripMenuItem
         '
-        Me.ABMTIpoDeAvionToolStripMenuItem.Name = "ABMTIpoDeAvionToolStripMenuItem"
-        Me.ABMTIpoDeAvionToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
-        Me.ABMTIpoDeAvionToolStripMenuItem.Text = "ABM Tipo de Avion"
+        Me.TipoAvionToolStripMenuItem.Name = "TipoAvionToolStripMenuItem"
+        Me.TipoAvionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TipoAvionToolStripMenuItem.Text = "Tipo Avion"
+        '
+        'DestinosToolStripMenuItem
+        '
+        Me.DestinosToolStripMenuItem.Name = "DestinosToolStripMenuItem"
+        Me.DestinosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DestinosToolStripMenuItem.Text = "Destinos"
         '
         'Escritorio
         '
@@ -71,7 +78,6 @@ Partial Class Escritorio
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Escritorio"
         Me.Text = "Escritorio"
@@ -83,8 +89,9 @@ Partial Class Escritorio
     End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents MENUToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ABMToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ABMAvionToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ABMTIpoDeAvionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AvionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TipoAvionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DestinosToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -103,6 +103,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Clases\CONEXION_BD.vb" />
+    <Compile Include="Clases\Destino.vb" />
     <Compile Include="Clases\MTB_01.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -118,6 +119,12 @@
       <DependentUpon>ABM Avion.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\ABM Avion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ABM Destinos.Designer.vb">
+      <DependentUpon>ABM Destinos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ABM Destinos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\ABM Tipo Avion.vb">
@@ -149,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM Avion.resx">
       <DependentUpon>ABM Avion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABM Destinos.resx">
+      <DependentUpon>ABM Destinos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM Tipo Avion.resx">
       <DependentUpon>ABM Tipo Avion.vb</DependentUpon>

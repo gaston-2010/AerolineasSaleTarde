@@ -1,14 +1,13 @@
 ﻿Public Class Escritorio
-    Private Sub ABMAvionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMAvionToolStripMenuItem.Click
-        ABM_Avion.ShowDialog()
+    Private Sub DestinosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DestinosToolStripMenuItem.Click
+        ABM_Destinos.ShowDialog()
     End Sub
 
-    Private Sub ABMTIpoDeAvionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMTIpoDeAvionToolStripMenuItem.Click
+    Private Sub TipoAvionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TipoAvionToolStripMenuItem.Click
         ABM_TipoAvion.ShowDialog()
     End Sub
 
-    Private Sub Escritorio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub AvionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AvionToolStripMenuItem.Click
+        ABM_Avion.ShowDialog()
     End Sub
-
 End Class
