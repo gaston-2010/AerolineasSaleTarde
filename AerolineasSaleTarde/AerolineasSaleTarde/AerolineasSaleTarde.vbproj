@@ -97,6 +97,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Aeropuerto.vb" />
     <Compile Include="Clases\Avion.vb" />
     <Compile Include="Clases\Class1.vb" />
     <Compile Include="Clases\CMB_01.vb">
@@ -109,6 +110,7 @@
     </Compile>
     <Compile Include="Clases\Tipo Avion.vb" />
     <Compile Include="Clases\tratamientos_especiales.vb" />
+    <Compile Include="Clases\Vuelo.vb" />
     <Compile Include="Escritorio.Designer.vb">
       <DependentUpon>Escritorio.vb</DependentUpon>
     </Compile>

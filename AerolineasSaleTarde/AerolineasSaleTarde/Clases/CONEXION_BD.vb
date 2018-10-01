@@ -23,7 +23,10 @@
         Me.conectar()
         cmd.CommandText = sql
         Dim tabla As New DataTable
-        tabla.Load(cmd.ExecuteReader())
+        Dim cmd1 As New OleDb.OleDbDataAdapter(sql, conexion.ConnectionString)
+
+        cmd1.Fill(tabla)
+        'tabla.Load(cmd1.ExecuteReader())
         cerrar()
         Return tabla
     End Function

@@ -23,16 +23,16 @@ Partial Class ABM_Destinos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
-        Me.cmb_Pais = New AerolineasSaleTarde.CMB_01()
-        Me.cmb_Provincia = New AerolineasSaleTarde.CMB_01()
         Me.cmd_Nuevo = New System.Windows.Forms.Button()
         Me.cmd_Grabar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.cmb_Localidad = New AerolineasSaleTarde.CMB_01()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cmd_Borrar = New System.Windows.Forms.Button()
         Me.txt_id = New AerolineasSaleTarde.MTB_01()
+        Me.cmb_Localidad = New AerolineasSaleTarde.CMB_01()
+        Me.cmb_Provincia = New AerolineasSaleTarde.CMB_01()
+        Me.cmb_Pais = New AerolineasSaleTarde.CMB_01()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -44,32 +44,12 @@ Partial Class ABM_Destinos
         Me.DGV1.Size = New System.Drawing.Size(394, 267)
         Me.DGV1.TabIndex = 0
         '
-        'cmb_Pais
-        '
-        Me.cmb_Pais.FormattingEnabled = True
-        Me.cmb_Pais.Location = New System.Drawing.Point(141, 59)
-        Me.cmb_Pais.Name = "cmb_Pais"
-        Me.cmb_Pais.nombre_campo = Nothing
-        Me.cmb_Pais.Size = New System.Drawing.Size(176, 21)
-        Me.cmb_Pais.TabIndex = 1
-        Me.cmb_Pais.validable = True
-        '
-        'cmb_Provincia
-        '
-        Me.cmb_Provincia.FormattingEnabled = True
-        Me.cmb_Provincia.Location = New System.Drawing.Point(141, 99)
-        Me.cmb_Provincia.Name = "cmb_Provincia"
-        Me.cmb_Provincia.nombre_campo = Nothing
-        Me.cmb_Provincia.Size = New System.Drawing.Size(176, 21)
-        Me.cmb_Provincia.TabIndex = 2
-        Me.cmb_Provincia.validable = True
-        '
         'cmd_Nuevo
         '
         Me.cmd_Nuevo.Location = New System.Drawing.Point(89, 231)
         Me.cmd_Nuevo.Name = "cmd_Nuevo"
         Me.cmd_Nuevo.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_Nuevo.TabIndex = 3
+        Me.cmd_Nuevo.TabIndex = 4
         Me.cmd_Nuevo.Text = "Nuevo"
         Me.cmd_Nuevo.UseVisualStyleBackColor = True
         '
@@ -78,7 +58,7 @@ Partial Class ABM_Destinos
         Me.cmd_Grabar.Location = New System.Drawing.Point(182, 231)
         Me.cmd_Grabar.Name = "cmd_Grabar"
         Me.cmd_Grabar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_Grabar.TabIndex = 4
+        Me.cmd_Grabar.TabIndex = 5
         Me.cmd_Grabar.Text = "Grabar"
         Me.cmd_Grabar.UseVisualStyleBackColor = True
         '
@@ -100,16 +80,6 @@ Partial Class ABM_Destinos
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Provincia"
         '
-        'cmb_Localidad
-        '
-        Me.cmb_Localidad.FormattingEnabled = True
-        Me.cmb_Localidad.Location = New System.Drawing.Point(141, 143)
-        Me.cmb_Localidad.Name = "cmb_Localidad"
-        Me.cmb_Localidad.nombre_campo = Nothing
-        Me.cmb_Localidad.Size = New System.Drawing.Size(176, 21)
-        Me.cmb_Localidad.TabIndex = 2
-        Me.cmb_Localidad.validable = True
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -124,7 +94,7 @@ Partial Class ABM_Destinos
         Me.cmd_Borrar.Location = New System.Drawing.Point(277, 231)
         Me.cmd_Borrar.Name = "cmd_Borrar"
         Me.cmd_Borrar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_Borrar.TabIndex = 4
+        Me.cmd_Borrar.TabIndex = 6
         Me.cmd_Borrar.Text = "Borrar"
         Me.cmd_Borrar.UseVisualStyleBackColor = True
         '
@@ -137,11 +107,41 @@ Partial Class ABM_Destinos
         Me.txt_id.TabIndex = 6
         Me.txt_id.validable = True
         '
+        'cmb_Localidad
+        '
+        Me.cmb_Localidad.FormattingEnabled = True
+        Me.cmb_Localidad.Location = New System.Drawing.Point(141, 143)
+        Me.cmb_Localidad.Name = "cmb_Localidad"
+        Me.cmb_Localidad.nombre_campo = Nothing
+        Me.cmb_Localidad.Size = New System.Drawing.Size(176, 21)
+        Me.cmb_Localidad.TabIndex = 3
+        Me.cmb_Localidad.validable = True
+        '
+        'cmb_Provincia
+        '
+        Me.cmb_Provincia.FormattingEnabled = True
+        Me.cmb_Provincia.Location = New System.Drawing.Point(141, 99)
+        Me.cmb_Provincia.Name = "cmb_Provincia"
+        Me.cmb_Provincia.nombre_campo = Nothing
+        Me.cmb_Provincia.Size = New System.Drawing.Size(176, 21)
+        Me.cmb_Provincia.TabIndex = 2
+        Me.cmb_Provincia.validable = True
+        '
+        'cmb_Pais
+        '
+        Me.cmb_Pais.FormattingEnabled = True
+        Me.cmb_Pais.Location = New System.Drawing.Point(141, 59)
+        Me.cmb_Pais.Name = "cmb_Pais"
+        Me.cmb_Pais.nombre_campo = Nothing
+        Me.cmb_Pais.Size = New System.Drawing.Size(176, 21)
+        Me.cmb_Pais.TabIndex = 1
+        Me.cmb_Pais.validable = True
+        '
         'ABM_Destinos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 314)
         Me.Controls.Add(Me.txt_id)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
