@@ -48,13 +48,16 @@
 
             If comprobarexistencia() = True Then
 
+                If comprobarfechas() = 1 Then
 
-                If control_estado_grabacion = estado_grabacion.insertar Then
-                    Me._Vuelo.transferir(Me)
-                    Me._Vuelo.insertar()
-                Else
-                    Me._Vuelo.id_vuelo = Me.txt_id_vuelo.Text
-                    Me._Vuelo.modificar()
+
+                    If control_estado_grabacion = estado_grabacion.insertar Then
+                        Me._Vuelo.transferir(Me)
+                        Me._Vuelo.insertar()
+                    Else
+                        Me._Vuelo.id_vuelo = Me.txt_id_vuelo.Text
+                        Me._Vuelo.modificar()
+                    End If
                 End If
             End If
             Me.cargar_grilla()
@@ -138,9 +141,19 @@
                         Exit Function
                     End If
                     If actual.Text = "  /  /" Then
+                        MsgBox("El Campo " & actual.nombre_campo & " está vacio", MsgBoxStyle.Exclamation)
+                        actual.Focus()
+                        Return 0
+                        Exit Function
                     End If
-
+                    If actual.Text = "  :" Then
+                        MsgBox("El Campo " & actual.nombre_campo & " está vacio", MsgBoxStyle.Exclamation)
+                        actual.Focus()
+                        Return 0
+                        Exit Function
+                    End If
                 End If
+            End If
             If nombre = "CMB_01" Then
                 Dim actual As CMB_01 = obj
                 If actual.validable = True Then
@@ -195,4 +208,16 @@
         Dim Sql As String = "SELECT * FROM Aeropuertos a1 join Aeropuertos a2 on a1.id=a2.id where not a2.id= " & nombre
         Me.cmb_aeropuertoOrigen.cargar(Me._conex.leo_tabla(Sql), "id", "nombre")
     End Sub
+
+    Private Function comprobarfechas()
+        Dim fecha_menor As Date = txt_FechaSalida.Text
+        Dim fecha_mayor As Date = txt_fechaLlegada.Text
+        If fecha_mayor < fecha_menor Then
+            MsgBox("La fecha de Salida debe ser menor que la de LLegada")
+            txt_fechaLlegada.Focus()
+            Return 0
+        End If
+
+        Return 1
+    End Function
 End Class
