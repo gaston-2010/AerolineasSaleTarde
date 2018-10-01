@@ -5,9 +5,6 @@
     Public Property nombre_campo As String
     Public Property validable As Boolean = True
 
-    Public Function Validar(ByRef obj As Object)
-        If obj.= 
-    End Function
 
 
 

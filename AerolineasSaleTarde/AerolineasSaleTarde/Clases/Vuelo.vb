@@ -76,5 +76,7 @@
         sql &= " WHERE id_vuelo=" & _id_vuelo
         Me.BD.INS_MOD_BOR(sql)
     End Sub
+    Public Sub transferir(ByRef sender As Object)
 
+    End Sub
 End Class

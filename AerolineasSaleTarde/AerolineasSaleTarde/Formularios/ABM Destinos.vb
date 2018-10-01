@@ -145,6 +145,7 @@
             Dim numero As Object = cmb_Localidad.SelectedValue
             If (TypeOf numero Is DataRowView) Then
                 Exit Function
+
             End If
             Dim nombre As String = Convert.ToString(numero)
             Dim Sql As String = "Select * from Destinos d join localidad l on d.id_localidad=l.id where l.id =" & nombre
