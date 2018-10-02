@@ -74,7 +74,7 @@ Partial Class ABM_Vuelos
         Me.txt_horaSalida.Name = "txt_horaSalida"
         Me.txt_horaSalida.nombre_campo = "Hora Salida"
         Me.txt_horaSalida.Size = New System.Drawing.Size(48, 20)
-        Me.txt_horaSalida.TabIndex = 0
+        Me.txt_horaSalida.TabIndex = 1
         Me.txt_horaSalida.validable = True
         Me.txt_horaSalida.ValidatingType = GetType(Date)
         '
@@ -85,7 +85,7 @@ Partial Class ABM_Vuelos
         Me.txt_fechaLlegada.Name = "txt_fechaLlegada"
         Me.txt_fechaLlegada.nombre_campo = "Fecha Llegada"
         Me.txt_fechaLlegada.Size = New System.Drawing.Size(100, 20)
-        Me.txt_fechaLlegada.TabIndex = 0
+        Me.txt_fechaLlegada.TabIndex = 2
         Me.txt_fechaLlegada.validable = True
         Me.txt_fechaLlegada.ValidatingType = GetType(Date)
         '
@@ -96,7 +96,7 @@ Partial Class ABM_Vuelos
         Me.txt_horaLlegada.Name = "txt_horaLlegada"
         Me.txt_horaLlegada.nombre_campo = "Hora Llegada"
         Me.txt_horaLlegada.Size = New System.Drawing.Size(46, 20)
-        Me.txt_horaLlegada.TabIndex = 0
+        Me.txt_horaLlegada.TabIndex = 3
         Me.txt_horaLlegada.validable = True
         Me.txt_horaLlegada.ValidatingType = GetType(Date)
         '
@@ -107,7 +107,7 @@ Partial Class ABM_Vuelos
         Me.cmb_avion.Name = "cmb_avion"
         Me.cmb_avion.nombre_campo = "Avion"
         Me.cmb_avion.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_avion.TabIndex = 1
+        Me.cmb_avion.TabIndex = 4
         Me.cmb_avion.validable = True
         '
         'cmb_aeropuertoOrigen
@@ -117,7 +117,7 @@ Partial Class ABM_Vuelos
         Me.cmb_aeropuertoOrigen.Name = "cmb_aeropuertoOrigen"
         Me.cmb_aeropuertoOrigen.nombre_campo = "Aeropuerto Origen"
         Me.cmb_aeropuertoOrigen.Size = New System.Drawing.Size(244, 21)
-        Me.cmb_aeropuertoOrigen.TabIndex = 1
+        Me.cmb_aeropuertoOrigen.TabIndex = 5
         Me.cmb_aeropuertoOrigen.validable = True
         '
         'cmb_aeropuertoDestino
@@ -127,7 +127,7 @@ Partial Class ABM_Vuelos
         Me.cmb_aeropuertoDestino.Name = "cmb_aeropuertoDestino"
         Me.cmb_aeropuertoDestino.nombre_campo = "Aeropuerto Destino"
         Me.cmb_aeropuertoDestino.Size = New System.Drawing.Size(244, 21)
-        Me.cmb_aeropuertoDestino.TabIndex = 1
+        Me.cmb_aeropuertoDestino.TabIndex = 6
         Me.cmb_aeropuertoDestino.validable = True
         '
         'cmb_estado
@@ -138,7 +138,7 @@ Partial Class ABM_Vuelos
         Me.cmb_estado.Name = "cmb_estado"
         Me.cmb_estado.nombre_campo = "Estado"
         Me.cmb_estado.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_estado.TabIndex = 1
+        Me.cmb_estado.TabIndex = 7
         Me.cmb_estado.validable = True
         '
         'Label1
@@ -272,7 +272,7 @@ Partial Class ABM_Vuelos
         Me.cmd_nuevo.Location = New System.Drawing.Point(111, 276)
         Me.cmd_nuevo.Name = "cmd_nuevo"
         Me.cmd_nuevo.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_nuevo.TabIndex = 3
+        Me.cmd_nuevo.TabIndex = 9
         Me.cmd_nuevo.Text = "Nuevo"
         Me.cmd_nuevo.UseVisualStyleBackColor = True
         '
@@ -281,7 +281,7 @@ Partial Class ABM_Vuelos
         Me.cmd_grabar.Location = New System.Drawing.Point(218, 276)
         Me.cmd_grabar.Name = "cmd_grabar"
         Me.cmd_grabar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_grabar.TabIndex = 3
+        Me.cmd_grabar.TabIndex = 10
         Me.cmd_grabar.Text = "Grabar"
         Me.cmd_grabar.UseVisualStyleBackColor = True
         '
@@ -290,7 +290,7 @@ Partial Class ABM_Vuelos
         Me.cmd_borrar.Location = New System.Drawing.Point(375, 276)
         Me.cmd_borrar.Name = "cmd_borrar"
         Me.cmd_borrar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_borrar.TabIndex = 3
+        Me.cmd_borrar.TabIndex = 11
         Me.cmd_borrar.Text = "Borrar"
         Me.cmd_borrar.UseVisualStyleBackColor = True
         '
@@ -309,7 +309,7 @@ Partial Class ABM_Vuelos
         Me.txt_Buscar.Name = "txt_Buscar"
         Me.txt_Buscar.nombre_campo = Nothing
         Me.txt_Buscar.Size = New System.Drawing.Size(100, 20)
-        Me.txt_Buscar.TabIndex = 0
+        Me.txt_Buscar.TabIndex = 12
         Me.txt_Buscar.validable = False
         '
         'Label18
@@ -335,7 +335,7 @@ Partial Class ABM_Vuelos
         Me.cmd_buscar.Location = New System.Drawing.Point(622, 16)
         Me.cmd_buscar.Name = "cmd_buscar"
         Me.cmd_buscar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_buscar.TabIndex = 3
+        Me.cmd_buscar.TabIndex = 13
         Me.cmd_buscar.Text = "Buscar"
         Me.cmd_buscar.UseVisualStyleBackColor = True
         '
@@ -346,7 +346,7 @@ Partial Class ABM_Vuelos
         Me.txt_id_vuelo.Name = "txt_id_vuelo"
         Me.txt_id_vuelo.nombre_campo = Nothing
         Me.txt_id_vuelo.Size = New System.Drawing.Size(24, 20)
-        Me.txt_id_vuelo.TabIndex = 0
+        Me.txt_id_vuelo.TabIndex = 8
         Me.txt_id_vuelo.validable = False
         '
         'ABM_Vuelos
