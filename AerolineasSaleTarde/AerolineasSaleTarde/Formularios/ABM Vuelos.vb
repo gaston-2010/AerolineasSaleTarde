@@ -33,9 +33,9 @@
     End Sub
 
     Private Sub cargar_grilla()
-        Dim sql As String = "Select v.id_vuelo,v.fechaSalida as ' Fecha de Salida',v.horasalida as 'Hora de salida'
+        Dim sql As String = "SET DATEFORMAT DMY Select v.id_vuelo,v.fechaSalida as ' Fecha de Salida',v.horasalida as 'Hora de salida'
         ,v.fechaLlegada as 'Fecha de LLegada',v.horaLlegada as 'Hora de LLegada'
-       ,v.id_avion ,a1.nombre as 'Aeropuerto Origen',a2.nombre as 'Aeropuerto Destino',v.estado
+       ,v.id_avion ,a1.id as 'Aeropuerto Origen',a2.id as 'Aeropuerto Destino',v.estado
         FROM Vuelos v join Aviones a on v.id_avion=a.id JOIN Aeropuertos a1 ON v.idAereopuertoOrigen = a1.id 
         JOIN Aeropuertos a2 ON v.idAereopuertoDestino = a2.id"
         Me.DGV1.DataSource = Me._conex.leo_tabla(sql)
@@ -52,10 +52,11 @@
 
 
                     If control_estado_grabacion = estado_grabacion.insertar Then
-                        Me._Vuelo.transferir(Me)
+                        transferir(Me)
                         Me._Vuelo.insertar()
                     Else
                         Me._Vuelo.id_vuelo = Me.txt_id_vuelo.Text
+                        transferir(Me)
                         Me._Vuelo.modificar()
                     End If
                 End If
@@ -69,10 +70,10 @@
 
     Private Sub DGV1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellDoubleClick
         Me.txt_id_vuelo.Text = DGV1.CurrentRow.Cells(0).Value
-        Me.txt_FechaSalida = DGV1.CurrentRow.Cells(1).Value
-        Me.txt_horaSalida = DGV1.CurrentRow.Cells(2).Value
-        Me.txt_fechaLlegada = DGV1.CurrentRow.Cells(3).Value
-        Me.txt_horaLlegada = DGV1.CurrentRow.Cells(4).Value
+        Me.txt_FechaSalida.Text = DGV1.CurrentRow.Cells(1).Value
+        Me.txt_horaSalida.Text = DGV1.CurrentRow.Cells(2).Value
+        Me.txt_fechaLlegada.Text = DGV1.CurrentRow.Cells(3).Value
+        Me.txt_horaLlegada.Text = DGV1.CurrentRow.Cells(4).Value
         Me.cmb_avion.SelectedValue = DGV1.CurrentRow.Cells(5).Value
         Me.cmb_aeropuertoOrigen.SelectedValue = DGV1.CurrentRow.Cells(6).Value
         Me.cmb_aeropuertoDestino.SelectedValue = DGV1.CurrentRow.Cells(7).Value
@@ -90,7 +91,7 @@
         End If
 
         Me._Vuelo.borrar()
-
+        Me.TE.blanquear_objetos(Me)
         Me.cargar_grilla()
     End Sub
 
@@ -105,12 +106,12 @@
             Dim idAereopuertoOrigen As Integer = retornarvalor(cmb_aeropuertoOrigen)
             Dim idAereopuertoDestino As Integer = retornarvalor(cmb_aeropuertoDestino)
             Dim estado As String = cmb_estado.SelectedItem
-            Dim sql As String = "SELECT * FROM Vuelos v join Aviones a on v.id_avion=a.id JOIN Aeropuertos a1 ON v.idAereopuertoOrigen = a1.id 
+            Dim sql As String = "SET DATEFORMAT DMY SELECT * FROM Vuelos v join Aviones a on v.id_avion=a.id JOIN Aeropuertos a1 ON v.idAereopuertoOrigen = a1.id 
                  JOIN Aeropuertos a2 ON v.idAereopuertoDestino = a2.id 
-                    WHERE fechaSalida= " & fechaSalida & "
-                     AND fechaLlegada= " & fechaLlegada & "
-                     AND horaLlegada= " & horaLlegada & "
-                     AND horasalida= " & horaSalida & "
+                    WHERE fechaSalida= '" & fechaSalida & "'
+                     AND fechaLlegada= '" & fechaLlegada & "'
+                     AND horaLlegada= '" & horaLlegada & "'
+                     AND horasalida= '" & horaSalida & "'
                      AND id_avion = " & id_avion & "
                      AND idAereopuertoOrigen= " & idAereopuertoOrigen & "
                      AND idAereopuertoDestino= " & idAereopuertoDestino & "
@@ -220,4 +221,29 @@
 
         Return 1
     End Function
+
+    Private Sub transferir(ByRef sender As Object)
+        Me._Vuelo.fechaSalida = Me.txt_FechaSalida.Text
+        Me._Vuelo.horaSalida = Me.txt_horaSalida.Text
+        Me._Vuelo.fechaLlegada = Me.txt_fechaLlegada.Text
+        Me._Vuelo.horaLlegada = Me.txt_horaLlegada.Text
+        Me._Vuelo.id_avion = Me.cmb_avion.SelectedValue
+        Me._Vuelo.idAereopuertoOrigen = Me.cmb_aeropuertoOrigen.SelectedValue
+        Me._Vuelo.idAereopuertoDestino = Me.cmb_aeropuertoDestino.SelectedValue
+        Me._Vuelo.estado = Me.cmb_estado.SelectedItem
+    End Sub
+
+    Private Sub cmd_buscar_Click(sender As Object, e As EventArgs) Handles cmd_buscar.Click
+        If txt_Buscar.Text <> "" Then
+            Dim sql As String = "SET DATEFORMAT DMY Select v.id_vuelo,v.fechaSalida as ' Fecha de Salida',v.horasalida as 'Hora de salida'
+        ,v.fechaLlegada as 'Fecha de LLegada',v.horaLlegada as 'Hora de LLegada'
+       ,v.id_avion ,a1.id as 'Aeropuerto Origen',a2.id as 'Aeropuerto Destino',v.estado
+        FROM Vuelos v join Aviones a on v.id_avion=a.id JOIN Aeropuertos a1 ON v.idAereopuertoOrigen = a1.id 
+        JOIN Aeropuertos a2 ON v.idAereopuertoDestino = a2.id where v.id_vuelo = " & txt_Buscar.Text
+            Me.DGV1.DataSource = Me._conex.leo_tabla(sql)
+        Else
+            MsgBox("Ingrese el numero de Vuelo a buscar")
+            txt_Buscar.Focus()
+        End If
+    End Sub
 End Class
