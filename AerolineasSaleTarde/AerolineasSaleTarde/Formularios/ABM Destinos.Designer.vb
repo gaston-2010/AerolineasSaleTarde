@@ -38,15 +38,20 @@ Partial Class ABM_Destinos
         '
         'DGV1
         '
+        Me.DGV1.BackgroundColor = System.Drawing.Color.Chocolate
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Location = New System.Drawing.Point(371, 25)
+        Me.DGV1.GridColor = System.Drawing.Color.Chocolate
+        Me.DGV1.Location = New System.Drawing.Point(12, 199)
         Me.DGV1.Name = "DGV1"
-        Me.DGV1.Size = New System.Drawing.Size(394, 267)
+        Me.DGV1.Size = New System.Drawing.Size(514, 267)
         Me.DGV1.TabIndex = 0
         '
         'cmd_Nuevo
         '
-        Me.cmd_Nuevo.Location = New System.Drawing.Point(89, 231)
+        Me.cmd_Nuevo.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.cmd_Nuevo.FlatAppearance.BorderSize = 2
+        Me.cmd_Nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_Nuevo.Location = New System.Drawing.Point(557, 289)
         Me.cmd_Nuevo.Name = "cmd_Nuevo"
         Me.cmd_Nuevo.Size = New System.Drawing.Size(75, 23)
         Me.cmd_Nuevo.TabIndex = 4
@@ -55,7 +60,10 @@ Partial Class ABM_Destinos
         '
         'cmd_Grabar
         '
-        Me.cmd_Grabar.Location = New System.Drawing.Point(182, 231)
+        Me.cmd_Grabar.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.cmd_Grabar.FlatAppearance.BorderSize = 2
+        Me.cmd_Grabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_Grabar.Location = New System.Drawing.Point(557, 331)
         Me.cmd_Grabar.Name = "cmd_Grabar"
         Me.cmd_Grabar.Size = New System.Drawing.Size(75, 23)
         Me.cmd_Grabar.TabIndex = 5
@@ -65,7 +73,8 @@ Partial Class ABM_Destinos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(36, 59)
+        Me.Label1.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label1.Location = New System.Drawing.Point(21, 31)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(27, 13)
         Me.Label1.TabIndex = 5
@@ -74,7 +83,8 @@ Partial Class ABM_Destinos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(36, 107)
+        Me.Label2.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label2.Location = New System.Drawing.Point(21, 71)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(51, 13)
         Me.Label2.TabIndex = 5
@@ -83,7 +93,8 @@ Partial Class ABM_Destinos
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(36, 146)
+        Me.Label3.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label3.Location = New System.Drawing.Point(21, 110)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(53, 13)
         Me.Label3.TabIndex = 5
@@ -91,7 +102,10 @@ Partial Class ABM_Destinos
         '
         'cmd_Borrar
         '
-        Me.cmd_Borrar.Location = New System.Drawing.Point(277, 231)
+        Me.cmd_Borrar.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.cmd_Borrar.FlatAppearance.BorderSize = 2
+        Me.cmd_Borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_Borrar.Location = New System.Drawing.Point(557, 375)
         Me.cmd_Borrar.Name = "cmd_Borrar"
         Me.cmd_Borrar.Size = New System.Drawing.Size(75, 23)
         Me.cmd_Borrar.TabIndex = 6
@@ -100,7 +114,7 @@ Partial Class ABM_Destinos
         '
         'txt_id
         '
-        Me.txt_id.Location = New System.Drawing.Point(141, 180)
+        Me.txt_id.Location = New System.Drawing.Point(126, 144)
         Me.txt_id.Name = "txt_id"
         Me.txt_id.nombre_campo = Nothing
         Me.txt_id.Size = New System.Drawing.Size(23, 20)
@@ -110,7 +124,7 @@ Partial Class ABM_Destinos
         'cmb_Localidad
         '
         Me.cmb_Localidad.FormattingEnabled = True
-        Me.cmb_Localidad.Location = New System.Drawing.Point(141, 143)
+        Me.cmb_Localidad.Location = New System.Drawing.Point(126, 107)
         Me.cmb_Localidad.Name = "cmb_Localidad"
         Me.cmb_Localidad.nombre_campo = Nothing
         Me.cmb_Localidad.Size = New System.Drawing.Size(176, 21)
@@ -120,7 +134,7 @@ Partial Class ABM_Destinos
         'cmb_Provincia
         '
         Me.cmb_Provincia.FormattingEnabled = True
-        Me.cmb_Provincia.Location = New System.Drawing.Point(141, 99)
+        Me.cmb_Provincia.Location = New System.Drawing.Point(126, 63)
         Me.cmb_Provincia.Name = "cmb_Provincia"
         Me.cmb_Provincia.nombre_campo = Nothing
         Me.cmb_Provincia.Size = New System.Drawing.Size(176, 21)
@@ -130,7 +144,7 @@ Partial Class ABM_Destinos
         'cmb_Pais
         '
         Me.cmb_Pais.FormattingEnabled = True
-        Me.cmb_Pais.Location = New System.Drawing.Point(141, 59)
+        Me.cmb_Pais.Location = New System.Drawing.Point(126, 23)
         Me.cmb_Pais.Name = "cmb_Pais"
         Me.cmb_Pais.nombre_campo = Nothing
         Me.cmb_Pais.Size = New System.Drawing.Size(176, 21)
@@ -142,7 +156,7 @@ Partial Class ABM_Destinos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Maroon
-        Me.ClientSize = New System.Drawing.Size(800, 314)
+        Me.ClientSize = New System.Drawing.Size(644, 508)
         Me.Controls.Add(Me.txt_id)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)

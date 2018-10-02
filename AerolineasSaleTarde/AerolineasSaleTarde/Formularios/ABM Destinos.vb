@@ -18,6 +18,10 @@
         Me.TE.blanquear_objetos(Me)
         Me.cmb_Localidad.Enabled = False
         Me.cmb_Provincia.Enabled = False
+        cmd_Borrar.BackColor = Color.Chocolate
+        cmd_Grabar.BackColor = Color.Chocolate
+        cmd_Nuevo.BackColor = Color.Chocolate
+
     End Sub
 
     Private Sub cmd_nuevo_Click(sender As Object, e As EventArgs) Handles cmd_Nuevo.Click

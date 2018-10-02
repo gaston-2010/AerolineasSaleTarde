@@ -58,7 +58,7 @@ Partial Class ABM_Vuelos
         '
         'txt_FechaSalida
         '
-        Me.txt_FechaSalida.Location = New System.Drawing.Point(138, 25)
+        Me.txt_FechaSalida.Location = New System.Drawing.Point(83, 80)
         Me.txt_FechaSalida.Mask = "00/00/0000"
         Me.txt_FechaSalida.Name = "txt_FechaSalida"
         Me.txt_FechaSalida.nombre_campo = "Fecha Salida"
@@ -69,7 +69,7 @@ Partial Class ABM_Vuelos
         '
         'txt_horaSalida
         '
-        Me.txt_horaSalida.Location = New System.Drawing.Point(138, 51)
+        Me.txt_horaSalida.Location = New System.Drawing.Point(83, 106)
         Me.txt_horaSalida.Mask = "00:00"
         Me.txt_horaSalida.Name = "txt_horaSalida"
         Me.txt_horaSalida.nombre_campo = "Hora Salida"
@@ -80,7 +80,7 @@ Partial Class ABM_Vuelos
         '
         'txt_fechaLlegada
         '
-        Me.txt_fechaLlegada.Location = New System.Drawing.Point(282, 25)
+        Me.txt_fechaLlegada.Location = New System.Drawing.Point(227, 80)
         Me.txt_fechaLlegada.Mask = "00/00/0000"
         Me.txt_fechaLlegada.Name = "txt_fechaLlegada"
         Me.txt_fechaLlegada.nombre_campo = "Fecha Llegada"
@@ -91,7 +91,7 @@ Partial Class ABM_Vuelos
         '
         'txt_horaLlegada
         '
-        Me.txt_horaLlegada.Location = New System.Drawing.Point(282, 51)
+        Me.txt_horaLlegada.Location = New System.Drawing.Point(227, 106)
         Me.txt_horaLlegada.Mask = "00:00"
         Me.txt_horaLlegada.Name = "txt_horaLlegada"
         Me.txt_horaLlegada.nombre_campo = "Hora Llegada"
@@ -103,7 +103,7 @@ Partial Class ABM_Vuelos
         'cmb_avion
         '
         Me.cmb_avion.FormattingEnabled = True
-        Me.cmb_avion.Location = New System.Drawing.Point(138, 91)
+        Me.cmb_avion.Location = New System.Drawing.Point(430, 80)
         Me.cmb_avion.Name = "cmb_avion"
         Me.cmb_avion.nombre_campo = "Avion"
         Me.cmb_avion.Size = New System.Drawing.Size(121, 21)
@@ -113,7 +113,7 @@ Partial Class ABM_Vuelos
         'cmb_aeropuertoOrigen
         '
         Me.cmb_aeropuertoOrigen.FormattingEnabled = True
-        Me.cmb_aeropuertoOrigen.Location = New System.Drawing.Point(138, 135)
+        Me.cmb_aeropuertoOrigen.Location = New System.Drawing.Point(126, 151)
         Me.cmb_aeropuertoOrigen.Name = "cmb_aeropuertoOrigen"
         Me.cmb_aeropuertoOrigen.nombre_campo = "Aeropuerto Origen"
         Me.cmb_aeropuertoOrigen.Size = New System.Drawing.Size(244, 21)
@@ -123,7 +123,7 @@ Partial Class ABM_Vuelos
         'cmb_aeropuertoDestino
         '
         Me.cmb_aeropuertoDestino.FormattingEnabled = True
-        Me.cmb_aeropuertoDestino.Location = New System.Drawing.Point(138, 174)
+        Me.cmb_aeropuertoDestino.Location = New System.Drawing.Point(126, 189)
         Me.cmb_aeropuertoDestino.Name = "cmb_aeropuertoDestino"
         Me.cmb_aeropuertoDestino.nombre_campo = "Aeropuerto Destino"
         Me.cmb_aeropuertoDestino.Size = New System.Drawing.Size(244, 21)
@@ -134,7 +134,7 @@ Partial Class ABM_Vuelos
         '
         Me.cmb_estado.FormattingEnabled = True
         Me.cmb_estado.Items.AddRange(New Object() {"En Vuelo", "Demorado", "Cancelado", "Disponible"})
-        Me.cmb_estado.Location = New System.Drawing.Point(138, 211)
+        Me.cmb_estado.Location = New System.Drawing.Point(430, 107)
         Me.cmb_estado.Name = "cmb_estado"
         Me.cmb_estado.nombre_campo = "Estado"
         Me.cmb_estado.Size = New System.Drawing.Size(121, 21)
@@ -144,7 +144,7 @@ Partial Class ABM_Vuelos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(147, 6)
+        Me.Label1.Location = New System.Drawing.Point(92, 61)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(39, 13)
         Me.Label1.TabIndex = 2
@@ -153,7 +153,7 @@ Partial Class ABM_Vuelos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(289, 6)
+        Me.Label2.Location = New System.Drawing.Point(234, 61)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(39, 13)
         Me.Label2.TabIndex = 2
@@ -162,7 +162,8 @@ Partial Class ABM_Vuelos
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(147, 6)
+        Me.Label3.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label3.Location = New System.Drawing.Point(92, 61)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(36, 13)
         Me.Label3.TabIndex = 2
@@ -171,7 +172,8 @@ Partial Class ABM_Vuelos
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(289, 6)
+        Me.Label4.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label4.Location = New System.Drawing.Point(234, 61)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(45, 13)
         Me.Label4.TabIndex = 2
@@ -180,7 +182,7 @@ Partial Class ABM_Vuelos
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(77, 25)
+        Me.Label5.Location = New System.Drawing.Point(22, 80)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(39, 13)
         Me.Label5.TabIndex = 2
@@ -189,7 +191,8 @@ Partial Class ABM_Vuelos
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(77, 51)
+        Me.Label6.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label6.Location = New System.Drawing.Point(22, 106)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(30, 13)
         Me.Label6.TabIndex = 2
@@ -198,7 +201,7 @@ Partial Class ABM_Vuelos
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(77, 91)
+        Me.Label7.Location = New System.Drawing.Point(369, 80)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(39, 13)
         Me.Label7.TabIndex = 2
@@ -207,7 +210,8 @@ Partial Class ABM_Vuelos
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(77, 25)
+        Me.Label8.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label8.Location = New System.Drawing.Point(22, 80)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(37, 13)
         Me.Label8.TabIndex = 2
@@ -216,7 +220,8 @@ Partial Class ABM_Vuelos
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(77, 91)
+        Me.Label9.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label9.Location = New System.Drawing.Point(369, 80)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(34, 13)
         Me.Label9.TabIndex = 2
@@ -225,7 +230,8 @@ Partial Class ABM_Vuelos
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(23, 135)
+        Me.Label13.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label13.Location = New System.Drawing.Point(11, 151)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(93, 13)
         Me.Label13.TabIndex = 2
@@ -234,7 +240,7 @@ Partial Class ABM_Vuelos
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(77, 174)
+        Me.Label14.Location = New System.Drawing.Point(65, 189)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(39, 13)
         Me.Label14.TabIndex = 2
@@ -243,7 +249,8 @@ Partial Class ABM_Vuelos
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(23, 174)
+        Me.Label15.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label15.Location = New System.Drawing.Point(11, 189)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(98, 13)
         Me.Label15.TabIndex = 2
@@ -252,7 +259,7 @@ Partial Class ABM_Vuelos
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(77, 211)
+        Me.Label16.Location = New System.Drawing.Point(369, 107)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(39, 13)
         Me.Label16.TabIndex = 2
@@ -261,7 +268,8 @@ Partial Class ABM_Vuelos
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(77, 211)
+        Me.Label17.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label17.Location = New System.Drawing.Point(369, 107)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(40, 13)
         Me.Label17.TabIndex = 2
@@ -269,7 +277,10 @@ Partial Class ABM_Vuelos
         '
         'cmd_nuevo
         '
-        Me.cmd_nuevo.Location = New System.Drawing.Point(111, 276)
+        Me.cmd_nuevo.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.cmd_nuevo.FlatAppearance.BorderSize = 2
+        Me.cmd_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_nuevo.Location = New System.Drawing.Point(12, 473)
         Me.cmd_nuevo.Name = "cmd_nuevo"
         Me.cmd_nuevo.Size = New System.Drawing.Size(75, 23)
         Me.cmd_nuevo.TabIndex = 3
@@ -278,7 +289,10 @@ Partial Class ABM_Vuelos
         '
         'cmd_grabar
         '
-        Me.cmd_grabar.Location = New System.Drawing.Point(218, 276)
+        Me.cmd_grabar.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.cmd_grabar.FlatAppearance.BorderSize = 2
+        Me.cmd_grabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_grabar.Location = New System.Drawing.Point(108, 473)
         Me.cmd_grabar.Name = "cmd_grabar"
         Me.cmd_grabar.Size = New System.Drawing.Size(75, 23)
         Me.cmd_grabar.TabIndex = 3
@@ -287,7 +301,10 @@ Partial Class ABM_Vuelos
         '
         'cmd_borrar
         '
-        Me.cmd_borrar.Location = New System.Drawing.Point(375, 276)
+        Me.cmd_borrar.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.cmd_borrar.FlatAppearance.BorderSize = 2
+        Me.cmd_borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_borrar.Location = New System.Drawing.Point(231, 473)
         Me.cmd_borrar.Name = "cmd_borrar"
         Me.cmd_borrar.Size = New System.Drawing.Size(75, 23)
         Me.cmd_borrar.TabIndex = 3
@@ -296,15 +313,16 @@ Partial Class ABM_Vuelos
         '
         'DGV1
         '
+        Me.DGV1.BackgroundColor = System.Drawing.Color.Chocolate
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Location = New System.Drawing.Point(425, 51)
+        Me.DGV1.Location = New System.Drawing.Point(26, 238)
         Me.DGV1.Name = "DGV1"
-        Me.DGV1.Size = New System.Drawing.Size(300, 214)
+        Me.DGV1.Size = New System.Drawing.Size(590, 214)
         Me.DGV1.TabIndex = 4
         '
         'txt_Buscar
         '
-        Me.txt_Buscar.Location = New System.Drawing.Point(491, 18)
+        Me.txt_Buscar.Location = New System.Drawing.Point(108, 12)
         Me.txt_Buscar.Mask = "CCCCCCCCCCCCCCCCCCCCC"
         Me.txt_Buscar.Name = "txt_Buscar"
         Me.txt_Buscar.nombre_campo = Nothing
@@ -315,7 +333,8 @@ Partial Class ABM_Vuelos
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(406, 18)
+        Me.Label18.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label18.Location = New System.Drawing.Point(9, 12)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(70, 13)
         Me.Label18.TabIndex = 2
@@ -332,7 +351,10 @@ Partial Class ABM_Vuelos
         '
         'cmd_buscar
         '
-        Me.cmd_buscar.Location = New System.Drawing.Point(622, 16)
+        Me.cmd_buscar.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.cmd_buscar.FlatAppearance.BorderSize = 2
+        Me.cmd_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_buscar.Location = New System.Drawing.Point(249, 12)
         Me.cmd_buscar.Name = "cmd_buscar"
         Me.cmd_buscar.Size = New System.Drawing.Size(75, 23)
         Me.cmd_buscar.TabIndex = 3
@@ -341,7 +363,7 @@ Partial Class ABM_Vuelos
         '
         'txt_id_vuelo
         '
-        Me.txt_id_vuelo.Location = New System.Drawing.Point(138, 238)
+        Me.txt_id_vuelo.Location = New System.Drawing.Point(574, 108)
         Me.txt_id_vuelo.Mask = "CCCCCCCCCCCCCCCCCCCCC"
         Me.txt_id_vuelo.Name = "txt_id_vuelo"
         Me.txt_id_vuelo.nombre_campo = Nothing
@@ -354,7 +376,7 @@ Partial Class ABM_Vuelos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Maroon
-        Me.ClientSize = New System.Drawing.Size(800, 311)
+        Me.ClientSize = New System.Drawing.Size(644, 508)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.cmd_buscar)
         Me.Controls.Add(Me.cmd_borrar)

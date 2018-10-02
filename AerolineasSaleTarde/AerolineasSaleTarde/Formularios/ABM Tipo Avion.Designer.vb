@@ -47,7 +47,8 @@ Partial Class ABM_TipoAvion
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(102, 43)
+        Me.Label1.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label1.Location = New System.Drawing.Point(16, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 0
@@ -56,7 +57,8 @@ Partial Class ABM_TipoAvion
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(47, 73)
+        Me.Label2.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label2.Location = New System.Drawing.Point(12, 49)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(157, 13)
         Me.Label2.TabIndex = 1
@@ -65,7 +67,8 @@ Partial Class ABM_TipoAvion
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(47, 113)
+        Me.Label3.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label3.Location = New System.Drawing.Point(12, 89)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(171, 13)
         Me.Label3.TabIndex = 2
@@ -74,7 +77,8 @@ Partial Class ABM_TipoAvion
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(47, 146)
+        Me.Label4.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label4.Location = New System.Drawing.Point(12, 122)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(172, 13)
         Me.Label4.TabIndex = 3
@@ -83,7 +87,8 @@ Partial Class ABM_TipoAvion
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(47, 186)
+        Me.Label5.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label5.Location = New System.Drawing.Point(12, 162)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(143, 13)
         Me.Label5.TabIndex = 4
@@ -92,7 +97,8 @@ Partial Class ABM_TipoAvion
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(47, 253)
+        Me.Label6.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label6.Location = New System.Drawing.Point(283, 89)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(48, 13)
         Me.Label6.TabIndex = 5
@@ -101,7 +107,8 @@ Partial Class ABM_TipoAvion
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(47, 223)
+        Me.Label7.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label7.Location = New System.Drawing.Point(283, 53)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(93, 13)
         Me.Label7.TabIndex = 6
@@ -109,7 +116,10 @@ Partial Class ABM_TipoAvion
         '
         'cmd_nuevo
         '
-        Me.cmd_nuevo.Location = New System.Drawing.Point(50, 331)
+        Me.cmd_nuevo.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.cmd_nuevo.FlatAppearance.BorderSize = 2
+        Me.cmd_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_nuevo.Location = New System.Drawing.Point(286, 473)
         Me.cmd_nuevo.Name = "cmd_nuevo"
         Me.cmd_nuevo.Size = New System.Drawing.Size(75, 23)
         Me.cmd_nuevo.TabIndex = 7
@@ -118,7 +128,10 @@ Partial Class ABM_TipoAvion
         '
         'cmd_guardar
         '
-        Me.cmd_guardar.Location = New System.Drawing.Point(143, 331)
+        Me.cmd_guardar.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.cmd_guardar.FlatAppearance.BorderSize = 2
+        Me.cmd_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_guardar.Location = New System.Drawing.Point(400, 473)
         Me.cmd_guardar.Name = "cmd_guardar"
         Me.cmd_guardar.Size = New System.Drawing.Size(75, 23)
         Me.cmd_guardar.TabIndex = 8
@@ -127,7 +140,10 @@ Partial Class ABM_TipoAvion
         '
         'cmd_borrar
         '
-        Me.cmd_borrar.Location = New System.Drawing.Point(412, 331)
+        Me.cmd_borrar.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.cmd_borrar.FlatAppearance.BorderSize = 2
+        Me.cmd_borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_borrar.Location = New System.Drawing.Point(518, 473)
         Me.cmd_borrar.Name = "cmd_borrar"
         Me.cmd_borrar.Size = New System.Drawing.Size(75, 23)
         Me.cmd_borrar.TabIndex = 9
@@ -136,17 +152,18 @@ Partial Class ABM_TipoAvion
         '
         'DGV1
         '
+        Me.DGV1.BackgroundColor = System.Drawing.Color.Chocolate
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Location = New System.Drawing.Point(441, 40)
+        Me.DGV1.Location = New System.Drawing.Point(15, 228)
         Me.DGV1.Name = "DGV1"
-        Me.DGV1.Size = New System.Drawing.Size(384, 251)
+        Me.DGV1.Size = New System.Drawing.Size(595, 228)
         Me.DGV1.TabIndex = 8
         '
         'cmb_alcance
         '
         Me.cmb_alcance.FormattingEnabled = True
         Me.cmb_alcance.Items.AddRange(New Object() {"Internacional", "Nacional"})
-        Me.cmb_alcance.Location = New System.Drawing.Point(231, 214)
+        Me.cmb_alcance.Location = New System.Drawing.Point(382, 49)
         Me.cmb_alcance.Name = "cmb_alcance"
         Me.cmb_alcance.nombre_campo = "Alcance Vuelo"
         Me.cmb_alcance.Size = New System.Drawing.Size(121, 21)
@@ -155,7 +172,7 @@ Partial Class ABM_TipoAvion
         '
         'txt_id_tipoAvion
         '
-        Me.txt_id_tipoAvion.Location = New System.Drawing.Point(231, 286)
+        Me.txt_id_tipoAvion.Location = New System.Drawing.Point(286, 16)
         Me.txt_id_tipoAvion.Mask = "9999"
         Me.txt_id_tipoAvion.Name = "txt_id_tipoAvion"
         Me.txt_id_tipoAvion.nombre_campo = "Longitud"
@@ -165,7 +182,7 @@ Partial Class ABM_TipoAvion
         '
         'txt_longitud
         '
-        Me.txt_longitud.Location = New System.Drawing.Point(231, 250)
+        Me.txt_longitud.Location = New System.Drawing.Point(339, 89)
         Me.txt_longitud.Mask = "9999"
         Me.txt_longitud.Name = "txt_longitud"
         Me.txt_longitud.nombre_campo = "Longitud"
@@ -175,7 +192,7 @@ Partial Class ABM_TipoAvion
         '
         'txt_capacidadKg
         '
-        Me.txt_capacidadKg.Location = New System.Drawing.Point(231, 186)
+        Me.txt_capacidadKg.Location = New System.Drawing.Point(196, 162)
         Me.txt_capacidadKg.Mask = "99999"
         Me.txt_capacidadKg.Name = "txt_capacidadKg"
         Me.txt_capacidadKg.nombre_campo = "Capacidad de KG Equipajes"
@@ -185,7 +202,7 @@ Partial Class ABM_TipoAvion
         '
         'txt_cantsalidas
         '
-        Me.txt_cantsalidas.Location = New System.Drawing.Point(231, 143)
+        Me.txt_cantsalidas.Location = New System.Drawing.Point(196, 119)
         Me.txt_cantsalidas.Mask = "99"
         Me.txt_cantsalidas.Name = "txt_cantsalidas"
         Me.txt_cantsalidas.nombre_campo = "Cantidad Salidas de Emergencia"
@@ -195,7 +212,7 @@ Partial Class ABM_TipoAvion
         '
         'txt_capPasClasTur
         '
-        Me.txt_capPasClasTur.Location = New System.Drawing.Point(231, 110)
+        Me.txt_capPasClasTur.Location = New System.Drawing.Point(196, 86)
         Me.txt_capPasClasTur.Mask = "999"
         Me.txt_capPasClasTur.Name = "txt_capPasClasTur"
         Me.txt_capPasClasTur.nombre_campo = "Capacidad Clase Turista"
@@ -205,7 +222,7 @@ Partial Class ABM_TipoAvion
         '
         'txt_capPasAlta
         '
-        Me.txt_capPasAlta.Location = New System.Drawing.Point(231, 70)
+        Me.txt_capPasAlta.Location = New System.Drawing.Point(196, 46)
         Me.txt_capPasAlta.Mask = "999"
         Me.txt_capPasAlta.Name = "txt_capPasAlta"
         Me.txt_capPasAlta.nombre_campo = "Capacidad Clase Alta"
@@ -215,7 +232,7 @@ Partial Class ABM_TipoAvion
         '
         'txt_nombre
         '
-        Me.txt_nombre.Location = New System.Drawing.Point(231, 40)
+        Me.txt_nombre.Location = New System.Drawing.Point(66, 16)
         Me.txt_nombre.Mask = "CCCCCCCCCCCCCCCCCC"
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.nombre_campo = "Nombre"
@@ -229,7 +246,7 @@ Partial Class ABM_TipoAvion
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Maroon
-        Me.ClientSize = New System.Drawing.Size(863, 390)
+        Me.ClientSize = New System.Drawing.Size(644, 508)
         Me.Controls.Add(Me.cmb_alcance)
         Me.Controls.Add(Me.txt_id_tipoAvion)
         Me.Controls.Add(Me.txt_longitud)
