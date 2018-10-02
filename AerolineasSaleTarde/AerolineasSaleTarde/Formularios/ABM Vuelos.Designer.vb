@@ -59,7 +59,7 @@ Partial Class ABM_Vuelos
         'txt_FechaSalida
         '
         Me.txt_FechaSalida.Location = New System.Drawing.Point(83, 80)
-        Me.txt_FechaSalida.Mask = "00/00/0000"
+        Me.txt_FechaSalida.Mask = "CCCCCCCC"
         Me.txt_FechaSalida.Name = "txt_FechaSalida"
         Me.txt_FechaSalida.nombre_campo = "Fecha Salida"
         Me.txt_FechaSalida.Size = New System.Drawing.Size(100, 20)
@@ -81,13 +81,12 @@ Partial Class ABM_Vuelos
         'txt_fechaLlegada
         '
         Me.txt_fechaLlegada.Location = New System.Drawing.Point(227, 80)
-        Me.txt_fechaLlegada.Mask = "00/00/0000"
+        Me.txt_fechaLlegada.Mask = "CCCCCCCC"
         Me.txt_fechaLlegada.Name = "txt_fechaLlegada"
         Me.txt_fechaLlegada.nombre_campo = "Fecha Llegada"
         Me.txt_fechaLlegada.Size = New System.Drawing.Size(100, 20)
         Me.txt_fechaLlegada.TabIndex = 2
         Me.txt_fechaLlegada.validable = True
-        Me.txt_fechaLlegada.ValidatingType = GetType(Date)
         '
         'txt_horaLlegada
         '

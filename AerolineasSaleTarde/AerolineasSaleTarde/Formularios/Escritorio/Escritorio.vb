@@ -1,10 +1,7 @@
 ﻿Public Class Form1
     Public Property actual As Form
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         actual = deletongo
-
-
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
@@ -62,8 +59,6 @@
         a.Y = Button1.Location.Y
         a.X = 0
         Panel4.Location = a
-
-
         actual.Close()
         With ABM_Avion
             .Show()
@@ -99,6 +94,16 @@
         a.Y = Button4.Location.Y
         a.X = 0
         Panel4.Location = a
+        With ABM_PersonalxAeropuerto
+
+
+            .Show()
+            .MdiParent = Me
+            .Dock = DockStyle.Fill
+            .BringToFront()
+        End With
+        actual = ABM_PersonalxAeropuerto
+
         Panel3.Visible = False
     End Sub
 
@@ -108,6 +113,13 @@
         a.Y = Button5.Location.Y
         a.X = 0
         Panel4.Location = a
+        With ABM_ServicioxAeropuerto
+            .Show()
+            .MdiParent = Me
+            .Dock = DockStyle.Fill
+            .BringToFront()
+        End With
+        actual = ABM_ServicioxAeropuerto
         Panel3.Visible = False
     End Sub
 
@@ -125,5 +137,9 @@
         End With
         actual = ABM_TipoAvion
         Panel3.Visible = False
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        Me.Close()
     End Sub
 End Class

@@ -3,7 +3,7 @@
     Dim conexion As New SqlClient.SqlConnection
     Dim cmd As New SqlClient.SqlCommand
 
-    Dim _cadena_conexion As String = "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Aerolineas;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
+    Dim _cadena_conexion As String = "Data Source=NETBOOK\SQLEXPRESS;Initial Catalog=Aerolineas;Integrated Security=True"
     'Public Property cadena_conexion As String
     Private Sub conectar()
         conexion.ConnectionString = _cadena_conexion

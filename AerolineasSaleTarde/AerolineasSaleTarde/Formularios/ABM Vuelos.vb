@@ -75,10 +75,10 @@
 
     Private Sub DGV1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellDoubleClick
         Me.txt_id_vuelo.Text = DGV1.CurrentRow.Cells(0).Value
-        Me.txt_FechaSalida.Text = DGV1.CurrentRow.Cells(1).Value
-        Me.txt_horaSalida.Text = DGV1.CurrentRow.Cells(2).Value
+        Me.txt_FechaSalida.Text = DGV1.CurrentRow.Cells(1).Value.ToString()
+        Me.txt_horaSalida.Text = DGV1.CurrentRow.Cells(2).Value.ToString()
         Me.txt_fechaLlegada.Text = DGV1.CurrentRow.Cells(3).Value
-        Me.txt_horaLlegada.Text = DGV1.CurrentRow.Cells(4).Value
+        Me.txt_horaLlegada.Text = DGV1.CurrentRow.Cells(4).Value.ToString()
         Me.cmb_avion.SelectedValue = DGV1.CurrentRow.Cells(5).Value
         Me.cmb_aeropuertoOrigen.SelectedValue = DGV1.CurrentRow.Cells(6).Value
         Me.cmb_aeropuertoDestino.SelectedValue = DGV1.CurrentRow.Cells(7).Value
@@ -250,5 +250,9 @@
             MsgBox("Ingrese el numero de Vuelo a buscar")
             txt_Buscar.Focus()
         End If
+    End Sub
+
+    Private Sub txt_FechaSalida_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txt_FechaSalida.MaskInputRejected
+
     End Sub
 End Class
