@@ -228,6 +228,7 @@ Partial Class ABM_TipoAvion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Maroon
         Me.ClientSize = New System.Drawing.Size(863, 390)
         Me.Controls.Add(Me.cmb_alcance)
         Me.Controls.Add(Me.txt_id_tipoAvion)
@@ -248,6 +249,7 @@ Partial Class ABM_TipoAvion
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ABM_TipoAvion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ABM TIPO AVION"

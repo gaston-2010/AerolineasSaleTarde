@@ -141,6 +141,7 @@ Partial Class ABM_Destinos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Maroon
         Me.ClientSize = New System.Drawing.Size(800, 314)
         Me.Controls.Add(Me.txt_id)
         Me.Controls.Add(Me.Label3)
@@ -153,6 +154,7 @@ Partial Class ABM_Destinos
         Me.Controls.Add(Me.cmb_Provincia)
         Me.Controls.Add(Me.cmb_Pais)
         Me.Controls.Add(Me.DGV1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ABM_Destinos"
         Me.Text = "ABM_Destinos"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()

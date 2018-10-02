@@ -122,6 +122,7 @@ Partial Class ABM_Avion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Maroon
         Me.ClientSize = New System.Drawing.Size(762, 237)
         Me.Controls.Add(Me.txt_id)
         Me.Controls.Add(Me.cmd_borrar)
@@ -132,6 +133,7 @@ Partial Class ABM_Avion
         Me.Controls.Add(Me.txt_nombre)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ABM_Avion"
         Me.Text = "ABM_Avion"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()

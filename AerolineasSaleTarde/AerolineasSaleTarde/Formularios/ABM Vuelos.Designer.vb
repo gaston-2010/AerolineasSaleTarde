@@ -353,6 +353,7 @@ Partial Class ABM_Vuelos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Maroon
         Me.ClientSize = New System.Drawing.Size(800, 311)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.cmd_buscar)
@@ -385,6 +386,7 @@ Partial Class ABM_Vuelos
         Me.Controls.Add(Me.txt_fechaLlegada)
         Me.Controls.Add(Me.txt_horaSalida)
         Me.Controls.Add(Me.txt_FechaSalida)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ABM_Vuelos"
         Me.Text = "ABM_Vuelos"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
