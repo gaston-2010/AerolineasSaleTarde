@@ -18,6 +18,10 @@
         Me.TE.blanquear_objetos(Me)
         Me.cmb_Localidad.Enabled = False
         Me.cmb_Provincia.Enabled = False
+        cmd_Borrar.BackColor = Color.Chocolate
+        cmd_Grabar.BackColor = Color.Chocolate
+        cmd_Nuevo.BackColor = Color.Chocolate
+
     End Sub
 
     Private Sub cmd_nuevo_Click(sender As Object, e As EventArgs) Handles cmd_Nuevo.Click
@@ -92,17 +96,8 @@
         End If
 
         Me._Destino.borrar()
-
+        Me.TE.blanquear_objetos(Me)
         Me.cargar_grilla()
-    End Sub
-
-    Private Sub cmb_Pais_TextChanged(sender As Object, e As EventArgs) Handles cmb_Pais.TextChanged
-
-    End Sub
-
-    Private Sub cmb_Provincia_TextChanged(sender As Object, e As EventArgs) Handles cmb_Provincia.TextChanged
-
-
     End Sub
 
     Private Sub cmb_Provincia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_Provincia.SelectedIndexChanged

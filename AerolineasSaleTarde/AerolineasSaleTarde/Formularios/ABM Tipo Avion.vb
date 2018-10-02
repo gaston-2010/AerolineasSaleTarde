@@ -13,6 +13,10 @@
         Me.cmd_borrar.Enabled = False
         Me.txt_id_tipoAvion.Visible = False
         Me.cargar_grilla()
+        cmd_borrar.BackColor = Color.Chocolate
+        cmd_guardar.BackColor = Color.Chocolate
+        cmd_nuevo.BackColor = Color.Chocolate
+
 
     End Sub
 

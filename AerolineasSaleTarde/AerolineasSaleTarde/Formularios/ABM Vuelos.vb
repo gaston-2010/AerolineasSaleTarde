@@ -21,6 +21,11 @@
             join Aeropuertos a2 on a1.id =a2.id") _
                             , "id", "nombre")
         Me.TE.blanquear_objetos(Me)
+        cmd_borrar.BackColor = Color.Chocolate
+        cmd_buscar.BackColor = Color.Chocolate
+        cmd_grabar.BackColor = Color.Chocolate
+        cmd_nuevo.BackColor = Color.Chocolate
+
     End Sub
 
     Private Sub cmd_nuevo_Click(sender As Object, e As EventArgs) Handles cmd_nuevo.Click

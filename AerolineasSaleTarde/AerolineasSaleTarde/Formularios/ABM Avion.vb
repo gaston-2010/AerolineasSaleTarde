@@ -15,6 +15,9 @@
         Me.cargar_grilla()
         Me.cmb_tipoavion.cargar(Me._conex.leo_tabla("SELECT * FROM TipoAvion") _
                              , "id_tipoAvion", "nombre")
+        cmd_borrar.BackColor = Color.Chocolate
+        cmd_grabar.BackColor = Color.Chocolate
+        cmd_nuevo.BackColor = Color.Chocolate
 
     End Sub
 
@@ -64,7 +67,7 @@
         Me.cmd_borrar.Enabled = True
     End Sub
 
-    Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
+    Private Sub cmd_borrar_Click(sender As Object, e As EventArgs)
         Me._avion.id = Me.txt_id.Text
         If MsgBox("DESEA ELIMINAR?", MsgBoxStyle.YesNo) = MsgBoxResult.No Then
             Exit Sub
