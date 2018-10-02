@@ -1,8 +1,9 @@
 ﻿Public Class CONEXION_BD
 
-    Dim conexion As New OleDb.OleDbConnection
-    Dim cmd As New OleDb.OleDbCommand
-    Dim _cadena_conexion As String = "Provider=SQLNCLI11;Data Source=PCESCRITORIO\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=Aerolineas"
+    Dim conexion As New SqlClient.SqlConnection
+    Dim cmd As New SqlClient.SqlCommand
+
+    Dim _cadena_conexion As String = "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Aerolineas;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
     'Public Property cadena_conexion As String
     Private Sub conectar()
         conexion.ConnectionString = _cadena_conexion
@@ -23,10 +24,7 @@
         Me.conectar()
         cmd.CommandText = sql
         Dim tabla As New DataTable
-        Dim cmd1 As New OleDb.OleDbDataAdapter(sql, conexion.ConnectionString)
-
-        cmd1.Fill(tabla)
-        'tabla.Load(cmd1.ExecuteReader())
+        tabla.Load(cmd.ExecuteReader())
         cerrar()
         Return tabla
     End Function

@@ -15,6 +15,11 @@
         Me.cmb_aeropuerto.cargar(Me._conex.leo_tabla("SELECT * FROM Aeropuertos") _
                             , "id", "nombre")
         Me.TE.blanquear_objetos(Me)
+        cmd_Borrar.BackColor = Color.Chocolate
+        cmd_Buscar.BackColor = Color.Chocolate
+        cmd_Nuevo.BackColor = Color.Chocolate
+        cmd_Grabar.BackColor = Color.Chocolate
+
 
     End Sub
 
