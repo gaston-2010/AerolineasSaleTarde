@@ -5,7 +5,7 @@
         modificar
     End Enum
     Dim control_estado_grabacion As estado_grabacion = estado_grabacion.insertar
-    Dim _PersonalxAero As New PersonalxAeropuerto
+    Dim _PersonalxAero As New PersonalxVuelo
     Dim _conex As New CONEXION_BD
     Dim TE As New tratamientos_especiales
 

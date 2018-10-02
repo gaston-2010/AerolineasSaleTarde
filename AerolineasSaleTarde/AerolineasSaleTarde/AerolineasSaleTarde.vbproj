@@ -110,7 +110,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Clases\Personal.vb" />
-    <Compile Include="Clases\PersonalxAeropuerto.vb" />
+    <Compile Include="Clases\PersonalxVuelo.vb" />
     <Compile Include="Clases\Tipo Avion.vb" />
     <Compile Include="Clases\tratamientos_especiales.vb" />
     <Compile Include="Clases\Vuelo.vb" />
@@ -138,10 +138,10 @@
     <Compile Include="Formularios\ABM Personal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\ABM PersonalxAeropuerto.Designer.vb">
-      <DependentUpon>ABM PersonalxAeropuerto.vb</DependentUpon>
+    <Compile Include="Formularios\ABM PersonalxVuelo.Designer.vb">
+      <DependentUpon>ABM PersonalxVuelo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\ABM PersonalxAeropuerto.vb">
+    <Compile Include="Formularios\ABM PersonalxVuelo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\ABM Tipo Avion.vb">
@@ -186,8 +186,8 @@
     <EmbeddedResource Include="Formularios\ABM Personal.resx">
       <DependentUpon>ABM Personal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\ABM PersonalxAeropuerto.resx">
-      <DependentUpon>ABM PersonalxAeropuerto.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\ABM PersonalxVuelo.resx">
+      <DependentUpon>ABM PersonalxVuelo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM Tipo Avion.resx">
       <DependentUpon>ABM Tipo Avion.vb</DependentUpon>

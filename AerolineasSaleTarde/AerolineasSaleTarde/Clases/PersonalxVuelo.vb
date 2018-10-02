@@ -1,4 +1,4 @@
-﻿Public Class PersonalxAeropuerto
+﻿Public Class PersonalxVuelo
     Public Property legajo As Integer
     Public Property id_vuelo As Integer
     Public Property id_puesto As Integer
