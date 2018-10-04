@@ -22,14 +22,6 @@ Partial Class ABM_Vuelos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.txt_FechaSalida = New AerolineasSaleTarde.MTB_01()
-        Me.txt_horaSalida = New AerolineasSaleTarde.MTB_01()
-        Me.txt_fechaLlegada = New AerolineasSaleTarde.MTB_01()
-        Me.txt_horaLlegada = New AerolineasSaleTarde.MTB_01()
-        Me.cmb_avion = New AerolineasSaleTarde.CMB_01()
-        Me.cmb_aeropuertoOrigen = New AerolineasSaleTarde.CMB_01()
-        Me.cmb_aeropuertoDestino = New AerolineasSaleTarde.CMB_01()
-        Me.cmb_estado = New AerolineasSaleTarde.CMB_01()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -48,97 +40,21 @@ Partial Class ABM_Vuelos
         Me.cmd_grabar = New System.Windows.Forms.Button()
         Me.cmd_borrar = New System.Windows.Forms.Button()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
-        Me.txt_Buscar = New AerolineasSaleTarde.MTB_01()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.cmd_buscar = New System.Windows.Forms.Button()
+        Me.cmb_estado = New AerolineasSaleTarde.CMB_01()
+        Me.cmb_aeropuertoDestino = New AerolineasSaleTarde.CMB_01()
+        Me.cmb_aeropuertoOrigen = New AerolineasSaleTarde.CMB_01()
+        Me.cmb_avion = New AerolineasSaleTarde.CMB_01()
         Me.txt_id_vuelo = New AerolineasSaleTarde.MTB_01()
+        Me.txt_Buscar = New AerolineasSaleTarde.MTB_01()
+        Me.txt_horaLlegada = New AerolineasSaleTarde.MTB_01()
+        Me.txt_fechaLlegada = New AerolineasSaleTarde.MTB_01()
+        Me.txt_horaSalida = New AerolineasSaleTarde.MTB_01()
+        Me.txt_FechaSalida = New AerolineasSaleTarde.MTB_01()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'txt_FechaSalida
-        '
-        Me.txt_FechaSalida.Location = New System.Drawing.Point(83, 80)
-        Me.txt_FechaSalida.Mask = "CCCCCCCC"
-        Me.txt_FechaSalida.Name = "txt_FechaSalida"
-        Me.txt_FechaSalida.nombre_campo = "Fecha Salida"
-        Me.txt_FechaSalida.Size = New System.Drawing.Size(100, 20)
-        Me.txt_FechaSalida.TabIndex = 0
-        Me.txt_FechaSalida.validable = True
-        Me.txt_FechaSalida.ValidatingType = GetType(Date)
-        '
-        'txt_horaSalida
-        '
-        Me.txt_horaSalida.Location = New System.Drawing.Point(83, 106)
-        Me.txt_horaSalida.Mask = "00:00"
-        Me.txt_horaSalida.Name = "txt_horaSalida"
-        Me.txt_horaSalida.nombre_campo = "Hora Salida"
-        Me.txt_horaSalida.Size = New System.Drawing.Size(48, 20)
-        Me.txt_horaSalida.TabIndex = 1
-        Me.txt_horaSalida.validable = True
-        Me.txt_horaSalida.ValidatingType = GetType(Date)
-        '
-        'txt_fechaLlegada
-        '
-        Me.txt_fechaLlegada.Location = New System.Drawing.Point(227, 80)
-        Me.txt_fechaLlegada.Mask = "CCCCCCCC"
-        Me.txt_fechaLlegada.Name = "txt_fechaLlegada"
-        Me.txt_fechaLlegada.nombre_campo = "Fecha Llegada"
-        Me.txt_fechaLlegada.Size = New System.Drawing.Size(100, 20)
-        Me.txt_fechaLlegada.TabIndex = 2
-        Me.txt_fechaLlegada.validable = True
-        '
-        'txt_horaLlegada
-        '
-        Me.txt_horaLlegada.Location = New System.Drawing.Point(227, 106)
-        Me.txt_horaLlegada.Mask = "00:00"
-        Me.txt_horaLlegada.Name = "txt_horaLlegada"
-        Me.txt_horaLlegada.nombre_campo = "Hora Llegada"
-        Me.txt_horaLlegada.Size = New System.Drawing.Size(46, 20)
-        Me.txt_horaLlegada.TabIndex = 3
-        Me.txt_horaLlegada.validable = True
-        Me.txt_horaLlegada.ValidatingType = GetType(Date)
-        '
-        'cmb_avion
-        '
-        Me.cmb_avion.FormattingEnabled = True
-        Me.cmb_avion.Location = New System.Drawing.Point(430, 80)
-        Me.cmb_avion.Name = "cmb_avion"
-        Me.cmb_avion.nombre_campo = "Avion"
-        Me.cmb_avion.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_avion.TabIndex = 4
-        Me.cmb_avion.validable = True
-        '
-        'cmb_aeropuertoOrigen
-        '
-        Me.cmb_aeropuertoOrigen.FormattingEnabled = True
-        Me.cmb_aeropuertoOrigen.Location = New System.Drawing.Point(126, 151)
-        Me.cmb_aeropuertoOrigen.Name = "cmb_aeropuertoOrigen"
-        Me.cmb_aeropuertoOrigen.nombre_campo = "Aeropuerto Origen"
-        Me.cmb_aeropuertoOrigen.Size = New System.Drawing.Size(244, 21)
-        Me.cmb_aeropuertoOrigen.TabIndex = 5
-        Me.cmb_aeropuertoOrigen.validable = True
-        '
-        'cmb_aeropuertoDestino
-        '
-        Me.cmb_aeropuertoDestino.FormattingEnabled = True
-        Me.cmb_aeropuertoDestino.Location = New System.Drawing.Point(126, 189)
-        Me.cmb_aeropuertoDestino.Name = "cmb_aeropuertoDestino"
-        Me.cmb_aeropuertoDestino.nombre_campo = "Aeropuerto Destino"
-        Me.cmb_aeropuertoDestino.Size = New System.Drawing.Size(244, 21)
-        Me.cmb_aeropuertoDestino.TabIndex = 6
-        Me.cmb_aeropuertoDestino.validable = True
-        '
-        'cmb_estado
-        '
-        Me.cmb_estado.FormattingEnabled = True
-        Me.cmb_estado.Items.AddRange(New Object() {"En Vuelo", "Demorado", "Cancelado", "Disponible"})
-        Me.cmb_estado.Location = New System.Drawing.Point(430, 107)
-        Me.cmb_estado.Name = "cmb_estado"
-        Me.cmb_estado.nombre_campo = "Estado"
-        Me.cmb_estado.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_estado.TabIndex = 7
-        Me.cmb_estado.validable = True
         '
         'Label1
         '
@@ -319,16 +235,6 @@ Partial Class ABM_Vuelos
         Me.DGV1.Size = New System.Drawing.Size(590, 214)
         Me.DGV1.TabIndex = 4
         '
-        'txt_Buscar
-        '
-        Me.txt_Buscar.Location = New System.Drawing.Point(108, 12)
-        Me.txt_Buscar.Mask = "CCCCCCCCCCCCCCCCCCCCC"
-        Me.txt_Buscar.Name = "txt_Buscar"
-        Me.txt_Buscar.nombre_campo = Nothing
-        Me.txt_Buscar.Size = New System.Drawing.Size(100, 20)
-        Me.txt_Buscar.TabIndex = 12
-        Me.txt_Buscar.validable = False
-        '
         'Label18
         '
         Me.Label18.AutoSize = True
@@ -360,6 +266,47 @@ Partial Class ABM_Vuelos
         Me.cmd_buscar.Text = "Buscar"
         Me.cmd_buscar.UseVisualStyleBackColor = True
         '
+        'cmb_estado
+        '
+        Me.cmb_estado.FormattingEnabled = True
+        Me.cmb_estado.Items.AddRange(New Object() {"En Vuelo", "Demorado", "Cancelado", "Disponible"})
+        Me.cmb_estado.Location = New System.Drawing.Point(430, 107)
+        Me.cmb_estado.Name = "cmb_estado"
+        Me.cmb_estado.nombre_campo = "Estado"
+        Me.cmb_estado.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_estado.TabIndex = 7
+        Me.cmb_estado.validable = True
+        '
+        'cmb_aeropuertoDestino
+        '
+        Me.cmb_aeropuertoDestino.FormattingEnabled = True
+        Me.cmb_aeropuertoDestino.Location = New System.Drawing.Point(126, 189)
+        Me.cmb_aeropuertoDestino.Name = "cmb_aeropuertoDestino"
+        Me.cmb_aeropuertoDestino.nombre_campo = "Aeropuerto Destino"
+        Me.cmb_aeropuertoDestino.Size = New System.Drawing.Size(244, 21)
+        Me.cmb_aeropuertoDestino.TabIndex = 6
+        Me.cmb_aeropuertoDestino.validable = True
+        '
+        'cmb_aeropuertoOrigen
+        '
+        Me.cmb_aeropuertoOrigen.FormattingEnabled = True
+        Me.cmb_aeropuertoOrigen.Location = New System.Drawing.Point(126, 151)
+        Me.cmb_aeropuertoOrigen.Name = "cmb_aeropuertoOrigen"
+        Me.cmb_aeropuertoOrigen.nombre_campo = "Aeropuerto Origen"
+        Me.cmb_aeropuertoOrigen.Size = New System.Drawing.Size(244, 21)
+        Me.cmb_aeropuertoOrigen.TabIndex = 5
+        Me.cmb_aeropuertoOrigen.validable = True
+        '
+        'cmb_avion
+        '
+        Me.cmb_avion.FormattingEnabled = True
+        Me.cmb_avion.Location = New System.Drawing.Point(430, 80)
+        Me.cmb_avion.Name = "cmb_avion"
+        Me.cmb_avion.nombre_campo = "Avion"
+        Me.cmb_avion.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_avion.TabIndex = 4
+        Me.cmb_avion.validable = True
+        '
         'txt_id_vuelo
         '
         Me.txt_id_vuelo.Location = New System.Drawing.Point(574, 108)
@@ -369,6 +316,59 @@ Partial Class ABM_Vuelos
         Me.txt_id_vuelo.Size = New System.Drawing.Size(24, 20)
         Me.txt_id_vuelo.TabIndex = 8
         Me.txt_id_vuelo.validable = False
+        '
+        'txt_Buscar
+        '
+        Me.txt_Buscar.Location = New System.Drawing.Point(108, 12)
+        Me.txt_Buscar.Mask = "CCCCCCCCCCCCCCCCCCCCC"
+        Me.txt_Buscar.Name = "txt_Buscar"
+        Me.txt_Buscar.nombre_campo = Nothing
+        Me.txt_Buscar.Size = New System.Drawing.Size(100, 20)
+        Me.txt_Buscar.TabIndex = 12
+        Me.txt_Buscar.validable = False
+        '
+        'txt_horaLlegada
+        '
+        Me.txt_horaLlegada.Location = New System.Drawing.Point(227, 106)
+        Me.txt_horaLlegada.Mask = "00:00"
+        Me.txt_horaLlegada.Name = "txt_horaLlegada"
+        Me.txt_horaLlegada.nombre_campo = "Hora Llegada"
+        Me.txt_horaLlegada.Size = New System.Drawing.Size(46, 20)
+        Me.txt_horaLlegada.TabIndex = 3
+        Me.txt_horaLlegada.validable = True
+        Me.txt_horaLlegada.ValidatingType = GetType(Date)
+        '
+        'txt_fechaLlegada
+        '
+        Me.txt_fechaLlegada.Location = New System.Drawing.Point(227, 80)
+        Me.txt_fechaLlegada.Mask = "99/99/9999"
+        Me.txt_fechaLlegada.Name = "txt_fechaLlegada"
+        Me.txt_fechaLlegada.nombre_campo = "Fecha Llegada"
+        Me.txt_fechaLlegada.Size = New System.Drawing.Size(100, 20)
+        Me.txt_fechaLlegada.TabIndex = 2
+        Me.txt_fechaLlegada.validable = True
+        '
+        'txt_horaSalida
+        '
+        Me.txt_horaSalida.Location = New System.Drawing.Point(83, 106)
+        Me.txt_horaSalida.Mask = "00:00"
+        Me.txt_horaSalida.Name = "txt_horaSalida"
+        Me.txt_horaSalida.nombre_campo = "Hora Salida"
+        Me.txt_horaSalida.Size = New System.Drawing.Size(48, 20)
+        Me.txt_horaSalida.TabIndex = 1
+        Me.txt_horaSalida.validable = True
+        Me.txt_horaSalida.ValidatingType = GetType(Date)
+        '
+        'txt_FechaSalida
+        '
+        Me.txt_FechaSalida.Location = New System.Drawing.Point(83, 80)
+        Me.txt_FechaSalida.Mask = "99/99/9999"
+        Me.txt_FechaSalida.Name = "txt_FechaSalida"
+        Me.txt_FechaSalida.nombre_campo = "Fecha Salida"
+        Me.txt_FechaSalida.Size = New System.Drawing.Size(100, 20)
+        Me.txt_FechaSalida.TabIndex = 0
+        Me.txt_FechaSalida.validable = True
+        Me.txt_FechaSalida.ValidatingType = GetType(Date)
         '
         'ABM_Vuelos
         '

@@ -38,8 +38,8 @@
     End Sub
 
     Private Sub cargar_grilla()
-        Dim sql As String = "SET DATEFORMAT DMY Select v.id_vuelo,v.fechaSalida as ' Fecha de Salida',v.horasalida as 'Hora de salida'
-        ,v.fechaLlegada as 'Fecha de LLegada',v.horaLlegada as 'Hora de LLegada'
+        Dim sql As String = "SET DATEFORMAT DMY Select v.id_vuelo,FORMAT(v.fechaSalida ,'dd/MM/yyyy ') as ' Fecha de Salida',v.horasalida  as 'Hora de salida'
+        ,FORMAT(v.fechaLlegada ,'dd/MM/yyyy ') as 'Fecha de LLegada',v.horaLlegada as 'Hora de LLegada'
        ,v.id_avion ,a1.id as 'Aeropuerto Origen',a2.id as 'Aeropuerto Destino',v.estado
         FROM Vuelos v join Aviones a on v.id_avion=a.id JOIN Aeropuertos a1 ON v.idAereopuertoOrigen = a1.id 
         JOIN Aeropuertos a2 ON v.idAereopuertoDestino = a2.id"
