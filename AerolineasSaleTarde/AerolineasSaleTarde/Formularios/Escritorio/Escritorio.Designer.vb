@@ -37,9 +37,9 @@ Partial Class Form1
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button10 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
@@ -229,16 +229,14 @@ Partial Class Form1
         Me.Panel3.Size = New System.Drawing.Size(644, 508)
         Me.Panel3.TabIndex = 9
         '
-        'Button10
+        'Label4
         '
-        Me.Button10.FlatAppearance.BorderSize = 2
-        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button10.Location = New System.Drawing.Point(609, 3)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(23, 23)
-        Me.Button10.TabIndex = 0
-        Me.Button10.Text = "X"
-        Me.Button10.UseVisualStyleBackColor = True
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(277, 219)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(79, 13)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "En Construcion"
         '
         'Label3
         '
@@ -250,14 +248,16 @@ Partial Class Form1
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "HOME"
         '
-        'Label4
+        'Button10
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(277, 219)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(79, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "En Construcion"
+        Me.Button10.FlatAppearance.BorderSize = 2
+        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button10.Location = New System.Drawing.Point(609, 3)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(23, 23)
+        Me.Button10.TabIndex = 0
+        Me.Button10.Text = "X"
+        Me.Button10.UseVisualStyleBackColor = True
         '
         'Form1
         '
