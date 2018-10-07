@@ -29,7 +29,7 @@
     End Sub
 
     Private Sub cargar_grilla()
-        Me.DGV1.DataSource = Me._conex.leo_tabla("SELECT * FROM Aviones")
+        Me.DGV1.DataSource = Me._conex.leo_tabla("SELECT a.id as 'Nº de Avion', a.nombre as 'Nombre', t.nombre as 'Tipo de Avion' FROM Aviones a JOIN TipoAvion t ON a.idTipoAvion = t.id_tipoAvion")
     End Sub
 
     Private Sub cmd_grabar_Click(sender As Object, e As EventArgs) Handles cmd_grabar.Click
@@ -60,8 +60,8 @@
 
     Private Sub DGV1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellDoubleClick
         Me.txt_id.Text = DGV1.CurrentRow.Cells(0).Value
-        Me.txt_nombre.Text = DGV1.CurrentRow.Cells(1).Value
-        Me.cmb_tipoavion.SelectedValue = DGV1.CurrentRow.Cells(2).Value
+        Me.txt_nombre.Text = DGV1.CurrentRow.Cells(1).Value.ToString
+        Me.cmb_tipoavion.Text = DGV1.CurrentRow.Cells(2).Value.ToString
         Me.control_estado_grabacion = estado_grabacion.modificar
         Me.cmd_grabar.Text = "Modificar"
         Me.cmd_borrar.Enabled = True

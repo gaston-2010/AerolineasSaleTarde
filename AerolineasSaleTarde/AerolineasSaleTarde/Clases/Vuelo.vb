@@ -35,14 +35,14 @@
 
     Public Sub insertar()
         Dim sql As String = ""
-        sql = "SET DATEFORMAT DMY INSERT INTO Vuelos ([fechaSalida]
-           ,[horasalida]
-           ,[fechaLlegada]
-           ,[horaLlegada]
-           ,[id_avion]
-           ,[idAereopuertoOrigen]
-           ,[idAereopuertoDestino]
-           ,[estado])"
+        sql = "SET DATEFORMAT DMY INSERT INTO Vuelos (fechaSalida
+           ,horasalida
+           ,fechaLlegada
+           ,horaLlegada
+           ,id_avion
+           ,idAereopuertoOrigen
+           ,idAereopuertoDestino
+           ,estado])"
         sql &= "VALUES ('" & _fechaSalida & "'
            ,'" & _horaSalida & "'
            ,'" & _fechaLlegada & "'
@@ -57,14 +57,14 @@
     Public Sub modificar()
         Dim sql As String = ""
         sql = "SET DATEFORMAT DMY UPDATE Vuelos"
-        sql &= " SET [fechaSalida] = '" & _fechaSalida & "'
-       ,[horasalida] = '" & _horaSalida & "'
-      ,[fechaLlegada] = '" & _fechaLlegada & "'
-      ,[horaLlegada] = '" & _horaLlegada & "'
-      ,[id_avion] = " & _id_avion & "
-      ,[idAereopuertoOrigen] = " & _idAereopuertoOrigen & " 
-     ,[idAereopuertoDestino] = " & _idAereopuertoDestino & "
-      ,[estado] = '" & _estado & "' WHERE id_vuelo=" & _id_vuelo
+        sql &= " SET fechaSalida = '" & _fechaSalida & "'
+       ,horasalida = '" & _horaSalida & "'
+      ,fechaLlegada = '" & _fechaLlegada & "'
+      ,horaLlegada = '" & _horaLlegada & "'
+      ,id_avion = " & _id_avion & "
+      ,idAereopuertoOrigen= " & _idAereopuertoOrigen & " 
+     ,idAereopuertoDestino = " & _idAereopuertoDestino & "
+      ,estado = '" & _estado & "' WHERE id_vuelo=" & _id_vuelo
         Me.BD.INS_MOD_BOR(sql)
 
     End Sub

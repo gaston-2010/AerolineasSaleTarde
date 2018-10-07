@@ -38,9 +38,9 @@
     End Sub
 
     Private Sub cargar_grilla()
-        Dim sql As String = "SET DATEFORMAT DMY Select v.id_vuelo,FORMAT(v.fechaSalida ,'dd/MM/yyyy ') as ' Fecha de Salida',v.horasalida  as 'Hora de salida'
+        Dim sql As String = "SET DATEFORMAT DMY Select v.id_vuelo as 'Nº Vuelo',FORMAT(v.fechaSalida ,'dd/MM/yyyy ') as ' Fecha de Salida',v.horasalida  as 'Hora de salida'
         ,FORMAT(v.fechaLlegada ,'dd/MM/yyyy ') as 'Fecha de LLegada',v.horaLlegada as 'Hora de LLegada'
-       ,v.id_avion ,a1.id as 'Aeropuerto Origen',a2.id as 'Aeropuerto Destino',v.estado
+       ,v.id_avion as 'Avion' ,a1.nombre as 'Aeropuerto Origen',a2.nombre as 'Aeropuerto Destino',v.estado
         FROM Vuelos v join Aviones a on v.id_avion=a.id JOIN Aeropuertos a1 ON v.idAereopuertoOrigen = a1.id 
         JOIN Aeropuertos a2 ON v.idAereopuertoDestino = a2.id"
         Me.DGV1.DataSource = Me._conex.leo_tabla(sql)
@@ -77,11 +77,11 @@
         Me.txt_id_vuelo.Text = DGV1.CurrentRow.Cells(0).Value
         Me.txt_FechaSalida.Text = DGV1.CurrentRow.Cells(1).Value.ToString()
         Me.txt_horaSalida.Text = DGV1.CurrentRow.Cells(2).Value.ToString()
-        Me.txt_fechaLlegada.Text = DGV1.CurrentRow.Cells(3).Value
+        Me.txt_fechaLlegada.Text = DGV1.CurrentRow.Cells(3).Value.ToString()
         Me.txt_horaLlegada.Text = DGV1.CurrentRow.Cells(4).Value.ToString()
         Me.cmb_avion.SelectedValue = DGV1.CurrentRow.Cells(5).Value
-        Me.cmb_aeropuertoOrigen.SelectedValue = DGV1.CurrentRow.Cells(6).Value
-        Me.cmb_aeropuertoDestino.SelectedValue = DGV1.CurrentRow.Cells(7).Value
+        Me.cmb_aeropuertoOrigen.Text = DGV1.CurrentRow.Cells(6).Value
+        Me.cmb_aeropuertoDestino.Text = DGV1.CurrentRow.Cells(7).Value
         Me.cmb_estado.SelectedItem = DGV1.CurrentRow.Cells(8).Value
         Me.control_estado_grabacion = estado_grabacion.modificar
         Me.cmd_grabar.Visible = True
@@ -218,7 +218,9 @@
     Private Function comprobarfechas()
         Dim fecha_menor As Date = txt_FechaSalida.Text
         Dim fecha_mayor As Date = txt_fechaLlegada.Text
-        If fecha_mayor < fecha_menor Then
+        Dim hora_menor As Date = txt_horaSalida.Text
+        Dim hora_mayor As Date = txt_horaLlegada.Text
+        If fecha_mayor <= fecha_menor And hora_menor >= hora_mayor Then
             MsgBox("La fecha de Salida debe ser menor que la de LLegada")
             txt_fechaLlegada.Focus()
             Return 0
@@ -240,9 +242,9 @@
 
     Private Sub cmd_buscar_Click(sender As Object, e As EventArgs) Handles cmd_buscar.Click
         If txt_Buscar.Text <> "" Then
-            Dim sql As String = "SET DATEFORMAT DMY Select v.id_vuelo,v.fechaSalida as ' Fecha de Salida',v.horasalida as 'Hora de salida'
-        ,v.fechaLlegada as 'Fecha de LLegada',v.horaLlegada as 'Hora de LLegada'
-       ,v.id_avion ,a1.id as 'Aeropuerto Origen',a2.id as 'Aeropuerto Destino',v.estado
+            Dim sql As String = "SET DATEFORMAT DMY Select v.id_vuelo as 'Nº Vuelo',FORMAT(v.fechaSalida ,'dd/MM/yyyy ') as ' Fecha de Salida',v.horasalida  as 'Hora de salida'
+        ,FORMAT(v.fechaLlegada ,'dd/MM/yyyy ') as 'Fecha de LLegada',v.horaLlegada as 'Hora de LLegada'
+       ,v.id_avion as 'Avion' ,a1.nombre as 'Aeropuerto Origen',a2.nombre as 'Aeropuerto Destino',v.estado
         FROM Vuelos v join Aviones a on v.id_avion=a.id JOIN Aeropuertos a1 ON v.idAereopuertoOrigen = a1.id 
         JOIN Aeropuertos a2 ON v.idAereopuertoDestino = a2.id where v.id_vuelo = " & txt_Buscar.Text
             Me.DGV1.DataSource = Me._conex.leo_tabla(sql)

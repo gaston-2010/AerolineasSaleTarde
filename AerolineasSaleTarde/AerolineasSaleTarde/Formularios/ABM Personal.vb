@@ -35,7 +35,7 @@
     End Sub
 
     Private Sub cargar_grilla()
-        Dim sql As String = "SELECT p.legajo,p.apellido, p.nombre, p.celular, p.mail, p.fechaIngreso, p.id_Aeropuerto,p.fechaNacimiento,
+        Dim sql As String = "SELECT p.legajo as 'Legajo',p.apellido as 'Apellido', p.nombre as 'Nombre', p.celular, p.mail, FORMAT(p.fechaIngreso ,'dd/MM/yyyy ') as ' Fecha de Ingreso',FORMAT(p.fechaNacimiento ,'dd/MM/yyyy ') as ' Fecha de Nacimiento',
                                a.nombre as 'Aeropuerto' FROM Personal p join Aeropuertos a on p.id_aeropuerto = a.id "
         Me.DGV1.DataSource = Me._conex.leo_tabla(sql)
 
@@ -69,8 +69,8 @@
         Me.txt_celular.Text = DGV1.CurrentRow.Cells(3).Value
         Me.txt_mail.Text = DGV1.CurrentRow.Cells(4).Value
         Me.txt_fechaingreso.Text = DGV1.CurrentRow.Cells(5).Value
-        Me.cmb_aeropuerto.SelectedValue = DGV1.CurrentRow.Cells(6).Value
-        Me.txt_fechanacimiento.Text = DGV1.CurrentRow.Cells(7).Value
+        Me.txt_fechanacimiento.Text = DGV1.CurrentRow.Cells(6).Value
+        Me.cmb_aeropuerto.Text = DGV1.CurrentRow.Cells(7).Value
     End Sub
 
     Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_Borrar.Click

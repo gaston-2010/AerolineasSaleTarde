@@ -5,10 +5,10 @@
 
     Dim BD As New CONEXION_BD
     Public Sub insertar()
-        Dim sql As String = "INSERT INTO [dbo].[ServicioxAeropuerto]
-           ([id_aeropuerto]
-           ,[tipo_servicio]
-           ,[nombre])
+        Dim sql As String = "INSERT INTO ServicioxAeropuerto
+           (id_aeropuerto
+           ,tipo_servicio
+           ,nombre)
      VALUES
            (" & _id_aeropuerto & "
            ," & _tipo_servicio & "
@@ -17,7 +17,7 @@
     End Sub
 
     Public Sub modificar()
-        Dim sql As String = "UPDATE [dbo].[ServicioxAeropuerto]
+        Dim sql As String = "UPDATE ServicioxAeropuerto
    SET nombre= '" & _nombre & "' where id_aeropuerto = " & _id_aeropuerto & " AND tipo_servicio= " & _tipo_servicio & ""
         BD.INS_MOD_BOR(sql)
     End Sub

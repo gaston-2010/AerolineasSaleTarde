@@ -20,11 +20,13 @@
                 txt_nombreAeropuerto.Enabled = False
                 Me.TE.blanquear_objetos(Me)
             Else
-                Dim sql2 As String = "SELECT * from ServicioxAeropuerto a where id_aeropuerto =" & txt_aeropuerto.Text.Trim()
+                Dim sql2 As String = "SELECT s.id_aeropuerto as 'Nº Aeropuerto,t.nombre as 'Tipo de Servicio',s.nombre as 'Nombre del Servicio' FROM ServicioxAeropuerto s join Aeropuertos a on s.id_aeropuerto = a.id
+          JOIN TipoServicio t ON s.tipo_servicio = t.id  where s.id_aeropuerto" & txt_aeropuerto.Text.Trim()
                 Me.DGV1.DataSource = Me._conex.leo_tabla(sql2)
                 txt_nombreAeropuerto.Enabled = True
                 rellenar(Me, txt_aeropuerto.Text)
-
+                cmd_Grabar.Enabled = False
+                txt_aeropuerto.Enabled = False
             End If
         Else
             MsgBox("Ingrese el Aeropuerto a buscar")
@@ -37,6 +39,8 @@
         cmd_Buscar.BackColor = Color.Chocolate
         cmd_Grabar.BackColor = Color.Chocolate
         cmd_Nuevo.BackColor = Color.Chocolate
+        cmd_Grabar.Enabled = False
+        txt_aeropuerto.Enabled = True
 
         Me.cmd_Borrar.Enabled = False
         txt_nombreAeropuerto.Enabled = False
@@ -55,11 +59,12 @@
                             , "id", "nombre")
         Me.TE.blanquear_objetos(Me)
         Me.DGV1.ClearSelection()
+        cmd_Grabar.Enabled = False
 
     End Sub
     Private Sub cargargrilla()
-        Dim sql As String = "SELECT s.id_aeropuerto,s.tipo_servicio,s.nombre FROM ServicioxAeropuerto s join Aeropuertos a on s.id_aeropuerto = a.id
-            where s.id_aeropuerto=" & txt_aeropuerto.Text
+        Dim sql As String = "SELECT s.id_aeropuerto as 'Nº Aeropuerto,t.nombre as 'Tipo de Servicio',s.nombre as 'Nombre del Servicio' FROM ServicioxAeropuerto s join Aeropuertos a on s.id_aeropuerto = a.id
+          JOIN TipoServicio t ON s.tipo_servicio = t.id  where s.id_aeropuerto=" & txt_aeropuerto.Text
         DGV1.DataSource = Me._conex.leo_tabla(sql)
     End Sub
     Private Sub cmd_grabar_Click(sender As Object, e As EventArgs) Handles cmd_Grabar.Click
@@ -88,7 +93,7 @@
         Me.control_estado_grabacion = estado_grabacion.modificar
         Me.cmd_Grabar.Text = "Modificar"
         Me.cmd_Borrar.Enabled = True
-        Me.cmb_tipoServicio.SelectedValue = DGV1.CurrentRow.Cells(1).Value
+        Me.cmb_tipoServicio.Text = DGV1.CurrentRow.Cells(1).Value
         Me.txt_nombreservicio.Text = DGV1.CurrentRow.Cells(2).Value
 
     End Sub

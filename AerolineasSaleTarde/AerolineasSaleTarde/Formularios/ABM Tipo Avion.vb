@@ -30,7 +30,14 @@
 
 
     Private Sub cargar_grilla()
-        Me.DGV1.DataSource = Me._conex.leo_tabla("SELECT * FROM TipoAvion")
+        Me.DGV1.DataSource = Me._conex.leo_tabla("SELECT id_tipoAvion as 'Id'
+      ,nombre as 'Nombre'
+      ,capacidadPasajerosClaseAlta as 'Capacidad Pasajeros Clase Alta'
+      ,capacidadPasajerosClaseTurista as 'Capacidad Pasajeros Clase Turista'
+      ,capacidadKGEquipaje as 'Capacidad KG de Equipaje'
+      ,numeroSalidaEmergencia as 'Cantidad Salida de Emergencias'
+      ,longitud as 'Longitud'
+,alcanceVuelo as 'Alcance Del Vuelo' FROM TipoAvion")
     End Sub
 
     Private Sub cmd_guardar_Click(sender As Object, e As EventArgs) Handles cmd_guardar.Click

@@ -13,14 +13,14 @@
 
     Public Sub insertar()
         Dim sql As String = ""
-        sql = "SET DATEFORMAT DMY INSERT INTO [dbo].[Personal]
-           ([apellido]
-           ,[nombre]
-           ,[celular]
-           ,[mail]
-           ,[fechaIngreso]
-           ,[id_Aeropuerto]
-           ,[fechaNacimiento])
+        sql = "SET DATEFORMAT DMY INSERT INTO Personal
+           (apellido
+           ,nombre
+           ,celular
+           ,mail
+           ,fechaIngreso
+           ,id_Aeropuerto
+           ,fechaNacimiento)
      VALUES
            ('" & _apellido & "'
            ,'" & _nombre & "'
@@ -35,13 +35,13 @@
     Public Sub modificar()
         Dim sql As String = ""
         sql = "SET DATEFORMAT DMY UPDATE Personal 
-        SET [apellido] = '" & _apellido & "'
-      ,[nombre] = '" & _nombre & "'
-        ,[celular] = " & _celular & "
-      ,[mail] = '" & _mail & "'
-      ,[fechaIngreso] = '" & _fechaIngreso & "'
-      ,[id_Aeropuerto] = " & _id_Aeropuerto & "
-      ,[fechaNacimiento] = '" & _fechaNacimiento & "' WHERE legajo = " & _legajo & ""
+        SET apellido = '" & _apellido & "'
+      ,nombre = '" & _nombre & "'
+        ,celular= " & _celular & "
+      ,mail = '" & _mail & "'
+      ,fechaIngreso= '" & _fechaIngreso & "'
+      ,id_Aeropuerto = " & _id_Aeropuerto & "
+      ,fechaNacimiento = '" & _fechaNacimiento & "' WHERE legajo = " & _legajo & ""
         Me.BD.INS_MOD_BOR(sql)
 
     End Sub

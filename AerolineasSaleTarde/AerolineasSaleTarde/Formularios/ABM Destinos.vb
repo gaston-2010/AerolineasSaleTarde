@@ -38,7 +38,7 @@
     End Sub
 
     Private Sub cargar_grilla()
-        Me.DGV1.DataSource = Me._conex.leo_tabla("SELECT d.id, d.id_localidad, l.nombre FROM Destinos d join Localidad l on d.id_localidad = l.id")
+        Me.DGV1.DataSource = Me._conex.leo_tabla("SELECT d.id as 'Nº Destino', d.id_localidad as 'Localidad', l.nombre as 'Nombre Localidad' FROM Destinos d join Localidad l on d.id_localidad = l.id")
 
     End Sub
 

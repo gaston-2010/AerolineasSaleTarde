@@ -20,11 +20,14 @@
                 txt_apellido.Enabled = False
                 Me.TE.blanquear_objetos(Me)
             Else
-                Dim sql1 As String = "SELECT legajo ,id_vuelo ,id_puesto From PersonalxVuelo where legajo=" & txt_Legajo.Text
+                Dim sql1 As String = "SELECT P.legajo, Pu.nombre as 'Puesto', P.id_vuelo as 'Nº de Vuelo' FROM PersonalxVuelo P 
+JOIN Personal pe ON P.legajo = pe.legajo JOIN Puesto pu on P.id_puesto = pu.id where P.legajo " & txt_Legajo.Text
                 Me.DGV1.DataSource = Me._conex.leo_tabla(sql1)
                 txt_nombre.Enabled = True
                 txt_apellido.Enabled = True
                 rellenar(Me, txt_Legajo.Text)
+                Me.cmd_Grabar.Visible = True
+                Me.txt_Legajo.Enabled = False
 
             End If
         Else
@@ -38,16 +41,16 @@
         cmd_Buscar.BackColor = Color.Chocolate
         cmd_Grabar.BackColor = Color.Chocolate
         cmd_Nuevo.BackColor = Color.Chocolate
-
+        cmd_Grabar.Visible = False
         Me.cmd_Borrar.Enabled = False
         txt_nombre.Enabled = False
         txt_apellido.Enabled = False
         Me.cmb_avion.cargar(Me._conex.leo_tabla("SELECT * FROM Vuelos") _
                             , "id_vuelo", "nombre")
-        Me.cmb_puesto.cargar(Me._conex.leo_tabla("SELECT * FROM [MicrosoftAccount\maximilianoalbert@hotmail.com].[Puesto]") _
+        Me.cmb_puesto.cargar(Me._conex.leo_tabla("SELECT * FROM Puesto") _
                             , "id_puesto", "nombre")
         Me.TE.blanquear_objetos(Me)
-
+        Me.txt_Legajo.Enabled = True
     End Sub
 
     Private Sub cmd_nuevo_Click(sender As Object, e As EventArgs) Handles cmd_Nuevo.Click
@@ -57,15 +60,19 @@
         Me.cmd_Borrar.Enabled = False
         Me.cmb_avion.cargar(Me._conex.leo_tabla("SELECT * FROM Vuelos") _
                             , "id_vuelo", "nombre")
-        Me.cmb_puesto.cargar(Me._conex.leo_tabla("SELECT * FROM [MicrosoftAccount\maximilianoalbert@hotmail.com].[Puesto]") _
+        Me.cmb_puesto.cargar(Me._conex.leo_tabla("SELECT * FROM Puesto") _
                             , "id_puesto", "nombre")
         Me.TE.blanquear_objetos(Me)
-        Me.cmd_Grabar.Visible = True
+        Me.cmd_Grabar.Visible = False
+        Me.txt_Legajo.Enabled = True
+        Dim table As New DataTable
+        DGV1.DataSource = table
 
     End Sub
 
     Private Sub cargar_grilla()
-        Dim sql As String = "SELECT * FROM PersonalxVuelo"
+        Dim sql As String = "SELECT P.legajo, Pu.nombre as 'Puesto', P.id_vuelo as 'Nº de Vuelo' FROM PersonalxVuelo P 
+JOIN Personal pe ON P.legajo = pe.legajo JOIN Puesto pu on P.id_puesto = pu.id where P.legajo =" & txt_Legajo.Text
         Me.DGV1.DataSource = Me._conex.leo_tabla(sql)
 
     End Sub
@@ -83,7 +90,7 @@
                     transferir(Me)
                     Me._PersonalxAero.modificar()
                 End If
-                Me.TE.blanquear_objetos(Me)
+
             End If
         End If
         cargar_grilla()
@@ -173,7 +180,7 @@
     End Sub
     Public Function comprobarexistencia()
         Dim tabla As New DataTable
-        Dim sql As String = "SELECT [legajo] ,[id_vuelo] ,[id_puesto] From PersonalxVuelo where legajo=" & txt_Legajo.Text & "AND id_vuelo =" & cmb_avion.SelectedValue
+        Dim sql As String = "SELECT legajo ,id_vuelo ,id_puesto From PersonalxVuelo where legajo=" & txt_Legajo.Text & "AND id_vuelo =" & cmb_avion.SelectedValue
         tabla = Me._conex.leo_tabla(sql)
         If tabla.Rows.Count = 0 Then
             Return 0
