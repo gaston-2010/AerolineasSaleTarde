@@ -43,6 +43,7 @@
     End Sub
 
     Private Sub cmd_grabar_Click(sender As Object, e As EventArgs) Handles cmd_Grabar.Click
+
         If Me.cmb_Pais.SelectedIndex = -1 Then
             MsgBox("El Pais Esta deseleccionado")
             Exit Sub
@@ -153,6 +154,5 @@
         Else
             Return True
         End If
-
     End Function
 End Class

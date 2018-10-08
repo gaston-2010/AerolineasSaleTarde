@@ -79,15 +79,17 @@
     <Compile Include="Clases\Aeropuerto.vb" />
     <Compile Include="Clases\Avion.vb" />
     <Compile Include="Clases\BD TRANSACCIONAL.vb" />
-    <Compile Include="Clases\Pasajero-Hacer.vb" />
     <Compile Include="Clases\CMB_01.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Clases\CONEXION_BD.vb" />
     <Compile Include="Clases\Destino.vb" />
+    <Compile Include="Clases\Domicilio.vb" />
+    <Compile Include="Clases\DomicilioxPasajero.vb" />
     <Compile Include="Clases\MTB_01.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Clases\Pasajero.vb" />
     <Compile Include="Clases\Personal.vb" />
     <Compile Include="Clases\PersonalxVuelo.vb" />
     <Compile Include="Clases\ServicioxAeropuerto.vb" />
@@ -104,6 +106,12 @@
       <DependentUpon>ABM Destinos.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\ABM Destinos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ABM Pasajero.Designer.vb">
+      <DependentUpon>ABM Pasajero.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ABM Pasajero.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\ABM Personal.Designer.vb">
@@ -175,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM Destinos.resx">
       <DependentUpon>ABM Destinos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABM Pasajero.resx">
+      <DependentUpon>ABM Pasajero.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM Personal.resx">
       <DependentUpon>ABM Personal.vb</DependentUpon>

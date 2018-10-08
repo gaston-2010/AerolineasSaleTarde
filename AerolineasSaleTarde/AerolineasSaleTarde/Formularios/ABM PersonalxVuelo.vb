@@ -195,6 +195,7 @@ JOIN Personal pe ON P.legajo = pe.legajo JOIN Puesto pu on P.id_puesto = pu.id_p
                 Return 1
             End If
         End If
+        Return 1
     End Function
 
 End Class
