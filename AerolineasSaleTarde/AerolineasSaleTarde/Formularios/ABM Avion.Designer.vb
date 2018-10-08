@@ -27,10 +27,10 @@ Partial Class ABM_Avion
         Me.DGV1 = New System.Windows.Forms.DataGridView()
         Me.cmd_nuevo = New System.Windows.Forms.Button()
         Me.cmd_grabar = New System.Windows.Forms.Button()
+        Me.cmd_borrar = New System.Windows.Forms.Button()
         Me.txt_id = New AerolineasSaleTarde.MTB_01()
         Me.cmb_tipoavion = New AerolineasSaleTarde.CMB_01()
         Me.txt_nombre = New AerolineasSaleTarde.MTB_01()
-        Me.cmd_borrar = New System.Windows.Forms.Button()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -87,6 +87,18 @@ Partial Class ABM_Avion
         Me.cmd_grabar.Text = "Grabar"
         Me.cmd_grabar.UseVisualStyleBackColor = True
         '
+        'cmd_borrar
+        '
+        Me.cmd_borrar.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.cmd_borrar.FlatAppearance.BorderSize = 2
+        Me.cmd_borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_borrar.Location = New System.Drawing.Point(535, 455)
+        Me.cmd_borrar.Name = "cmd_borrar"
+        Me.cmd_borrar.Size = New System.Drawing.Size(75, 23)
+        Me.cmd_borrar.TabIndex = 6
+        Me.cmd_borrar.Text = "Borrar"
+        Me.cmd_borrar.UseVisualStyleBackColor = True
+        '
         'txt_id
         '
         Me.txt_id.Location = New System.Drawing.Point(66, 300)
@@ -117,18 +129,6 @@ Partial Class ABM_Avion
         Me.txt_nombre.Size = New System.Drawing.Size(100, 20)
         Me.txt_nombre.TabIndex = 1
         Me.txt_nombre.validable = True
-        '
-        'cmd_borrar
-        '
-        Me.cmd_borrar.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.cmd_borrar.FlatAppearance.BorderSize = 2
-        Me.cmd_borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmd_borrar.Location = New System.Drawing.Point(535, 455)
-        Me.cmd_borrar.Name = "cmd_borrar"
-        Me.cmd_borrar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_borrar.TabIndex = 6
-        Me.cmd_borrar.Text = "Borrar"
-        Me.cmd_borrar.UseVisualStyleBackColor = True
         '
         'ABM_Avion
         '

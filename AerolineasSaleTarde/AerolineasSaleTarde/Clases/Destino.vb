@@ -2,33 +2,15 @@
     Public Property id_localidad As Integer
     Public Property id As Integer
 
-    Dim BD As New CONEXION_BD
+    Dim BD As New BD_TRANSACCIONAL
 
-    Enum estado_validar
-        encontrado
-        no_encontrado
-    End Enum
 
-    Public Function validar() As estado_validar
-        Dim sql As String = ""
-        Dim tabla As New DataTable
-
-        sql = "SELECT * FROM Destinos "
-        sql &= " WHERE id = '" & _id & "'"
-
-        tabla = Me.BD.leo_tabla(sql)
-        If tabla.Rows.Count() = 0 Then
-            Return estado_validar.no_encontrado
-        Else
-            Return estado_validar.encontrado
-        End If
-    End Function
 
     Public Sub insertar()
         Dim sql As String = ""
         sql = "INSERT INTO Destinos"
         sql &= "(id_localidad) VALUES ( " & _id_localidad & " )"
-        Me.BD.INS_MOD_BOR(sql)
+        Me.BD.consultaABM(sql)
     End Sub
 
     Public Sub modificar()
@@ -36,7 +18,7 @@
         sql = "UPDATE Destinos"
         sql &= " SET id_localidad=" & _id_localidad & ""
         sql &= " WHERE id=" & _id
-        Me.BD.INS_MOD_BOR(sql)
+        Me.BD.consultaABM(sql)
 
     End Sub
 
@@ -54,7 +36,7 @@
         Dim sql As String = ""
         sql = " DELETE FROM Destinos"
         sql &= " WHERE id=" & _id
-        Me.BD.INS_MOD_BOR(sql)
+        Me.BD.consultaABM(sql)
     End Sub
 
 End Class

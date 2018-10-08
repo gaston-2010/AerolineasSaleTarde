@@ -6,7 +6,7 @@
     End Enum
     Dim control_estado_grabacion As estado_grabacion = estado_grabacion.insertar
     Dim _tipoavion As New Tipo_Avion
-    Dim _conex As New CONEXION_BD
+    Dim _conex As New BD_TRANSACCIONAL
     Dim TE As New tratamientos_especiales
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -30,7 +30,7 @@
 
 
     Private Sub cargar_grilla()
-        Me.DGV1.DataSource = Me._conex.leo_tabla("SELECT id_tipoAvion as 'Id'
+        Me.DGV1.DataSource = Me._conex.consultaATabla("SELECT id_tipoAvion as 'Id'
       ,nombre as 'Nombre'
       ,capacidadPasajerosClaseAlta as 'Capacidad Pasajeros Clase Alta'
       ,capacidadPasajerosClaseTurista as 'Capacidad Pasajeros Clase Turista'

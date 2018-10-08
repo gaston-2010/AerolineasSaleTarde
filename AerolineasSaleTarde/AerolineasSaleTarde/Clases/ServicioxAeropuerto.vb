@@ -3,7 +3,7 @@
     Public Property tipo_servicio As Integer
     Public Property nombre As String
 
-    Dim BD As New CONEXION_BD
+    Dim BD As New BD_TRANSACCIONAL
     Public Sub insertar()
         Dim sql As String = "INSERT INTO ServicioxAeropuerto
            (id_aeropuerto
@@ -13,17 +13,17 @@
            (" & _id_aeropuerto & "
            ," & _tipo_servicio & "
            ,'" & _nombre & "')"
-        BD.INS_MOD_BOR(sql)
+        BD.consultaABM(sql)
     End Sub
 
     Public Sub modificar()
         Dim sql As String = "UPDATE ServicioxAeropuerto
    SET nombre= '" & _nombre & "' where id_aeropuerto = " & _id_aeropuerto & " AND tipo_servicio= " & _tipo_servicio & ""
-        BD.INS_MOD_BOR(sql)
+        BD.consultaABM(sql)
     End Sub
     Public Sub borrar()
         Dim sql As String = "DELETE FROM PersonalxVuelo WHERE id_aeropuerto= " & _id_aeropuerto & " AND tipo_servicio=" & _tipo_servicio & " AND nombre='" & _nombre & "'"
-        BD.INS_MOD_BOR(sql)
+        BD.consultaABM(sql)
     End Sub
 
 

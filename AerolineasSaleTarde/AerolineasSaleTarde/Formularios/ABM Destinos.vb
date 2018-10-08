@@ -5,7 +5,7 @@
     End Enum
     Dim control_estado_grabacion As estado_grabacion = estado_grabacion.insertar
     Dim _Destino As New Destino
-    Dim _conex As New CONEXION_BD
+    Dim _conex As New BD_TRANSACCIONAL
     Dim TE As New tratamientos_especiales
     Dim cambio As Boolean = False
 
@@ -13,7 +13,7 @@
         Me.cmd_Borrar.Enabled = False
         Me.txt_id.Visible = False
         Me.cargar_grilla()
-        Me.cmb_Pais.cargar(Me._conex.leo_tabla("SELECT * FROM Pais") _
+        Me.cmb_Pais.cargar(Me._conex.consultaATabla("SELECT * FROM Pais") _
                             , "id", "nombre")
         Me.TE.blanquear_objetos(Me)
         Me.cmb_Localidad.Enabled = False
@@ -31,14 +31,14 @@
         Me.cmd_Borrar.Enabled = False
         Me.cmb_Localidad.Enabled = False
         Me.cmb_Provincia.Enabled = False
-        Me.cmb_Pais.cargar(Me._conex.leo_tabla("SELECT * FROM Pais") _
+        Me.cmb_Pais.cargar(Me._conex.consultaATabla("SELECT * FROM Pais") _
                             , "id", "nombre")
         Me.cmd_Grabar.Visible = True
 
     End Sub
 
     Private Sub cargar_grilla()
-        Me.DGV1.DataSource = Me._conex.leo_tabla("SELECT d.id as 'Nº Destino', d.id_localidad as 'Localidad', l.nombre as 'Nombre Localidad' FROM Destinos d join Localidad l on d.id_localidad = l.id")
+        Me.DGV1.DataSource = Me._conex.consultaATabla("SELECT d.id as 'Nº Destino', d.id_localidad as 'Localidad', l.nombre as 'Nombre Localidad' FROM Destinos d join Localidad l on d.id_localidad = l.id")
 
     End Sub
 
@@ -83,9 +83,9 @@
         Me.cmb_Localidad.Enabled = True
         Me.cmb_Localidad.Text = DGV1.CurrentRow.Cells(2).Value
         Dim sql As String = "SELECT * FROM Provincia p JOIN localidad l ON l.id_provincia = p.id where l.nombre= '" & cmb_Localidad.Text & "'"
-        Me.cmb_Provincia.cargar(Me._conex.leo_tabla(sql), "id", "nombre")
+        Me.cmb_Provincia.cargar(Me._conex.consultaATabla(sql), "id", "nombre")
         Dim sql2 As String = "SELECT * FROM Pais p JOIN provincia pr ON pr.id_pais = p.id where pr.nombre= '" & cmb_Provincia.Text & "'"
-        Me.cmb_Pais.cargar(Me._conex.leo_tabla(sql2), "id", "nombre")
+        Me.cmb_Pais.cargar(Me._conex.consultaATabla(sql2), "id", "nombre")
 
     End Sub
 
@@ -113,7 +113,7 @@
                 Exit Sub
             End If
             Dim sql As String = "SELECT * FROM Localidad l JOIN Provincia p ON l.id_provincia = p.id where p.id=" & nombre & ""
-            Me.cmb_Localidad.cargar(Me._conex.leo_tabla(sql), "id", "nombre")
+        Me.cmb_Localidad.cargar(Me._conex.consultaATabla(sql), "id", "nombre")
 
     End Sub
 
@@ -130,7 +130,7 @@
                 Exit Sub
             End If
             Dim Sql As String = "Select * FROM Provincia p JOIN Pais pa On p.id_pais = pa.id where pa.id = " & nombre
-            Me.cmb_Provincia.cargar(Me._conex.leo_tabla(Sql), "id", "nombre")
+        Me.cmb_Provincia.cargar(Me._conex.consultaATabla(Sql), "id", "nombre")
 
     End Sub
 
@@ -144,7 +144,7 @@
             End If
             Dim nombre As String = Convert.ToString(numero)
             Dim Sql As String = "Select * from Destinos d join localidad l on d.id_localidad=l.id where l.id =" & nombre
-            tabla = Me._conex.leo_tabla(Sql)
+            tabla = Me._conex.consultaATabla(Sql)
             If tabla.Rows.Count <> 0 Then
                 MsgBox("El Destino ya esta creado")
                 Return False

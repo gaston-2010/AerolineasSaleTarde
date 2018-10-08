@@ -5,7 +5,7 @@
     End Enum
     Dim control_estado_grabacion As estado_grabacion = estado_grabacion.insertar
     Dim _Vuelo As New Vuelo
-    Dim _conex As New CONEXION_BD
+    Dim _conex As New BD_TRANSACCIONAL
     Dim TE As New tratamientos_especiales
     Dim cambio As Boolean = False
 
@@ -13,11 +13,11 @@
         Me.cmd_borrar.Enabled = False
         Me.txt_id_vuelo.Visible = False
         Me.cargar_grilla()
-        Me.cmb_avion.cargar(Me._conex.leo_tabla("SELECT * FROM Aviones") _
+        Me.cmb_avion.cargar(Me._conex.consultaATabla("SELECT * FROM Aviones") _
                             , "id", "nombre")
-        Me.cmb_aeropuertoDestino.cargar(Me._conex.leo_tabla("SELECT * FROM Aeropuertos") _
+        Me.cmb_aeropuertoDestino.cargar(Me._conex.consultaATabla("SELECT * FROM Aeropuertos") _
                             , "id", "nombre")
-        Me.cmb_aeropuertoOrigen.cargar(Me._conex.leo_tabla("SELECT * FROM Aeropuertos a1
+        Me.cmb_aeropuertoOrigen.cargar(Me._conex.consultaATabla("SELECT * FROM Aeropuertos a1
             join Aeropuertos a2 on a1.id =a2.id") _
                             , "id", "nombre")
         Me.TE.blanquear_objetos(Me)
@@ -43,7 +43,7 @@
        ,v.id_avion as 'Avion' ,a1.nombre as 'Aeropuerto Origen',a2.nombre as 'Aeropuerto Destino',v.estado
         FROM Vuelos v join Aviones a on v.id_avion=a.id JOIN Aeropuertos a1 ON v.idAereopuertoOrigen = a1.id 
         JOIN Aeropuertos a2 ON v.idAereopuertoDestino = a2.id"
-        Me.DGV1.DataSource = Me._conex.leo_tabla(sql)
+        Me.DGV1.DataSource = Me._conex.consultaATabla(sql)
 
     End Sub
 
@@ -121,7 +121,7 @@
                      AND idAereopuertoOrigen= " & idAereopuertoOrigen & "
                      AND idAereopuertoDestino= " & idAereopuertoDestino & "
                      AND estado= '" & estado & "'"
-            tabla = Me._conex.leo_tabla(Sql)
+            tabla = Me._conex.consultaATabla(sql)
             If tabla.Rows.Count <> 0 Then
                 MsgBox("El Vuelo ya esta creado")
                 Return False
@@ -197,7 +197,7 @@
             Exit Sub
         End If
         Dim Sql As String = "SELECT * FROM Aeropuertos a1 join Aeropuertos a2 on a1.id=a2.id where not a2.id= " & nombre
-        Me.cmb_aeropuertoOrigen.cargar(Me._conex.leo_tabla(Sql), "id", "nombre")
+        Me.cmb_aeropuertoOrigen.cargar(Me._conex.consultaATabla(Sql), "id", "nombre")
 
     End Sub
 
@@ -212,7 +212,7 @@
             Exit Sub
         End If
         Dim Sql As String = "SELECT * FROM Aeropuertos a1 join Aeropuertos a2 on a1.id=a2.id where not a2.id= " & nombre
-        Me.cmb_aeropuertoOrigen.cargar(Me._conex.leo_tabla(Sql), "id", "nombre")
+        Me.cmb_aeropuertoOrigen.cargar(Me._conex.consultaATabla(Sql), "id", "nombre")
     End Sub
 
     Private Function comprobarfechas()
@@ -247,7 +247,7 @@
        ,v.id_avion as 'Avion' ,a1.nombre as 'Aeropuerto Origen',a2.nombre as 'Aeropuerto Destino',v.estado
         FROM Vuelos v join Aviones a on v.id_avion=a.id JOIN Aeropuertos a1 ON v.idAereopuertoOrigen = a1.id 
         JOIN Aeropuertos a2 ON v.idAereopuertoDestino = a2.id where v.id_vuelo = " & txt_Buscar.Text
-            Me.DGV1.DataSource = Me._conex.leo_tabla(sql)
+            Me.DGV1.DataSource = Me._conex.consultaATabla(sql)
         Else
             MsgBox("Ingrese el numero de Vuelo a buscar")
             txt_Buscar.Focus()

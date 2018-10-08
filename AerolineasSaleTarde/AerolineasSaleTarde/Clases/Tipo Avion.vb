@@ -1,12 +1,8 @@
 ﻿Public Class Tipo_Avion
 
 
-    Enum estado_validar
-        encontrado
-        no_encontrado
-    End Enum
 
-    Dim BD As New CONEXION_BD
+    Dim BD As New BD_TRANSACCIONAL
 
     Public Property id_tipoAvion As Integer
     Public Property nombre As String
@@ -17,21 +13,6 @@
     Public Property alcance As String
     Public Property cantidadsal As Integer
     Public Property validado As Boolean = False
-
-    Public Function validar() As estado_validar
-        Dim sql As String = ""
-        Dim tabla As New DataTable
-
-        sql = "SELECT * FROM tipoAvion "
-        sql &= " WHERE id_tipoAvion = '" & _id_tipoAvion & "'"
-
-        tabla = Me.BD.leo_tabla(sql)
-        If tabla.Rows.Count() = 0 Then
-            Return estado_validar.no_encontrado
-        Else
-            Return estado_validar.encontrado
-        End If
-    End Function
 
     Public Sub insertar()
         Dim sql As String = ""
@@ -51,7 +32,7 @@
         sql &= ", " & _capacidadKg
         sql &= ", '" & _alcance & "'"
         sql &= ", " & _cantidadsal & ")"
-        Me.BD.INS_MOD_BOR(sql)
+        Me.BD.consultaABM(sql)
 
     End Sub
 
@@ -67,7 +48,7 @@
         sql &= ", alcanceVuelo='" & _alcance & "'"
         sql &= ", numeroSalidaEmergencia=" & _cantidadsal
         sql &= "WHERE id_tipoAvion=" & _id_tipoAvion
-        Me.BD.INS_MOD_BOR(sql)
+        Me.BD.consultaABM(sql)
 
     End Sub
 
@@ -76,7 +57,7 @@
         Dim sql As String = ""
         sql = " DELETE FROM TipoAvion"
         sql &= " WHERE id_tipoavion=" & _id_tipoAvion
-        Me.BD.INS_MOD_BOR(sql)
+        Me.BD.consultaABM(sql)
     End Sub
 
     Public Sub transferir(ByRef controles As Object)

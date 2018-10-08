@@ -6,14 +6,14 @@
     End Enum
     Dim control_estado_grabacion As estado_grabacion = estado_grabacion.insertar
     Dim _avion As New Avion
-    Dim _conex As New CONEXION_BD
+    Dim _conex As New BD_TRANSACCIONAL
     Dim TE As New tratamientos_especiales
 
     Private Sub ABM_Avion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.cmd_borrar.Enabled = False
         Me.txt_id.Visible = False
         Me.cargar_grilla()
-        Me.cmb_tipoavion.cargar(Me._conex.leo_tabla("SELECT * FROM TipoAvion") _
+        Me.cmb_tipoavion.cargar(Me._conex.consultaATabla("SELECT * FROM TipoAvion") _
                              , "id_tipoAvion", "nombre")
         cmd_borrar.BackColor = Color.Chocolate
         cmd_grabar.BackColor = Color.Chocolate
@@ -29,7 +29,7 @@
     End Sub
 
     Private Sub cargar_grilla()
-        Me.DGV1.DataSource = Me._conex.leo_tabla("SELECT a.id as 'Nº de Avion', a.nombre as 'Nombre', t.nombre as 'Tipo de Avion' FROM Aviones a JOIN TipoAvion t ON a.idTipoAvion = t.id_tipoAvion")
+        Me.DGV1.DataSource = Me._conex.consultaATabla("SELECT a.id as 'Nº de Avion', a.nombre as 'Nombre', t.nombre as 'Tipo de Avion' FROM Aviones a JOIN TipoAvion t ON a.idTipoAvion = t.id_tipoAvion")
     End Sub
 
     Private Sub cmd_grabar_Click(sender As Object, e As EventArgs) Handles cmd_grabar.Click
@@ -77,6 +77,5 @@
 
         Me.cargar_grilla()
     End Sub
-
 
 End Class

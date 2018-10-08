@@ -9,7 +9,7 @@
     Public Property fechaNacimiento As Date
 
 
-    Dim BD As New CONEXION_BD
+    Dim BD As New BD_TRANSACCIONAL
 
     Public Sub insertar()
         Dim sql As String = ""
@@ -29,7 +29,7 @@
            ,'" & _fechaIngreso & "'
            ," & _id_Aeropuerto & "
            ,'" & _fechaNacimiento & "')"
-        Me.BD.INS_MOD_BOR(sql)
+        Me.BD.consultaABM(sql)
     End Sub
 
     Public Sub modificar()
@@ -42,7 +42,7 @@
       ,fechaIngreso= '" & _fechaIngreso & "'
       ,id_Aeropuerto = " & _id_Aeropuerto & "
       ,fechaNacimiento = '" & _fechaNacimiento & "' WHERE legajo = " & _legajo & ""
-        Me.BD.INS_MOD_BOR(sql)
+        Me.BD.consultaABM(sql)
 
     End Sub
 
@@ -51,7 +51,7 @@
         Dim sql As String = ""
         sql = " DELETE FROM Personal"
         sql &= " WHERE legajo=" & _legajo
-        Me.BD.INS_MOD_BOR(sql)
+        Me.BD.consultaABM(sql)
     End Sub
 
 End Class

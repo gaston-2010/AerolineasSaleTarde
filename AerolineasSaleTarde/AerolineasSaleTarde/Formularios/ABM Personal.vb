@@ -5,14 +5,14 @@
     End Enum
     Dim control_estado_grabacion As estado_grabacion = estado_grabacion.insertar
     Dim _Personal As New Personal
-    Dim _conex As New CONEXION_BD
+    Dim _conex As New BD_TRANSACCIONAL
     Dim TE As New tratamientos_especiales
 
     Private Sub ABM_Avion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.cmd_Borrar.Enabled = False
         Me.txt_legajo.Visible = False
         Me.cargar_grilla()
-        Me.cmb_aeropuerto.cargar(Me._conex.leo_tabla("SELECT * FROM Aeropuertos") _
+        Me.cmb_aeropuerto.cargar(Me._conex.consultaATabla("SELECT * FROM Aeropuertos") _
                             , "id", "nombre")
         Me.TE.blanquear_objetos(Me)
         cmd_Borrar.BackColor = Color.Chocolate
@@ -28,7 +28,7 @@
         Me.TE.blanquear_objetos(Me)
         Me.cmd_Grabar.Text = "Grabar"
         Me.cmd_Borrar.Enabled = False
-        Me.cmb_aeropuerto.cargar(Me._conex.leo_tabla("SELECT * FROM Aeropuertos") _
+        Me.cmb_aeropuerto.cargar(Me._conex.consultaATabla("SELECT * FROM Aeropuertos") _
                             , "id", "nombre")
         Me.cmd_Grabar.Visible = True
 
@@ -37,7 +37,7 @@
     Private Sub cargar_grilla()
         Dim sql As String = "SELECT p.legajo as 'Legajo',p.apellido as 'Apellido', p.nombre as 'Nombre', p.celular, p.mail, FORMAT(p.fechaIngreso ,'dd/MM/yyyy ') as ' Fecha de Ingreso',FORMAT(p.fechaNacimiento ,'dd/MM/yyyy ') as ' Fecha de Nacimiento',
                                a.nombre as 'Aeropuerto' FROM Personal p join Aeropuertos a on p.id_aeropuerto = a.id "
-        Me.DGV1.DataSource = Me._conex.leo_tabla(sql)
+        Me.DGV1.DataSource = Me._conex.consultaATabla(sql)
 
     End Sub
 
@@ -141,7 +141,7 @@
         If txt_legajoBuscar.Text <> "" Then
             Dim sql As String = "SELECT p.legajo,p.apellido, p.nombre, p.celular, p.mail, p.fechaIngreso, p.id_Aeropuerto,p.fechaNacimiento,
                                a.nombre as 'Aeropuerto' FROM Personal p join Aeropuertos a on p.id_aeropuerto = a.id where p.legajo =" & txt_legajoBuscar.Text
-            Me.DGV1.DataSource = Me._conex.leo_tabla(sql)
+            Me.DGV1.DataSource = Me._conex.consultaATabla(sql)
         Else
             MsgBox("Ingrese el Legajo a buscar")
             txt_legajoBuscar.Focus()

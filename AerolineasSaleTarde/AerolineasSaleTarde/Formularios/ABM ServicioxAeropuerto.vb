@@ -7,25 +7,25 @@
     End Enum
     Dim control_estado_grabacion As estado_grabacion = estado_grabacion.insertar
     Dim _ServicioxAero As New ServicioxAeropuerto
-    Dim _conex As New CONEXION_BD
+    Dim _conex As New BD_TRANSACCIONAL
     Dim TE As New tratamientos_especiales
 
     Private Sub cmd_Buscar_Click(sender As Object, e As EventArgs) Handles cmd_Buscar.Click
         If txt_aeropuerto.Text <> "" Then
             Dim tabla As New DataTable
             Dim sql As String = "SELECT * from Aeropuertos a where a.id =" & txt_aeropuerto.Text.Trim()
-            tabla = Me._conex.leo_tabla(sql)
+            tabla = Me._conex.consultaATabla(sql)
             If tabla.Rows.Count = 0 Then
                 MsgBox("Aeropuerto No Encontrado")
                 txt_nombreAeropuerto.Enabled = False
                 Me.TE.blanquear_objetos(Me)
             Else
-                Dim sql2 As String = "SELECT s.id_aeropuerto as 'Nº Aeropuerto,t.nombre as 'Tipo de Servicio',s.nombre as 'Nombre del Servicio' FROM ServicioxAeropuerto s join Aeropuertos a on s.id_aeropuerto = a.id
-          JOIN TipoServicio t ON s.tipo_servicio = t.id  where s.id_aeropuerto" & txt_aeropuerto.Text.Trim()
-                Me.DGV1.DataSource = Me._conex.leo_tabla(sql2)
+                Dim sql2 As String = "SELECT s.id_aeropuerto as 'Nº Aeropuerto',t.nombre as 'Tipo de Servicio',s.nombre as 'Nombre del Servicio' FROM ServicioxAeropuerto s join Aeropuertos a on s.id_aeropuerto = a.id
+          JOIN TipoServicio t ON s.tipo_servicio = t.id  where s.id_aeropuerto=" & txt_aeropuerto.Text.Trim()
+                Me.DGV1.DataSource = Me._conex.consultaATabla(sql2)
                 txt_nombreAeropuerto.Enabled = True
                 rellenar(Me, txt_aeropuerto.Text)
-                cmd_Grabar.Enabled = False
+                cmd_Grabar.Enabled = True
                 txt_aeropuerto.Enabled = False
             End If
         Else
@@ -44,7 +44,7 @@
 
         Me.cmd_Borrar.Enabled = False
         txt_nombreAeropuerto.Enabled = False
-        Me.cmb_tipoServicio.cargar(Me._conex.leo_tabla("SELECT * FROM TipoServicio") _
+        Me.cmb_tipoServicio.cargar(Me._conex.consultaATabla("SELECT * FROM TipoServicio") _
                             , "id", "nombre")
         Me.TE.blanquear_objetos(Me)
 
@@ -55,7 +55,7 @@
         Me.cmd_Borrar.Enabled = False
         Me.cmd_Grabar.Text = "Grabar"
         Me.cmd_Borrar.Enabled = False
-        Me.cmb_tipoServicio.cargar(Me._conex.leo_tabla("SELECT * FROM TipoServicio") _
+        Me.cmb_tipoServicio.cargar(Me._conex.consultaATabla("SELECT * FROM TipoServicio") _
                             , "id", "nombre")
         Me.TE.blanquear_objetos(Me)
         Me.DGV1.ClearSelection()
@@ -63,9 +63,9 @@
 
     End Sub
     Private Sub cargargrilla()
-        Dim sql As String = "SELECT s.id_aeropuerto as 'Nº Aeropuerto,t.nombre as 'Tipo de Servicio',s.nombre as 'Nombre del Servicio' FROM ServicioxAeropuerto s join Aeropuertos a on s.id_aeropuerto = a.id
+        Dim sql As String = "SELECT s.id_aeropuerto as 'Nº Aeropuerto',t.nombre as 'Tipo de Servicio',s.nombre as 'Nombre del Servicio' FROM ServicioxAeropuerto s join Aeropuertos a on s.id_aeropuerto = a.id
           JOIN TipoServicio t ON s.tipo_servicio = t.id  where s.id_aeropuerto=" & txt_aeropuerto.Text
-        DGV1.DataSource = Me._conex.leo_tabla(sql)
+        DGV1.DataSource = Me._conex.consultaATabla(sql)
     End Sub
     Private Sub cmd_grabar_Click(sender As Object, e As EventArgs) Handles cmd_Grabar.Click
 
@@ -163,7 +163,7 @@
     Private Sub rellenar(ByRef sender As Object, ByVal legajo As Integer)
         Dim tabla As New DataTable
         Dim sql As String = "SELECT a.nombre From Aeropuertos a where a.id= '" & legajo & "'"
-        tabla = Me._conex.leo_tabla(sql)
+        tabla = Me._conex.consultaATabla(sql)
         Dim c As Integer = 0
         For c = 0 To tabla.Rows.Count - 1
             Me.txt_nombreAeropuerto.Text = tabla.Rows(c)(0)
@@ -174,7 +174,7 @@
         Dim tabla As New DataTable
         Dim sql As String = "SELECT s.id_aeropuerto,s.tipo_servicio,s.nombre FROM ServicioxAeropuerto s join Aeropuertos a on s.id_aeropuerto = a.id
             where s.id_aeropuerto =" & txt_aeropuerto.Text & " AND s.tipo_servicio=" & cmb_tipoServicio.SelectedValue & " AND s.nombre= '" & txt_nombreservicio.Text & "'"
-        tabla = Me._conex.leo_tabla(sql)
+        tabla = Me._conex.consultaATabla(sql)
         If tabla.Rows.Count = 0 Then
             Return 0
         Else

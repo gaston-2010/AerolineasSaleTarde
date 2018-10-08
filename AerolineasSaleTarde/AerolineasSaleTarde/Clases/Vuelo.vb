@@ -9,28 +9,10 @@
     Public Property idAereopuertoDestino As Integer
     Public Property estado As String
 
-    Enum estado_validar
-        encontrado
-        no_encontrado
-    End Enum
 
-    Dim BD As New CONEXION_BD
+    Dim BD As New BD_TRANSACCIONAL
 
 
-    Public Function validar() As estado_validar
-        Dim sql As String = ""
-        Dim tabla As New DataTable
-
-        sql = "SELECT * FROM Vuelos "
-        sql &= " WHERE id = '" & _id_vuelo & "'"
-
-        tabla = Me.BD.leo_tabla(sql)
-        If tabla.Rows.Count() = 0 Then
-            Return estado_validar.no_encontrado
-        Else
-            Return estado_validar.encontrado
-        End If
-    End Function
 
 
     Public Sub insertar()
@@ -42,7 +24,7 @@
            ,id_avion
            ,idAereopuertoOrigen
            ,idAereopuertoDestino
-           ,estado])"
+           ,estado)"
         sql &= "VALUES ('" & _fechaSalida & "'
            ,'" & _horaSalida & "'
            ,'" & _fechaLlegada & "'
@@ -51,7 +33,7 @@
            ," & _idAereopuertoOrigen & "
            ," & _idAereopuertoDestino & "
            ,'" & _estado & "')"
-        Me.BD.INS_MOD_BOR(sql)
+        Me.BD.consultaABM(sql)
     End Sub
 
     Public Sub modificar()
@@ -65,7 +47,7 @@
       ,idAereopuertoOrigen= " & _idAereopuertoOrigen & " 
      ,idAereopuertoDestino = " & _idAereopuertoDestino & "
       ,estado = '" & _estado & "' WHERE id_vuelo=" & _id_vuelo
-        Me.BD.INS_MOD_BOR(sql)
+        Me.BD.consultaABM(sql)
 
     End Sub
 
@@ -74,7 +56,7 @@
         Dim sql As String = ""
         sql = " DELETE FROM Vuelos"
         sql &= " WHERE id_vuelo=" & _id_vuelo
-        Me.BD.INS_MOD_BOR(sql)
+        Me.BD.consultaABM(sql)
     End Sub
     Public Sub transferir(ByRef sender As Object)
 
