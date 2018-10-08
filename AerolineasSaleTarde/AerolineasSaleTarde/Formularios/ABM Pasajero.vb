@@ -76,7 +76,7 @@
                 Me._Dom.eliminarnoref()
             End If
             Me.cargar_grilla()
-
+            cmd_Grabar.Visible = False
         End If
     End Sub
 
