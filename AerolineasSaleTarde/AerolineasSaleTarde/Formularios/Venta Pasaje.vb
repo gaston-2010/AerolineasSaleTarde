@@ -110,7 +110,8 @@
         Me.cmd_Borrar.Enabled = False
         Me.cmb_tipoDocumento.cargar(Me._conex.consultaATabla("SELECT * FROM TipoDocumento") _
                             , "id", "nombre")
-        Me.cmb_vuelo.DataSource = _conex.consultaATabla("SELECT id_vuelo FROM Vuelos")
+        Me.cmb_vuelo.cargar(Me._conex.consultaATabla("SELECT * FROM Vuelos") _
+                            , "id_vuelo", "nombre")
         Me.TE.blanquear_objetos(Me)
         cmd_Borrar.BackColor = Color.Chocolate
         cmd_Buscar.BackColor = Color.Chocolate
