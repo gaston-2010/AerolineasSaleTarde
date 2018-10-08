@@ -6,7 +6,7 @@
     Dim control_estado_grabacion As estado_grabacion = estado_grabacion.insertar
     Dim _Pasajero As New Pasajero
     Dim _Dom As New Domicilio
-    Dim _DomxPasa As New DomicilioxPasajero
+
     Dim _conex As New BD_TRANSACCIONAL
     Dim TE As New tratamientos_especiales
 
@@ -46,9 +46,8 @@
         Dim sql As String = " SELECT pa.tipoDocumento as 'Tipo Documento' , pa.nroDocumento as 'Nº Documento'
           ,pa.nombre as 'Nombre' ,pa.apellido as 'Apellido',pa.nacionalidad as 'Nacionalidad',pa.sexo as 'Sexo' 
            ,pa.calle as 'Calle',pa.nroCalle as 'Nº Calle',p.nombre as 'Pais' ,do.dpto as 'Departamento'
-           ,d.localidad as 'Localidad' ,pa.motivo as 'Motivo Viaje' FROM Pasajero pa JOIN DomicilioxPasajero d 
-            ON pa.tipoDocumento = d.tipoDocumento AND pa.nroDocumento = d.nroDocumento
-            JOIN domicilio do ON d.calle = do.calle AND d.nroCalle = do.nroCalle AND d.localidad = do.localidad 
+           ,do.localidad as 'Localidad' ,pa.motivo as 'Motivo Viaje' FROM Pasajero pa 
+            JOIN domicilio do ON pa.calle = do.calle AND pa.nroCalle = do.nroCalle AND pa.id_localidad = do.localidad 
             JOIN Pais p on p.id=do.pais
             WHERE pa.tipoDocumento = " & cmb_tipoDocumento.SelectedValue & " AND pa.nroDocumento= " & txt_nroDocumento.Text & ""
         Me.DGV1.DataSource = Me._conex.consultaATabla(sql)
@@ -68,14 +67,13 @@
                 transferir(Me)
                 Me._Dom.insertar()
                 Me._Pasajero.insertar()
-                Me._DomxPasa.insertar()
+
             Else
 
                 transferir(Me)
-                Me._Dom.insertar()
-
+                comprobardomicilio()
                 Me._Pasajero.modificar()
-                Me._DomxPasa.modificar()
+                Me._Dom.eliminarnoref()
             End If
             Me.cargar_grilla()
 
@@ -174,11 +172,7 @@
         Me._Dom.dpto = txt_departamento.Text
         Me._Dom.pais = cmb_Pais.SelectedValue
         Me._Dom.localidad = cmb_localidad.SelectedValue
-        Me._DomxPasa.calle = txt_calle.Text.Trim
-        Me._DomxPasa.nroCalle = txt_nroCalle.Text
-        Me._DomxPasa.localidad = cmb_localidad.SelectedValue
-        Me._DomxPasa.nroDocumento = txt_nroDocumento.Text
-        Me._DomxPasa.tipoDocumento = cmb_tipoDocumento.SelectedValue
+
     End Sub
 
     Private Sub cmd_Buscar_Click(sender As Object, e As EventArgs) Handles cmd_Buscar.Click
@@ -186,9 +180,8 @@
             Dim sql As String = " SELECT pa.tipoDocumento as 'Tipo Documento' , pa.nroDocumento as 'Nº Documento'
           ,pa.nombre as 'Nombre' ,pa.apellido as 'Apellido',pa.nacionalidad as 'Nacionalidad',pa.sexo as 'Sexo' 
            ,pa.calle as 'Calle',pa.nroCalle as 'Nº Calle',p.nombre as 'Pais' ,do.dpto as 'Departamento'
-           ,d.localidad as 'Localidad' ,pa.motivo as 'Motivo Viaje' FROM Pasajero pa JOIN DomicilioxPasajero d 
-            ON pa.tipoDocumento = d.tipoDocumento AND pa.nroDocumento = d.nroDocumento
-            JOIN domicilio do ON d.calle = do.calle AND d.nroCalle = do.nroCalle AND d.localidad = do.localidad 
+           ,do.localidad as 'Localidad' ,pa.motivo as 'Motivo Viaje' FROM Pasajero pa 
+            JOIN domicilio do ON pa.calle = do.calle AND pa.nroCalle = do.nroCalle AND pa.id_localidad = do.localidad 
             JOIN Pais p on p.id=do.pais
             WHERE pa.tipoDocumento = " & cmb_tipoDocumento.SelectedValue & " AND pa.nroDocumento= " & txt_nroDocumento.Text & ""
 
@@ -238,6 +231,20 @@
         End If
         Dim Sql As String = "SELECT * FROM Localidad l JOIN Provincia p ON l.id_provincia = p.id where p.id_pais = " & nombre
         Me.cmb_localidad.cargar(Me._conex.consultaATabla(Sql), "id", "nombre")
+
+    End Sub
+
+    Private Sub comprobardomicilio()
+        Dim tabla As New DataTable
+        Dim sql As String = "SELECT nroCalle,calle,localidad FROM Domicilio where nroCalle = " & txt_nroCalle.Text & " 
+        AND calle= '" & txt_calle.Text & "' AND localidad = " & cmb_localidad.SelectedValue
+        tabla = Me._conex.consultaATabla(sql)
+        If tabla.Rows.Count() = 0 Then
+            Me._Dom.insertar()
+        Else
+            Me._Dom.modificar()
+        End If
+
 
     End Sub
 End Class
