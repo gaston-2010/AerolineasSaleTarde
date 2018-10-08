@@ -10,7 +10,7 @@
     Dim _conex As New BD_TRANSACCIONAL
     Dim TE As New tratamientos_especiales
 
-    Private Sub ABM_Avion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub ABM_Avion_Load(sender As Object, e As EventArgs)
         Me.cmd_Borrar.Enabled = False
         Me.cmb_tipoDocumento.cargar(Me._conex.consultaATabla("SELECT * FROM TipoDocumento") _
                             , "id", "nombre")
@@ -26,7 +26,7 @@
         Me.cmb_tipoDocumento.Enabled = True
     End Sub
 
-    Private Sub cmd_nuevo_Click(sender As Object, e As EventArgs) Handles cmd_Nuevo.Click
+    Private Sub cmd_nuevo_Click(sender As Object, e As EventArgs)
         Me.control_estado_grabacion = estado_grabacion.insertar
         Me.TE.blanquear_objetos(Me)
         Me.cmd_Grabar.Text = "Grabar"
@@ -54,7 +54,7 @@
 
     End Sub
 
-    Private Sub cmd_grabar_Click(sender As Object, e As EventArgs) Handles cmd_Grabar.Click
+    Private Sub cmd_grabar_Click(sender As Object, e As EventArgs)
         If Me.cmd_Grabar.Text = "Grabar" Then
             control_estado_grabacion = estado_grabacion.insertar
         Else
@@ -80,7 +80,7 @@
         End If
     End Sub
 
-    Private Sub DGV1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellDoubleClick
+    Private Sub DGV1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs)
 
         Me.control_estado_grabacion = estado_grabacion.modificar
         Me.cmd_Grabar.Text = "Modificar"
@@ -101,7 +101,7 @@
         Me.cmb_tipoDocumento.Enabled = False
     End Sub
 
-    Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_Borrar.Click
+    Private Sub cmd_borrar_Click(sender As Object, e As EventArgs)
         Me._Pasajero.tipoDocumento = cmb_tipoDocumento.SelectedValue
         Me._Pasajero.nroDocumento = txt_nroDocumento.Text
         If MsgBox("DESEA ELIMINAR?", MsgBoxStyle.YesNo) = MsgBoxResult.No Then
@@ -175,7 +175,7 @@
 
     End Sub
 
-    Private Sub cmd_Buscar_Click(sender As Object, e As EventArgs) Handles cmd_Buscar.Click
+    Private Sub cmd_Buscar_Click(sender As Object, e As EventArgs)
         If txt_nroDocumento.Text <> "" And cmb_tipoDocumento.SelectedIndex <> -1 Then
             Dim sql As String = " SELECT pa.tipoDocumento as 'Tipo Documento' , pa.nroDocumento as 'Nº Documento'
           ,pa.nombre as 'Nombre' ,pa.apellido as 'Apellido',pa.nacionalidad as 'Nacionalidad',pa.sexo as 'Sexo' 
@@ -247,4 +247,6 @@
 
 
     End Sub
+
+
 End Class
