@@ -41,6 +41,7 @@ Partial Class Embarque
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.cmb_abordo = New AerolineasSaleTarde.CMB_01()
         Me.btn_embarque = New System.Windows.Forms.Button()
+        Me.cmd_nuevo = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.dgv1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -213,11 +214,21 @@ Partial Class Embarque
         Me.btn_embarque.Text = "Realizar Embarque"
         Me.btn_embarque.UseVisualStyleBackColor = True
         '
+        'cmd_nuevo
+        '
+        Me.cmd_nuevo.Location = New System.Drawing.Point(402, 358)
+        Me.cmd_nuevo.Name = "cmd_nuevo"
+        Me.cmd_nuevo.Size = New System.Drawing.Size(75, 23)
+        Me.cmd_nuevo.TabIndex = 6
+        Me.cmd_nuevo.Text = "Nuevo"
+        Me.cmd_nuevo.UseVisualStyleBackColor = True
+        '
         'Embarque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 393)
+        Me.Controls.Add(Me.cmd_nuevo)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btn_embarque)
@@ -250,4 +261,5 @@ Partial Class Embarque
     Friend WithEvents btn_embarque As Button
     Friend WithEvents cmb_Tdni As CMB_01
     Friend WithEvents cmb_abordo As CMB_01
+    Friend WithEvents cmd_nuevo As Button
 End Class

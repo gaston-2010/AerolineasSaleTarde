@@ -84,6 +84,7 @@
     </Compile>
     <Compile Include="Clases\CONEXION_BD.vb" />
     <Compile Include="Clases\Destino.vb" />
+    <Compile Include="Clases\Detalle Embarques.vb" />
     <Compile Include="Clases\Domicilio.vb" />
     <Compile Include="Clases\Embarquec.vb" />
     <Compile Include="Clases\MTB_01.vb">
