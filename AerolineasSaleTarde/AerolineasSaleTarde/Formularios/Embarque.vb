@@ -23,12 +23,17 @@
     End Sub
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
-        Dim sql As String = "SELECT e.peso as 'Peso Equipaje', e.[especial/noespecial],d.[abordo/bodega]    
-        FROM Vuelos v JOIN Pasaje p ON p.idVuelo = v.id_vuelo JOIN Embarque em ON em.nroVuelo = p.idVuelo AND em.nroDocumento=p.nroDocumento
-        AND em.tipoDocumento = p.tipoDocumento JOIN DetalleEmbarques d ON d.nroVuelo = p.idVuelo AND d.nroDocumento=p.nroDocumento
-        AND d.tipoDocumento = p.tipoDocumento JOIN Equipajes e ON d.nroEquipaje = e.nroEquipaje
-        WHERE v.fechaSalida = GETDATE() and p.nroDocumento =" & txt_dni.Text & " AND p.tipoDocumento = " & cmb_Tdni.SelectedValue
-
-
+        Dim sql As String = "SELECT *
+        FROM Vuelos v JOIN Pasaje p ON p.idVuelo = v.id_vuelo 
+        WHERE YEAR(v.fechaSalida) = YEAR(getdate()) AND MONTH(v.fechaSalida) = MONTH(getdate()) 
+        AND DAY(v.fechaSalida) = DAY(getdate()) AND
+        p.nroDocumento =" & txt_dni.Text & " AND p.tipoDocumento = " & cmb_Tdni.SelectedValue
+        Dim tabla As New DataTable
+        tabla = _conex.consultaATabla(sql)
+        If tabla.Rows.Count = 0 Then
+            MsgBox("El Pasajero no tiene pasaje para hoy")
+        Else
+            MsgBox("El Pasajero tiene un Pasaje para hoy")
+        End If
     End Sub
 End Class
