@@ -27,8 +27,11 @@
                 Return estado_proceso._ok
             End If
         End If
-        conexion.Close()
+
+
         conexion.ConnectionString = _cadena_conexion
+
+
         Try
                 conexion.Open()
             Catch ex As Exception
@@ -64,8 +67,8 @@
                        & Chr(13) & ex.Message)
                 Return estado_proceso._error
             Finally
-                cerrar()
-            End Try
+            cerrar()
+        End Try
             'excelente profe
             'no aprende sus estructuras
             '10/10 quiero uno para mi
@@ -85,8 +88,8 @@
             End If
             If control_conexion = tipo_conexion.transaccion Then
                 If control_estado = estado_proceso._ok Then
-                    transaccion.Commit()
-                    MsgBox("Se grabó correctamente")
+                transaccion.Commit()
+                MsgBox("Se grabó correctamente")
                 Else
                     transaccion.Rollback()
                     MsgBox("Se produjo errores, no se grabó")
@@ -101,13 +104,16 @@
 
             conectar()
             cmd.CommandText = sql
-            Try
-                tabla.Load(cmd.ExecuteReader)
-            Catch ex As Exception
-                MsgBox("Error en el comando: " & Chr(13) & sql & Chr(13) & ex.Message)
-                Return New DataTable
-            End Try
-            Return tabla
+        Try
+            tabla.Load(cmd.ExecuteReader)
+        Catch ex As Exception
+            MsgBox("Error en el comando: " & Chr(13) & sql & Chr(13) & ex.Message)
+            cerrar()
+            Return New DataTable
+
+        End Try
+        cerrar()
+        Return tabla
         End Function
 
 End Class
