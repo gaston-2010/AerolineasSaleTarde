@@ -169,10 +169,10 @@
     <Compile Include="Formularios\Venta Pasaje.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Prueba.Designer.vb">
-      <DependentUpon>Prueba.vb</DependentUpon>
+    <Compile Include="Formularios\Venta Pasajes.Designer.vb">
+      <DependentUpon>Venta Pasajes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Prueba.vb">
+    <Compile Include="Formularios\Venta Pasajes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -232,8 +232,8 @@
     <EmbeddedResource Include="Formularios\Venta Pasaje.resx">
       <DependentUpon>Venta Pasaje.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Prueba.resx">
-      <DependentUpon>Prueba.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\Venta Pasajes.resx">
+      <DependentUpon>Venta Pasajes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
