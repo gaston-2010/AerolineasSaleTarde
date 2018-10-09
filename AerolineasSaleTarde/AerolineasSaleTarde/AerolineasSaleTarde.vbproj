@@ -145,6 +145,12 @@
     <Compile Include="Formularios\ABM ServicioxAeropuerto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Embarque.Designer.vb">
+      <DependentUpon>Embarque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Embarque.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Escritorio\deletongo.designer.vb">
       <DependentUpon>deletongo.vb</DependentUpon>
     </Compile>
@@ -213,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM Vuelos.resx">
       <DependentUpon>ABM Vuelos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Embarque.resx">
+      <DependentUpon>Embarque.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Escritorio\deletongo.resx">
       <DependentUpon>deletongo.vb</DependentUpon>
