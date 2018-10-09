@@ -29,6 +29,7 @@ Partial Class Embarque
         Me.Label3 = New System.Windows.Forms.Label()
         Me.chk_Especial = New System.Windows.Forms.CheckBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.cmb_Tdni = New AerolineasSaleTarde.CMB_01()
         Me.btn_buscar = New System.Windows.Forms.Button()
         Me.txt_puertaEmbarque = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -38,9 +39,8 @@ Partial Class Embarque
         Me.Especial = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btn_embarque = New System.Windows.Forms.Button()
-        Me.cmb_Tdni = New AerolineasSaleTarde.CMB_01()
         Me.cmb_abordo = New AerolineasSaleTarde.CMB_01()
+        Me.btn_embarque = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.dgv1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -111,6 +111,16 @@ Partial Class Embarque
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(800, 77)
         Me.Panel1.TabIndex = 3
+        '
+        'cmb_Tdni
+        '
+        Me.cmb_Tdni.FormattingEnabled = True
+        Me.cmb_Tdni.Location = New System.Drawing.Point(334, 31)
+        Me.cmb_Tdni.Name = "cmb_Tdni"
+        Me.cmb_Tdni.nombre_campo = Nothing
+        Me.cmb_Tdni.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_Tdni.TabIndex = 3
+        Me.cmb_Tdni.validable = True
         '
         'btn_buscar
         '
@@ -184,25 +194,6 @@ Partial Class Embarque
         Me.Panel2.Size = New System.Drawing.Size(800, 270)
         Me.Panel2.TabIndex = 5
         '
-        'btn_embarque
-        '
-        Me.btn_embarque.Location = New System.Drawing.Point(655, 358)
-        Me.btn_embarque.Name = "btn_embarque"
-        Me.btn_embarque.Size = New System.Drawing.Size(119, 23)
-        Me.btn_embarque.TabIndex = 2
-        Me.btn_embarque.Text = "Realizar Embarque"
-        Me.btn_embarque.UseVisualStyleBackColor = True
-        '
-        'cmb_Tdni
-        '
-        Me.cmb_Tdni.FormattingEnabled = True
-        Me.cmb_Tdni.Location = New System.Drawing.Point(334, 31)
-        Me.cmb_Tdni.Name = "cmb_Tdni"
-        Me.cmb_Tdni.nombre_campo = Nothing
-        Me.cmb_Tdni.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_Tdni.TabIndex = 3
-        Me.cmb_Tdni.validable = True
-        '
         'cmb_abordo
         '
         Me.cmb_abordo.FormattingEnabled = True
@@ -212,6 +203,15 @@ Partial Class Embarque
         Me.cmb_abordo.Size = New System.Drawing.Size(121, 21)
         Me.cmb_abordo.TabIndex = 5
         Me.cmb_abordo.validable = True
+        '
+        'btn_embarque
+        '
+        Me.btn_embarque.Location = New System.Drawing.Point(655, 358)
+        Me.btn_embarque.Name = "btn_embarque"
+        Me.btn_embarque.Size = New System.Drawing.Size(119, 23)
+        Me.btn_embarque.TabIndex = 2
+        Me.btn_embarque.Text = "Realizar Embarque"
+        Me.btn_embarque.UseVisualStyleBackColor = True
         '
         'Embarque
         '
