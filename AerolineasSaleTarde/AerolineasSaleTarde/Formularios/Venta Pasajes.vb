@@ -133,7 +133,7 @@
         Me._Dom.dpto = txt_departamento.Text
         Me._Dom.pais = cmb_Pais.SelectedValue
         Me._Dom.localidad = cmb_localidad.SelectedValue
-        Me._Pasaje.tipoDocumento = Me.cmb_tipoDocumento.Text
+        Me._Pasaje.tipoDocumento = Me.cmb_tipoDocumento.SelectedValue
         Me._Pasaje.nroDocumento = Me.txt_nroDocumento.Text
         Me._Pasaje.idVuelo = Me.txt_vuelo.Text
         Dim numero As String = Me.cmb_tipoPasaje.SelectedIndex
@@ -227,12 +227,14 @@
     End Sub
 
     Private Sub Venta_Pasajes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.cmb_origen.cargar(Me._conex.consultaATabla("select l.nombre from vuelos v join Aeropuertos a on v.idAeropuertoOrigen = a.id join Localidad l on a.id_localidad = l.id "))
-        Me.cmb_destino.cargar(Me._conex.consultaATabla("select l.nombre from vuelos v join Aeropuertos a on v.idAeropuertoDestino = a.id join Localidad l on a.id_localidad = l.id "))
+        Me.cmb_origen.cargar(Me._conex.consultaATabla("select l.nombre ,v.idAereopuertoOrigen from vuelos v join Aeropuertos a on v.idAereopuertoOrigen = a.id join Localidad l on a.id_localidad = l.id "), "idAereopuertoOrigen", "nombre")
+        Me.cmb_destino.cargar(Me._conex.consultaATabla("select l.nombre, v.idAereopuertoDestino from vuelos v join Aeropuertos a on v.idAereopuertoDestino = a.id join Localidad l on a.id_localidad = l.id "), "idAereopuertoDestino", "nombre")
         Me.cmd_Borrar.Enabled = False
         Me.cmb_tipoDocumento.cargar(Me._conex.consultaATabla("SELECT * FROM TipoDocumento") _
                             , "id", "nombre")
         Me.cmb_Pais.cargar(Me._conex.consultaATabla("SELECT * FROM Pais") _
+                            , "id", "nombre")
+        Me.cmb_tipoDocumento.cargar(Me._conex.consultaATabla("SELECT * FROM TipoDocumento") _
                             , "id", "nombre")
         Me.TE.blanquear_objetos(Me)
         cmd_Borrar.BackColor = Color.Chocolate
@@ -247,14 +249,16 @@
 
     Private Sub btn_buscarVuelo_Click(sender As Object, e As EventArgs) Handles btn_buscarVuelo.Click
         If cmb_origen.SelectedIndex <> -1 And cmb_destino.SelectedIndex <> -1 And txt_fecha.Text <> "" Then
-            Dim sql As String = " SELECT * from Vuelos v Where idAereopuertoOrigen = " & cmb_destino.SelectedValue & "and id AeropuertoDestino = " & cmb_destino.SelectedValue & "And " & txt_fecha.Text & " BETWEEN  v.fechaSalida AND v.fechaLlegada"
+            Dim sql As String = " SET DATEFORMAT DMY SELECT * from Vuelos v Where idAereopuertoOrigen = " & cmb_origen.SelectedValue & " and idAereopuertoDestino = " & cmb_destino.SelectedValue & " and '" & txt_fecha.Text & "' = v.fechaSalida"
             Dim tabla As New DataTable
             tabla = Me._conex.consultaATabla(sql)
             If tabla.Rows.Count = 0 Then
                 MsgBox("No hay vuelos disponibles para esa fecha")
             Else
                 Panel2.Enabled = True
-                txt_vuelo = tabla.Rows(0).Item(0)
+                Panel3.Enabled = True
+                txt_vuelo.Text = tabla.Rows(0).Item(0).ToString()
+
             End If
         Else
             MsgBox("Falta un dato")
@@ -285,13 +289,15 @@
     End Function
 
     Private Sub btn_comprar_Click(sender As Object, e As EventArgs) Handles btn_comprar.Click
-        
+
         If ValidarCampo(Me) = 1 Then
             If comprobarasiento() = 0 Then
+                _conex.iniciarTransaccion()
                 transferir(Me)
                 Me._Pasaje.insertar()
                 Me._Dom.insertar()
                 Me._Pasajero.insertar()
+                _conex.FinTransaccion()
             End If
 
         Else

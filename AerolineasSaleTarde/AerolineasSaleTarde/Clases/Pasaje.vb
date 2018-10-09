@@ -24,7 +24,7 @@
            ,tipoDocumento = " & _tipoDocumento & "
            ,tipoPasaje = " & _tipoPasaje & " 
            ,atencion = " & _atencion & "
-           ,nroAsiento= " & _nroAsiento & "
+           ,nroAsiento = " & _nroAsiento & "
            ,claseTurista = " & _claseTurista & ")"
         BD.consultaABM(sql)
 
