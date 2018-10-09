@@ -64,9 +64,10 @@
     End Function
 
     Public Sub transferir(ByRef sender As Object)
-        Me._Pasaje.tipoDocumento = Me.cmb_tipoDocumento.Text
+        Me._Pasaje.tipoDocumento = Me.cmb_tipoDocumento.SelectedValue
+
         Me._Pasaje.nroDocumento = Me.txt_nroDocumento.Text
-        Me._Pasaje.idVuelo = Me.cmb_vuelo.SelectedItem
+        Me._Pasaje.idVuelo = Me.cmb_vuelo.SelectedValue
         Dim numero As String = Me.cmb_tipoPasaje.SelectedIndex
         numero = numero.Substring(0, 1)
         Me._Pasaje.tipoPasaje = Convert.ToInt16(numero)
