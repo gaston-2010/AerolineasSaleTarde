@@ -43,16 +43,16 @@ Partial Class ABM_Vuelos
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.cmd_buscar = New System.Windows.Forms.Button()
+        Me.txt_fechaSalida = New System.Windows.Forms.DateTimePicker()
+        Me.txt_fechaLlegada = New System.Windows.Forms.DateTimePicker()
         Me.cmb_estado = New AerolineasSaleTarde.CMB_01()
         Me.cmb_aeropuertoDestino = New AerolineasSaleTarde.CMB_01()
         Me.cmb_aeropuertoOrigen = New AerolineasSaleTarde.CMB_01()
         Me.cmb_avion = New AerolineasSaleTarde.CMB_01()
         Me.txt_id_vuelo = New AerolineasSaleTarde.MTB_01()
         Me.txt_Buscar = New AerolineasSaleTarde.MTB_01()
-        Me.txt_horaLlegada = New AerolineasSaleTarde.MTB_01()
-        Me.txt_fechaLlegada = New AerolineasSaleTarde.MTB_01()
-        Me.txt_horaSalida = New AerolineasSaleTarde.MTB_01()
-        Me.txt_FechaSalida = New AerolineasSaleTarde.MTB_01()
+        Me.txt_horaSalida = New System.Windows.Forms.DateTimePicker()
+        Me.txt_horaLlegada = New System.Windows.Forms.DateTimePicker()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -198,7 +198,7 @@ Partial Class ABM_Vuelos
         Me.cmd_nuevo.Location = New System.Drawing.Point(12, 473)
         Me.cmd_nuevo.Name = "cmd_nuevo"
         Me.cmd_nuevo.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_nuevo.TabIndex = 9
+        Me.cmd_nuevo.TabIndex = 11
         Me.cmd_nuevo.Text = "Nuevo"
         Me.cmd_nuevo.UseVisualStyleBackColor = True
         '
@@ -210,7 +210,7 @@ Partial Class ABM_Vuelos
         Me.cmd_grabar.Location = New System.Drawing.Point(108, 473)
         Me.cmd_grabar.Name = "cmd_grabar"
         Me.cmd_grabar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_grabar.TabIndex = 10
+        Me.cmd_grabar.TabIndex = 12
         Me.cmd_grabar.Text = "Grabar"
         Me.cmd_grabar.UseVisualStyleBackColor = True
         '
@@ -222,7 +222,7 @@ Partial Class ABM_Vuelos
         Me.cmd_borrar.Location = New System.Drawing.Point(231, 473)
         Me.cmd_borrar.Name = "cmd_borrar"
         Me.cmd_borrar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_borrar.TabIndex = 11
+        Me.cmd_borrar.TabIndex = 13
         Me.cmd_borrar.Text = "Borrar"
         Me.cmd_borrar.UseVisualStyleBackColor = True
         '
@@ -233,7 +233,7 @@ Partial Class ABM_Vuelos
         Me.DGV1.Location = New System.Drawing.Point(26, 238)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.Size = New System.Drawing.Size(590, 214)
-        Me.DGV1.TabIndex = 4
+        Me.DGV1.TabIndex = 16
         '
         'Label18
         '
@@ -262,9 +262,27 @@ Partial Class ABM_Vuelos
         Me.cmd_buscar.Location = New System.Drawing.Point(249, 12)
         Me.cmd_buscar.Name = "cmd_buscar"
         Me.cmd_buscar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_buscar.TabIndex = 13
+        Me.cmd_buscar.TabIndex = 2
         Me.cmd_buscar.Text = "Buscar"
         Me.cmd_buscar.UseVisualStyleBackColor = True
+        '
+        'txt_fechaSalida
+        '
+        Me.txt_fechaSalida.CustomFormat = ""
+        Me.txt_fechaSalida.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.txt_fechaSalida.Location = New System.Drawing.Point(84, 81)
+        Me.txt_fechaSalida.Name = "txt_fechaSalida"
+        Me.txt_fechaSalida.Size = New System.Drawing.Size(112, 20)
+        Me.txt_fechaSalida.TabIndex = 3
+        Me.txt_fechaSalida.Value = New Date(2018, 10, 12, 0, 0, 0, 0)
+        '
+        'txt_fechaLlegada
+        '
+        Me.txt_fechaLlegada.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.txt_fechaLlegada.Location = New System.Drawing.Point(227, 81)
+        Me.txt_fechaLlegada.Name = "txt_fechaLlegada"
+        Me.txt_fechaLlegada.Size = New System.Drawing.Size(112, 20)
+        Me.txt_fechaLlegada.TabIndex = 5
         '
         'cmb_estado
         '
@@ -274,7 +292,7 @@ Partial Class ABM_Vuelos
         Me.cmb_estado.Name = "cmb_estado"
         Me.cmb_estado.nombre_campo = "Estado"
         Me.cmb_estado.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_estado.TabIndex = 7
+        Me.cmb_estado.TabIndex = 8
         Me.cmb_estado.validable = True
         '
         'cmb_aeropuertoDestino
@@ -284,7 +302,7 @@ Partial Class ABM_Vuelos
         Me.cmb_aeropuertoDestino.Name = "cmb_aeropuertoDestino"
         Me.cmb_aeropuertoDestino.nombre_campo = "Aeropuerto Destino"
         Me.cmb_aeropuertoDestino.Size = New System.Drawing.Size(244, 21)
-        Me.cmb_aeropuertoDestino.TabIndex = 6
+        Me.cmb_aeropuertoDestino.TabIndex = 10
         Me.cmb_aeropuertoDestino.validable = True
         '
         'cmb_aeropuertoOrigen
@@ -294,7 +312,7 @@ Partial Class ABM_Vuelos
         Me.cmb_aeropuertoOrigen.Name = "cmb_aeropuertoOrigen"
         Me.cmb_aeropuertoOrigen.nombre_campo = "Aeropuerto Origen"
         Me.cmb_aeropuertoOrigen.Size = New System.Drawing.Size(244, 21)
-        Me.cmb_aeropuertoOrigen.TabIndex = 5
+        Me.cmb_aeropuertoOrigen.TabIndex = 9
         Me.cmb_aeropuertoOrigen.validable = True
         '
         'cmb_avion
@@ -304,7 +322,7 @@ Partial Class ABM_Vuelos
         Me.cmb_avion.Name = "cmb_avion"
         Me.cmb_avion.nombre_campo = "Avion"
         Me.cmb_avion.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_avion.TabIndex = 4
+        Me.cmb_avion.TabIndex = 7
         Me.cmb_avion.validable = True
         '
         'txt_id_vuelo
@@ -324,51 +342,28 @@ Partial Class ABM_Vuelos
         Me.txt_Buscar.Name = "txt_Buscar"
         Me.txt_Buscar.nombre_campo = Nothing
         Me.txt_Buscar.Size = New System.Drawing.Size(100, 20)
-        Me.txt_Buscar.TabIndex = 12
+        Me.txt_Buscar.TabIndex = 1
         Me.txt_Buscar.validable = False
-        '
-        'txt_horaLlegada
-        '
-        Me.txt_horaLlegada.Location = New System.Drawing.Point(227, 106)
-        Me.txt_horaLlegada.Mask = "00:00"
-        Me.txt_horaLlegada.Name = "txt_horaLlegada"
-        Me.txt_horaLlegada.nombre_campo = "Hora Llegada"
-        Me.txt_horaLlegada.Size = New System.Drawing.Size(46, 20)
-        Me.txt_horaLlegada.TabIndex = 3
-        Me.txt_horaLlegada.validable = True
-        Me.txt_horaLlegada.ValidatingType = GetType(Date)
-        '
-        'txt_fechaLlegada
-        '
-        Me.txt_fechaLlegada.Location = New System.Drawing.Point(227, 80)
-        Me.txt_fechaLlegada.Mask = "99/99/9999"
-        Me.txt_fechaLlegada.Name = "txt_fechaLlegada"
-        Me.txt_fechaLlegada.nombre_campo = "Fecha Llegada"
-        Me.txt_fechaLlegada.Size = New System.Drawing.Size(100, 20)
-        Me.txt_fechaLlegada.TabIndex = 2
-        Me.txt_fechaLlegada.validable = True
         '
         'txt_horaSalida
         '
-        Me.txt_horaSalida.Location = New System.Drawing.Point(83, 106)
-        Me.txt_horaSalida.Mask = "00:00"
+        Me.txt_horaSalida.CustomFormat = "hh:mm"
+        Me.txt_horaSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.txt_horaSalida.Location = New System.Drawing.Point(84, 103)
         Me.txt_horaSalida.Name = "txt_horaSalida"
-        Me.txt_horaSalida.nombre_campo = "Hora Salida"
-        Me.txt_horaSalida.Size = New System.Drawing.Size(48, 20)
-        Me.txt_horaSalida.TabIndex = 1
-        Me.txt_horaSalida.validable = True
-        Me.txt_horaSalida.ValidatingType = GetType(Date)
+        Me.txt_horaSalida.Size = New System.Drawing.Size(112, 20)
+        Me.txt_horaSalida.TabIndex = 4
+        Me.txt_horaSalida.Value = New Date(2018, 10, 12, 0, 0, 0, 0)
         '
-        'txt_FechaSalida
+        'txt_horaLlegada
         '
-        Me.txt_FechaSalida.Location = New System.Drawing.Point(83, 80)
-        Me.txt_FechaSalida.Mask = "99/99/9999"
-        Me.txt_FechaSalida.Name = "txt_FechaSalida"
-        Me.txt_FechaSalida.nombre_campo = "Fecha Salida"
-        Me.txt_FechaSalida.Size = New System.Drawing.Size(100, 20)
-        Me.txt_FechaSalida.TabIndex = 0
-        Me.txt_FechaSalida.validable = True
-        Me.txt_FechaSalida.ValidatingType = GetType(Date)
+        Me.txt_horaLlegada.CustomFormat = "hh:mm"
+        Me.txt_horaLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.txt_horaLlegada.Location = New System.Drawing.Point(227, 108)
+        Me.txt_horaLlegada.Name = "txt_horaLlegada"
+        Me.txt_horaLlegada.Size = New System.Drawing.Size(112, 20)
+        Me.txt_horaLlegada.TabIndex = 6
+        Me.txt_horaLlegada.Value = New Date(2018, 10, 12, 0, 0, 0, 0)
         '
         'ABM_Vuelos
         '
@@ -376,6 +371,10 @@ Partial Class ABM_Vuelos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Maroon
         Me.ClientSize = New System.Drawing.Size(644, 508)
+        Me.Controls.Add(Me.txt_fechaLlegada)
+        Me.Controls.Add(Me.txt_horaLlegada)
+        Me.Controls.Add(Me.txt_horaSalida)
+        Me.Controls.Add(Me.txt_fechaSalida)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.cmd_buscar)
         Me.Controls.Add(Me.cmd_borrar)
@@ -403,10 +402,6 @@ Partial Class ABM_Vuelos
         Me.Controls.Add(Me.cmb_avion)
         Me.Controls.Add(Me.txt_id_vuelo)
         Me.Controls.Add(Me.txt_Buscar)
-        Me.Controls.Add(Me.txt_horaLlegada)
-        Me.Controls.Add(Me.txt_fechaLlegada)
-        Me.Controls.Add(Me.txt_horaSalida)
-        Me.Controls.Add(Me.txt_FechaSalida)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ABM_Vuelos"
         Me.Text = "ABM_Vuelos"
@@ -415,11 +410,6 @@ Partial Class ABM_Vuelos
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents txt_FechaSalida As MTB_01
-    Friend WithEvents txt_horaSalida As MTB_01
-    Friend WithEvents txt_fechaLlegada As MTB_01
-    Friend WithEvents txt_horaLlegada As MTB_01
     Friend WithEvents cmb_avion As CMB_01
     Friend WithEvents cmb_aeropuertoOrigen As CMB_01
     Friend WithEvents cmb_aeropuertoDestino As CMB_01
@@ -447,4 +437,8 @@ Partial Class ABM_Vuelos
     Friend WithEvents Label19 As Label
     Friend WithEvents cmd_buscar As Button
     Friend WithEvents txt_id_vuelo As MTB_01
+    Friend WithEvents txt_fechaSalida As DateTimePicker
+    Friend WithEvents txt_fechaLlegada As DateTimePicker
+    Friend WithEvents txt_horaSalida As DateTimePicker
+    Friend WithEvents txt_horaLlegada As DateTimePicker
 End Class

@@ -17,8 +17,7 @@
     Dim conexion As New SqlClient.SqlConnection
     Dim cmd As New SqlClient.SqlCommand
     Dim transaccion As SqlClient.SqlTransaction
-    Dim _cadena_conexion As String = "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Aerolineas;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
-
+    Dim _cadena_conexion As String = "Data Source=PCESCRITORIO\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=Aerolineas"
     Private Function conectar() As estado_proceso
             'Si el tipo de conexion es Transaccion, entonces devuelve ok
             'para confirmar que ya esta conectado
