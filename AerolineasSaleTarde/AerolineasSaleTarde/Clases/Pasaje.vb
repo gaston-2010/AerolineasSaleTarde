@@ -19,13 +19,7 @@
            , nroAsiento 
            , claseTurista )
      VALUES
-           (" & _idVuelo & "
-           , " & _nroDocumento & "
-           ," & _tipoDocumento & "
-           ," & _tipoPasaje & " 
-           ," & _atencion & "
-           , " & _nroAsiento & "
-           , " & _claseTurista & ")"
+           (" & _idVuelo & "," & _nroDocumento & "," & _tipoDocumento & "," & _tipoPasaje & "," & _atencion & "," & _nroAsiento & "," & _claseTurista & ")"
         BD.consultaABM(sql)
 
     End Sub
