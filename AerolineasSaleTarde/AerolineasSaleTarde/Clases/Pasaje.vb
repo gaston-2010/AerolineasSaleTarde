@@ -19,13 +19,13 @@
            , nroAsiento 
            , claseTurista )
      VALUES
-           (idVuelo = " & _idVuelo & "
-           ,nroDocumento = " & _nroDocumento & "
-           ,tipoDocumento = " & _tipoDocumento & "
-           ,tipoPasaje = " & _tipoPasaje & " 
-           ,atencion = " & _atencion & "
-           ,nroAsiento = " & _nroAsiento & "
-           ,claseTurista = " & _claseTurista & ")"
+           (" & _idVuelo & "
+           , " & _nroDocumento & "
+           ," & _tipoDocumento & "
+           ," & _tipoPasaje & " 
+           ," & _atencion & "
+           , " & _nroAsiento & "
+           , " & _claseTurista & ")"
         BD.consultaABM(sql)
 
     End Sub

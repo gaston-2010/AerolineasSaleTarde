@@ -294,9 +294,12 @@
             If comprobarasiento() = 0 Then
                 _conex.iniciarTransaccion()
                 transferir(Me)
-                Me._Pasaje.insertar()
                 Me._Dom.insertar()
                 Me._Pasajero.insertar()
+
+                Me._Pasaje.insertar()
+
+
                 _conex.FinTransaccion()
             End If
 
