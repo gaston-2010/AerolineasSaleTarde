@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Venta_Pasajes
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,10 @@ Partial Class Venta_Pasajes
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.cmd_Borrar = New System.Windows.Forms.Button()
-        Me.cmd_Grabar = New System.Windows.Forms.Button()
+        Me.cmd_Cargar = New System.Windows.Forms.Button()
         Me.cmd_Nuevo = New System.Windows.Forms.Button()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,7 +47,6 @@ Partial Class Venta_Pasajes
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.txt_vuelo = New System.Windows.Forms.TextBox()
         Me.btn_buscarVuelo = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -63,6 +62,7 @@ Partial Class Venta_Pasajes
         Me.Label19 = New System.Windows.Forms.Label()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.cmd_Modificar = New System.Windows.Forms.Button()
         Me.cmb_clase = New AerolineasSaleTarde.CMB_01()
         Me.txt_nroAsiento = New AerolineasSaleTarde.MTB_01()
         Me.cmb_tipoPasaje = New AerolineasSaleTarde.CMB_01()
@@ -80,7 +80,8 @@ Partial Class Venta_Pasajes
         Me.cmb_motivo = New AerolineasSaleTarde.CMB_01()
         Me.cmb_origen = New AerolineasSaleTarde.CMB_01()
         Me.cmb_destino = New AerolineasSaleTarde.CMB_01()
-        Me.txt_fecha = New AerolineasSaleTarde.MTB_01()
+        Me.txt_vuelo = New AerolineasSaleTarde.MTB_01()
+        Me.fecha = New System.Windows.Forms.DateTimePicker()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -96,14 +97,14 @@ Partial Class Venta_Pasajes
         Me.cmd_Borrar.Text = "Borrar"
         Me.cmd_Borrar.UseVisualStyleBackColor = True
         '
-        'cmd_Grabar
+        'cmd_Cargar
         '
-        Me.cmd_Grabar.Location = New System.Drawing.Point(723, 67)
-        Me.cmd_Grabar.Name = "cmd_Grabar"
-        Me.cmd_Grabar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_Grabar.TabIndex = 36
-        Me.cmd_Grabar.Text = "Cargar"
-        Me.cmd_Grabar.UseVisualStyleBackColor = True
+        Me.cmd_Cargar.Location = New System.Drawing.Point(723, 67)
+        Me.cmd_Cargar.Name = "cmd_Cargar"
+        Me.cmd_Cargar.Size = New System.Drawing.Size(75, 23)
+        Me.cmd_Cargar.TabIndex = 36
+        Me.cmd_Cargar.Text = "Cargar"
+        Me.cmd_Cargar.UseVisualStyleBackColor = True
         '
         'cmd_Nuevo
         '
@@ -265,7 +266,7 @@ Partial Class Venta_Pasajes
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.txt_fecha)
+        Me.Panel1.Controls.Add(Me.fecha)
         Me.Panel1.Controls.Add(Me.txt_vuelo)
         Me.Panel1.Controls.Add(Me.btn_buscarVuelo)
         Me.Panel1.Controls.Add(Me.cmb_origen)
@@ -279,13 +280,6 @@ Partial Class Venta_Pasajes
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(810, 117)
         Me.Panel1.TabIndex = 38
-        '
-        'txt_vuelo
-        '
-        Me.txt_vuelo.Location = New System.Drawing.Point(56, 79)
-        Me.txt_vuelo.Name = "txt_vuelo"
-        Me.txt_vuelo.Size = New System.Drawing.Size(100, 20)
-        Me.txt_vuelo.TabIndex = 10
         '
         'btn_buscarVuelo
         '
@@ -341,8 +335,9 @@ Partial Class Venta_Pasajes
         Me.Panel2.Controls.Add(Me.txt_nroDocumento)
         Me.Panel2.Controls.Add(Me.Label16)
         Me.Panel2.Controls.Add(Me.cmb_Pais)
+        Me.Panel2.Controls.Add(Me.cmd_Modificar)
         Me.Panel2.Controls.Add(Me.cmd_Nuevo)
-        Me.Panel2.Controls.Add(Me.cmd_Grabar)
+        Me.Panel2.Controls.Add(Me.cmd_Cargar)
         Me.Panel2.Controls.Add(Me.cmd_Borrar)
         Me.Panel2.Controls.Add(Me.txt_nacionalidad)
         Me.Panel2.Controls.Add(Me.txt_calle)
@@ -462,6 +457,15 @@ Partial Class Venta_Pasajes
         Me.Label10.TabIndex = 0
         Me.Label10.Text = "Venta de Pasajes"
         '
+        'cmd_Modificar
+        '
+        Me.cmd_Modificar.Location = New System.Drawing.Point(430, 119)
+        Me.cmd_Modificar.Name = "cmd_Modificar"
+        Me.cmd_Modificar.Size = New System.Drawing.Size(75, 23)
+        Me.cmd_Modificar.TabIndex = 35
+        Me.cmd_Modificar.Text = "Modificar Domicilio"
+        Me.cmd_Modificar.UseVisualStyleBackColor = True
+        '
         'cmb_clase
         '
         Me.cmb_clase.FormattingEnabled = True
@@ -488,7 +492,7 @@ Partial Class Venta_Pasajes
         Me.cmb_tipoPasaje.Items.AddRange(New Object() {"1 - Bebe", "2 - Niño", "3 - Adulto"})
         Me.cmb_tipoPasaje.Location = New System.Drawing.Point(87, 45)
         Me.cmb_tipoPasaje.Name = "cmb_tipoPasaje"
-        Me.cmb_tipoPasaje.nombre_campo = Nothing
+        Me.cmb_tipoPasaje.nombre_campo = "Tipo Pasaje"
         Me.cmb_tipoPasaje.Size = New System.Drawing.Size(121, 21)
         Me.cmb_tipoPasaje.TabIndex = 13
         Me.cmb_tipoPasaje.validable = True
@@ -630,16 +634,22 @@ Partial Class Venta_Pasajes
         Me.cmb_destino.TabIndex = 7
         Me.cmb_destino.validable = True
         '
-        'txt_fecha
+        'txt_vuelo
         '
-        Me.txt_fecha.Location = New System.Drawing.Point(476, 41)
-        Me.txt_fecha.Mask = "00/00/0000"
-        Me.txt_fecha.Name = "txt_fecha"
-        Me.txt_fecha.nombre_campo = Nothing
-        Me.txt_fecha.Size = New System.Drawing.Size(100, 20)
-        Me.txt_fecha.TabIndex = 11
-        Me.txt_fecha.validable = True
-        Me.txt_fecha.ValidatingType = GetType(Date)
+        Me.txt_vuelo.Location = New System.Drawing.Point(56, 78)
+        Me.txt_vuelo.Name = "txt_vuelo"
+        Me.txt_vuelo.nombre_campo = "Nº Vuelo"
+        Me.txt_vuelo.Size = New System.Drawing.Size(100, 20)
+        Me.txt_vuelo.TabIndex = 12
+        Me.txt_vuelo.validable = True
+        '
+        'fecha
+        '
+        Me.fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.fecha.Location = New System.Drawing.Point(473, 40)
+        Me.fecha.Name = "fecha"
+        Me.fecha.Size = New System.Drawing.Size(114, 20)
+        Me.fecha.TabIndex = 13
         '
         'Venta_Pasajes
         '
@@ -663,7 +673,7 @@ Partial Class Venta_Pasajes
     End Sub
 
     Friend WithEvents cmd_Borrar As Button
-    Friend WithEvents cmd_Grabar As Button
+    Friend WithEvents cmd_Cargar As Button
     Friend WithEvents cmd_Nuevo As Button
     Friend WithEvents DGV1 As DataGridView
     Friend WithEvents Label9 As Label
@@ -719,6 +729,7 @@ Partial Class Venta_Pasajes
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
-    Friend WithEvents txt_vuelo As TextBox
-    Friend WithEvents txt_fecha As MTB_01
+    Friend WithEvents cmd_Modificar As Button
+    Friend WithEvents txt_vuelo As MTB_01
+    Friend WithEvents fecha As DateTimePicker
 End Class

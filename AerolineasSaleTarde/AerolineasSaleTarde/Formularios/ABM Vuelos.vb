@@ -26,6 +26,7 @@
         cmd_grabar.BackColor = Color.Chocolate
         cmd_nuevo.BackColor = Color.Chocolate
 
+
     End Sub
 
     Private Sub cmd_nuevo_Click(sender As Object, e As EventArgs) Handles cmd_nuevo.Click
@@ -216,11 +217,11 @@
     End Sub
 
     Private Function comprobarfechas()
-        Dim fecha_menor As Date = txt_FechaSalida.Text
-        Dim fecha_mayor As Date = txt_fechaLlegada.Text
-        Dim hora_menor As Date = txt_horaSalida.Text
-        Dim hora_mayor As Date = txt_horaLlegada.Text
-        If fecha_mayor <= fecha_menor And hora_menor >= hora_mayor Then
+        Dim fecha_menor As DateTime = txt_fechaSalida.Text
+        Dim fecha_mayor As DateTime = txt_fechaLlegada.Text
+        Dim hora_menor As DateTime = txt_horaSalida.Text
+        Dim hora_mayor As DateTime = txt_horaLlegada.Text
+        If fecha_mayor < fecha_menor Or hora_menor >= hora_mayor Then
             MsgBox("La fecha de Salida debe ser menor que la de LLegada")
             txt_fechaLlegada.Focus()
             Return 0
@@ -254,7 +255,7 @@
         End If
     End Sub
 
-    Private Sub txt_FechaSalida_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txt_FechaSalida.MaskInputRejected
+    Private Sub txt_FechaSalida_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
 
     End Sub
 End Class
