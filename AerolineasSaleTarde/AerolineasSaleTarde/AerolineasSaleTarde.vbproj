@@ -47,6 +47,18 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -55,6 +67,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -98,6 +111,14 @@
     <Compile Include="Clases\Tipo Avion.vb" />
     <Compile Include="Clases\tratamientos_especiales.vb" />
     <Compile Include="Clases\Vuelo.vb" />
+    <Compile Include="DataReferences\Listados.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Listados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataReferences\Listados.vb">
+      <DependentUpon>Listados.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ABM Aeropuerto.Designer.vb">
       <DependentUpon>ABM Aeropuerto.vb</DependentUpon>
     </Compile>
@@ -171,6 +192,12 @@
     <Compile Include="Formularios\Escritorio\Escritorio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\ReporteDestino.Designer.vb">
+      <DependentUpon>ReporteDestino.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReporteDestino.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Venta Pasaje.Designer.vb">
       <DependentUpon>Venta Pasaje.vb</DependentUpon>
     </Compile>
@@ -240,6 +267,9 @@
     <EmbeddedResource Include="Formularios\Escritorio\Escritorio.resx">
       <DependentUpon>Escritorio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReporteDestino.resx">
+      <DependentUpon>ReporteDestino.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Venta Pasaje.resx">
       <DependentUpon>Venta Pasaje.vb</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +284,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataReferences\Listados.xsc">
+      <DependentUpon>Listados.xsd</DependentUpon>
+    </None>
+    <None Include="DataReferences\Listados.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Listados.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataReferences\Listados.xss">
+      <DependentUpon>Listados.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -264,6 +305,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
