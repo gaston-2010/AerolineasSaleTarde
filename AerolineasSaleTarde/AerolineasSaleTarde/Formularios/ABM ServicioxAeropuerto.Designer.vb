@@ -28,13 +28,11 @@ Partial Class ABM_ServicioxAeropuerto
         Me.cmd_Nuevo = New System.Windows.Forms.Button()
         Me.cmd_Buscar = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_nombreservicio = New AerolineasSaleTarde.MTB_01()
-        Me.txt_nombreAeropuerto = New AerolineasSaleTarde.MTB_01()
-        Me.txt_aeropuerto = New AerolineasSaleTarde.MTB_01()
         Me.cmb_tipoServicio = New AerolineasSaleTarde.CMB_01()
+        Me.cmb_Aeropuerto = New AerolineasSaleTarde.CMB_01()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -88,7 +86,7 @@ Partial Class ABM_ServicioxAeropuerto
         Me.cmd_Buscar.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.cmd_Buscar.FlatAppearance.BorderSize = 2
         Me.cmd_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmd_Buscar.Location = New System.Drawing.Point(228, 27)
+        Me.cmd_Buscar.Location = New System.Drawing.Point(228, 46)
         Me.cmd_Buscar.Name = "cmd_Buscar"
         Me.cmd_Buscar.Size = New System.Drawing.Size(75, 23)
         Me.cmd_Buscar.TabIndex = 1
@@ -99,27 +97,17 @@ Partial Class ABM_ServicioxAeropuerto
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.Color.DarkSalmon
-        Me.Label5.Location = New System.Drawing.Point(21, 131)
+        Me.Label5.Location = New System.Drawing.Point(21, 113)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(69, 13)
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Tipo Servicio"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.ForeColor = System.Drawing.Color.DarkSalmon
-        Me.Label3.Location = New System.Drawing.Point(17, 79)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(99, 13)
-        Me.Label3.TabIndex = 12
-        Me.Label3.Text = "Nombre Aeropuerto"
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.DarkSalmon
-        Me.Label1.Location = New System.Drawing.Point(21, 29)
+        Me.Label1.Location = New System.Drawing.Point(21, 48)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(59, 13)
         Me.Label1.TabIndex = 14
@@ -129,7 +117,7 @@ Partial Class ABM_ServicioxAeropuerto
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.DarkSalmon
-        Me.Label2.Location = New System.Drawing.Point(241, 135)
+        Me.Label2.Location = New System.Drawing.Point(241, 117)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(44, 13)
         Me.Label2.TabIndex = 12
@@ -137,7 +125,7 @@ Partial Class ABM_ServicioxAeropuerto
         '
         'txt_nombreservicio
         '
-        Me.txt_nombreservicio.Location = New System.Drawing.Point(308, 132)
+        Me.txt_nombreservicio.Location = New System.Drawing.Point(308, 114)
         Me.txt_nombreservicio.Mask = "CCCCCCCCCCCCCCCCCCCCC"
         Me.txt_nombreservicio.Name = "txt_nombreservicio"
         Me.txt_nombreservicio.nombre_campo = "Nombre"
@@ -145,35 +133,25 @@ Partial Class ABM_ServicioxAeropuerto
         Me.txt_nombreservicio.TabIndex = 4
         Me.txt_nombreservicio.validable = True
         '
-        'txt_nombreAeropuerto
-        '
-        Me.txt_nombreAeropuerto.Location = New System.Drawing.Point(122, 79)
-        Me.txt_nombreAeropuerto.Mask = "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"
-        Me.txt_nombreAeropuerto.Name = "txt_nombreAeropuerto"
-        Me.txt_nombreAeropuerto.nombre_campo = "Nombre Aeropuerto"
-        Me.txt_nombreAeropuerto.Size = New System.Drawing.Size(181, 20)
-        Me.txt_nombreAeropuerto.TabIndex = 2
-        Me.txt_nombreAeropuerto.validable = False
-        '
-        'txt_aeropuerto
-        '
-        Me.txt_aeropuerto.Location = New System.Drawing.Point(105, 29)
-        Me.txt_aeropuerto.Mask = "99999999999999"
-        Me.txt_aeropuerto.Name = "txt_aeropuerto"
-        Me.txt_aeropuerto.nombre_campo = "Aeropuerto"
-        Me.txt_aeropuerto.Size = New System.Drawing.Size(100, 20)
-        Me.txt_aeropuerto.TabIndex = 0
-        Me.txt_aeropuerto.validable = True
-        '
         'cmb_tipoServicio
         '
         Me.cmb_tipoServicio.FormattingEnabled = True
-        Me.cmb_tipoServicio.Location = New System.Drawing.Point(105, 131)
+        Me.cmb_tipoServicio.Location = New System.Drawing.Point(105, 113)
         Me.cmb_tipoServicio.Name = "cmb_tipoServicio"
         Me.cmb_tipoServicio.nombre_campo = "Tipo Servicio"
         Me.cmb_tipoServicio.Size = New System.Drawing.Size(121, 21)
         Me.cmb_tipoServicio.TabIndex = 3
         Me.cmb_tipoServicio.validable = True
+        '
+        'cmb_Aeropuerto
+        '
+        Me.cmb_Aeropuerto.FormattingEnabled = True
+        Me.cmb_Aeropuerto.Location = New System.Drawing.Point(86, 48)
+        Me.cmb_Aeropuerto.Name = "cmb_Aeropuerto"
+        Me.cmb_Aeropuerto.nombre_campo = "Aeropuerto"
+        Me.cmb_Aeropuerto.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_Aeropuerto.TabIndex = 20
+        Me.cmb_Aeropuerto.validable = True
         '
         'ABM_ServicioxAeropuerto
         '
@@ -181,6 +159,7 @@ Partial Class ABM_ServicioxAeropuerto
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Maroon
         Me.ClientSize = New System.Drawing.Size(628, 469)
+        Me.Controls.Add(Me.cmb_Aeropuerto)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.cmd_Borrar)
         Me.Controls.Add(Me.cmd_Grabar)
@@ -188,11 +167,8 @@ Partial Class ABM_ServicioxAeropuerto
         Me.Controls.Add(Me.cmd_Buscar)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txt_nombreservicio)
-        Me.Controls.Add(Me.txt_nombreAeropuerto)
-        Me.Controls.Add(Me.txt_aeropuerto)
         Me.Controls.Add(Me.cmb_tipoServicio)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ABM_ServicioxAeropuerto"
@@ -209,11 +185,9 @@ Partial Class ABM_ServicioxAeropuerto
     Friend WithEvents cmd_Nuevo As Button
     Friend WithEvents cmd_Buscar As Button
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents txt_nombreAeropuerto As MTB_01
-    Friend WithEvents txt_aeropuerto As MTB_01
     Friend WithEvents cmb_tipoServicio As CMB_01
     Friend WithEvents txt_nombreservicio As MTB_01
     Friend WithEvents Label2 As Label
+    Friend WithEvents cmb_Aeropuerto As CMB_01
 End Class

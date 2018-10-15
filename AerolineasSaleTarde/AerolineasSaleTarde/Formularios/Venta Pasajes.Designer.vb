@@ -47,28 +47,22 @@ Partial Class Venta_Pasajes
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.fecha = New System.Windows.Forms.DateTimePicker()
+        Me.txt_vuelo = New AerolineasSaleTarde.MTB_01()
         Me.btn_buscarVuelo = New System.Windows.Forms.Button()
+        Me.cmb_origen = New AerolineasSaleTarde.CMB_01()
+        Me.cmb_destino = New AerolineasSaleTarde.CMB_01()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.btn_comprar = New System.Windows.Forms.Button()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.cmd_Modificar = New System.Windows.Forms.Button()
-        Me.cmb_clase = New AerolineasSaleTarde.CMB_01()
-        Me.txt_nroAsiento = New AerolineasSaleTarde.MTB_01()
-        Me.cmb_tipoPasaje = New AerolineasSaleTarde.CMB_01()
         Me.cmb_tipoDocumento = New AerolineasSaleTarde.CMB_01()
         Me.txt_nroDocumento = New AerolineasSaleTarde.MTB_01()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.cmb_Pais = New AerolineasSaleTarde.CMB_01()
+        Me.cmd_Modificar = New System.Windows.Forms.Button()
         Me.txt_nacionalidad = New AerolineasSaleTarde.MTB_01()
         Me.txt_calle = New AerolineasSaleTarde.MTB_01()
         Me.txt_nroCalle = New AerolineasSaleTarde.MTB_01()
@@ -78,10 +72,16 @@ Partial Class Venta_Pasajes
         Me.cmb_sexo = New AerolineasSaleTarde.CMB_01()
         Me.cmb_localidad = New AerolineasSaleTarde.CMB_01()
         Me.cmb_motivo = New AerolineasSaleTarde.CMB_01()
-        Me.cmb_origen = New AerolineasSaleTarde.CMB_01()
-        Me.cmb_destino = New AerolineasSaleTarde.CMB_01()
-        Me.txt_vuelo = New AerolineasSaleTarde.MTB_01()
-        Me.fecha = New System.Windows.Forms.DateTimePicker()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btn_comprar = New System.Windows.Forms.Button()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.cmb_clase = New AerolineasSaleTarde.CMB_01()
+        Me.txt_nroAsiento = New AerolineasSaleTarde.MTB_01()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.cmb_tipoPasaje = New AerolineasSaleTarde.CMB_01()
+        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -93,7 +93,7 @@ Partial Class Venta_Pasajes
         Me.cmd_Borrar.Location = New System.Drawing.Point(723, 99)
         Me.cmd_Borrar.Name = "cmd_Borrar"
         Me.cmd_Borrar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_Borrar.TabIndex = 37
+        Me.cmd_Borrar.TabIndex = 15
         Me.cmd_Borrar.Text = "Borrar"
         Me.cmd_Borrar.UseVisualStyleBackColor = True
         '
@@ -102,7 +102,7 @@ Partial Class Venta_Pasajes
         Me.cmd_Cargar.Location = New System.Drawing.Point(723, 67)
         Me.cmd_Cargar.Name = "cmd_Cargar"
         Me.cmd_Cargar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_Cargar.TabIndex = 36
+        Me.cmd_Cargar.TabIndex = 14
         Me.cmd_Cargar.Text = "Cargar"
         Me.cmd_Cargar.UseVisualStyleBackColor = True
         '
@@ -111,7 +111,7 @@ Partial Class Venta_Pasajes
         Me.cmd_Nuevo.Location = New System.Drawing.Point(723, 29)
         Me.cmd_Nuevo.Name = "cmd_Nuevo"
         Me.cmd_Nuevo.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_Nuevo.TabIndex = 35
+        Me.cmd_Nuevo.TabIndex = 13
         Me.cmd_Nuevo.Text = "Blanquear"
         Me.cmd_Nuevo.UseVisualStyleBackColor = True
         '
@@ -279,16 +279,53 @@ Partial Class Venta_Pasajes
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(810, 117)
-        Me.Panel1.TabIndex = 38
+        Me.Panel1.TabIndex = 0
+        '
+        'fecha
+        '
+        Me.fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.fecha.Location = New System.Drawing.Point(473, 40)
+        Me.fecha.Name = "fecha"
+        Me.fecha.Size = New System.Drawing.Size(114, 20)
+        Me.fecha.TabIndex = 3
+        '
+        'txt_vuelo
+        '
+        Me.txt_vuelo.Location = New System.Drawing.Point(56, 78)
+        Me.txt_vuelo.Name = "txt_vuelo"
+        Me.txt_vuelo.nombre_campo = "Nº Vuelo"
+        Me.txt_vuelo.Size = New System.Drawing.Size(100, 20)
+        Me.txt_vuelo.TabIndex = 12
+        Me.txt_vuelo.validable = True
         '
         'btn_buscarVuelo
         '
         Me.btn_buscarVuelo.Location = New System.Drawing.Point(603, 37)
         Me.btn_buscarVuelo.Name = "btn_buscarVuelo"
         Me.btn_buscarVuelo.Size = New System.Drawing.Size(75, 23)
-        Me.btn_buscarVuelo.TabIndex = 9
+        Me.btn_buscarVuelo.TabIndex = 4
         Me.btn_buscarVuelo.Text = "Buscar"
         Me.btn_buscarVuelo.UseVisualStyleBackColor = True
+        '
+        'cmb_origen
+        '
+        Me.cmb_origen.FormattingEnabled = True
+        Me.cmb_origen.Location = New System.Drawing.Point(56, 40)
+        Me.cmb_origen.Name = "cmb_origen"
+        Me.cmb_origen.nombre_campo = Nothing
+        Me.cmb_origen.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_origen.TabIndex = 1
+        Me.cmb_origen.validable = True
+        '
+        'cmb_destino
+        '
+        Me.cmb_destino.FormattingEnabled = True
+        Me.cmb_destino.Location = New System.Drawing.Point(242, 40)
+        Me.cmb_destino.Name = "cmb_destino"
+        Me.cmb_destino.nombre_campo = Nothing
+        Me.cmb_destino.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_destino.TabIndex = 2
+        Me.cmb_destino.validable = True
         '
         'Label15
         '
@@ -307,7 +344,7 @@ Partial Class Venta_Pasajes
         Me.Label14.Location = New System.Drawing.Point(192, 40)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(43, 13)
-        Me.Label14.TabIndex = 4
+        Me.Label14.TabIndex = 2
         Me.Label14.Text = "Destino"
         '
         'Label13
@@ -364,7 +401,7 @@ Partial Class Venta_Pasajes
         Me.Panel2.Location = New System.Drawing.Point(0, 117)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(810, 303)
-        Me.Panel2.TabIndex = 39
+        Me.Panel2.TabIndex = 1
         '
         'Label20
         '
@@ -375,6 +412,26 @@ Partial Class Venta_Pasajes
         Me.Label20.TabIndex = 40
         Me.Label20.Text = "Tipo Y Numero de Documento"
         '
+        'cmb_tipoDocumento
+        '
+        Me.cmb_tipoDocumento.FormattingEnabled = True
+        Me.cmb_tipoDocumento.Location = New System.Drawing.Point(411, 36)
+        Me.cmb_tipoDocumento.Name = "cmb_tipoDocumento"
+        Me.cmb_tipoDocumento.nombre_campo = "Tipo Documento"
+        Me.cmb_tipoDocumento.Size = New System.Drawing.Size(58, 21)
+        Me.cmb_tipoDocumento.TabIndex = 0
+        Me.cmb_tipoDocumento.validable = True
+        '
+        'txt_nroDocumento
+        '
+        Me.txt_nroDocumento.Location = New System.Drawing.Point(500, 36)
+        Me.txt_nroDocumento.Mask = "9999999999999999"
+        Me.txt_nroDocumento.Name = "txt_nroDocumento"
+        Me.txt_nroDocumento.nombre_campo = "Numero Documento"
+        Me.txt_nroDocumento.Size = New System.Drawing.Size(129, 20)
+        Me.txt_nroDocumento.TabIndex = 1
+        Me.txt_nroDocumento.validable = True
+        '
         'Label16
         '
         Me.Label16.AutoSize = True
@@ -383,6 +440,112 @@ Partial Class Venta_Pasajes
         Me.Label16.Size = New System.Drawing.Size(99, 13)
         Me.Label16.TabIndex = 0
         Me.Label16.Text = "Carga de Pasajeros"
+        '
+        'cmb_Pais
+        '
+        Me.cmb_Pais.FormattingEnabled = True
+        Me.cmb_Pais.Location = New System.Drawing.Point(243, 94)
+        Me.cmb_Pais.Name = "cmb_Pais"
+        Me.cmb_Pais.nombre_campo = "Pais"
+        Me.cmb_Pais.Size = New System.Drawing.Size(129, 21)
+        Me.cmb_Pais.TabIndex = 9
+        Me.cmb_Pais.validable = True
+        '
+        'cmd_Modificar
+        '
+        Me.cmd_Modificar.Location = New System.Drawing.Point(430, 119)
+        Me.cmd_Modificar.Name = "cmd_Modificar"
+        Me.cmd_Modificar.Size = New System.Drawing.Size(75, 23)
+        Me.cmd_Modificar.TabIndex = 12
+        Me.cmd_Modificar.Text = "Modificar Domicilio"
+        Me.cmd_Modificar.UseVisualStyleBackColor = True
+        '
+        'txt_nacionalidad
+        '
+        Me.txt_nacionalidad.Location = New System.Drawing.Point(80, 95)
+        Me.txt_nacionalidad.Name = "txt_nacionalidad"
+        Me.txt_nacionalidad.nombre_campo = "Nacionalidad"
+        Me.txt_nacionalidad.Size = New System.Drawing.Size(111, 20)
+        Me.txt_nacionalidad.TabIndex = 4
+        Me.txt_nacionalidad.validable = True
+        '
+        'txt_calle
+        '
+        Me.txt_calle.Location = New System.Drawing.Point(243, 36)
+        Me.txt_calle.Name = "txt_calle"
+        Me.txt_calle.nombre_campo = "Calle"
+        Me.txt_calle.Size = New System.Drawing.Size(129, 20)
+        Me.txt_calle.TabIndex = 7
+        Me.txt_calle.validable = True
+        '
+        'txt_nroCalle
+        '
+        Me.txt_nroCalle.Location = New System.Drawing.Point(257, 61)
+        Me.txt_nroCalle.Mask = "99999999999999"
+        Me.txt_nroCalle.Name = "txt_nroCalle"
+        Me.txt_nroCalle.nombre_campo = "Nº Calle"
+        Me.txt_nroCalle.Size = New System.Drawing.Size(115, 20)
+        Me.txt_nroCalle.TabIndex = 8
+        Me.txt_nroCalle.validable = True
+        '
+        'txt_Apellido
+        '
+        Me.txt_Apellido.Location = New System.Drawing.Point(62, 64)
+        Me.txt_Apellido.Name = "txt_Apellido"
+        Me.txt_Apellido.nombre_campo = "Apellido"
+        Me.txt_Apellido.Size = New System.Drawing.Size(129, 20)
+        Me.txt_Apellido.TabIndex = 3
+        Me.txt_Apellido.validable = True
+        '
+        'txt_departamento
+        '
+        Me.txt_departamento.Location = New System.Drawing.Point(276, 126)
+        Me.txt_departamento.Name = "txt_departamento"
+        Me.txt_departamento.nombre_campo = "Departamento"
+        Me.txt_departamento.Size = New System.Drawing.Size(96, 20)
+        Me.txt_departamento.TabIndex = 10
+        Me.txt_departamento.validable = True
+        '
+        'txt_nombre
+        '
+        Me.txt_nombre.Location = New System.Drawing.Point(62, 36)
+        Me.txt_nombre.Name = "txt_nombre"
+        Me.txt_nombre.nombre_campo = "Nombre"
+        Me.txt_nombre.Size = New System.Drawing.Size(129, 20)
+        Me.txt_nombre.TabIndex = 2
+        Me.txt_nombre.validable = True
+        '
+        'cmb_sexo
+        '
+        Me.cmb_sexo.FormattingEnabled = True
+        Me.cmb_sexo.Items.AddRange(New Object() {"Masculino", "Femenino", "Sin Definir"})
+        Me.cmb_sexo.Location = New System.Drawing.Point(62, 121)
+        Me.cmb_sexo.Name = "cmb_sexo"
+        Me.cmb_sexo.nombre_campo = "Sexo"
+        Me.cmb_sexo.Size = New System.Drawing.Size(129, 21)
+        Me.cmb_sexo.TabIndex = 5
+        Me.cmb_sexo.validable = True
+        '
+        'cmb_localidad
+        '
+        Me.cmb_localidad.FormattingEnabled = True
+        Me.cmb_localidad.Location = New System.Drawing.Point(257, 152)
+        Me.cmb_localidad.Name = "cmb_localidad"
+        Me.cmb_localidad.nombre_campo = "Localidad"
+        Me.cmb_localidad.Size = New System.Drawing.Size(129, 21)
+        Me.cmb_localidad.TabIndex = 11
+        Me.cmb_localidad.validable = True
+        '
+        'cmb_motivo
+        '
+        Me.cmb_motivo.FormattingEnabled = True
+        Me.cmb_motivo.Items.AddRange(New Object() {"Ocio", "Trabajo", "Emergencia"})
+        Me.cmb_motivo.Location = New System.Drawing.Point(62, 148)
+        Me.cmb_motivo.Name = "cmb_motivo"
+        Me.cmb_motivo.nombre_campo = "Motivo"
+        Me.cmb_motivo.Size = New System.Drawing.Size(129, 21)
+        Me.cmb_motivo.TabIndex = 6
+        Me.cmb_motivo.validable = True
         '
         'Panel3
         '
@@ -400,14 +563,14 @@ Partial Class Venta_Pasajes
         Me.Panel3.Location = New System.Drawing.Point(0, 314)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(810, 147)
-        Me.Panel3.TabIndex = 40
+        Me.Panel3.TabIndex = 2
         '
         'btn_comprar
         '
         Me.btn_comprar.Location = New System.Drawing.Point(704, 81)
         Me.btn_comprar.Name = "btn_comprar"
         Me.btn_comprar.Size = New System.Drawing.Size(75, 23)
-        Me.btn_comprar.TabIndex = 20
+        Me.btn_comprar.TabIndex = 5
         Me.btn_comprar.Text = "Comprar"
         Me.btn_comprar.UseVisualStyleBackColor = True
         '
@@ -438,34 +601,6 @@ Partial Class Venta_Pasajes
         Me.Label19.TabIndex = 19
         Me.Label19.Text = "Tipo Pasaje"
         '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(230, 48)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(156, 17)
-        Me.CheckBox1.TabIndex = 14
-        Me.CheckBox1.Text = "Necesita Atencion Especial"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(12, 8)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(90, 13)
-        Me.Label10.TabIndex = 0
-        Me.Label10.Text = "Venta de Pasajes"
-        '
-        'cmd_Modificar
-        '
-        Me.cmd_Modificar.Location = New System.Drawing.Point(430, 119)
-        Me.cmd_Modificar.Name = "cmd_Modificar"
-        Me.cmd_Modificar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_Modificar.TabIndex = 35
-        Me.cmd_Modificar.Text = "Modificar Domicilio"
-        Me.cmd_Modificar.UseVisualStyleBackColor = True
-        '
         'cmb_clase
         '
         Me.cmb_clase.FormattingEnabled = True
@@ -474,7 +609,7 @@ Partial Class Venta_Pasajes
         Me.cmb_clase.Name = "cmb_clase"
         Me.cmb_clase.nombre_campo = "Clase"
         Me.cmb_clase.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_clase.TabIndex = 16
+        Me.cmb_clase.TabIndex = 4
         Me.cmb_clase.validable = True
         '
         'txt_nroAsiento
@@ -483,8 +618,18 @@ Partial Class Venta_Pasajes
         Me.txt_nroAsiento.Name = "txt_nroAsiento"
         Me.txt_nroAsiento.nombre_campo = "Nº Asiento"
         Me.txt_nroAsiento.Size = New System.Drawing.Size(100, 20)
-        Me.txt_nroAsiento.TabIndex = 15
+        Me.txt_nroAsiento.TabIndex = 2
         Me.txt_nroAsiento.validable = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(230, 48)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(156, 17)
+        Me.CheckBox1.TabIndex = 3
+        Me.CheckBox1.Text = "Necesita Atencion Especial"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'cmb_tipoPasaje
         '
@@ -494,162 +639,17 @@ Partial Class Venta_Pasajes
         Me.cmb_tipoPasaje.Name = "cmb_tipoPasaje"
         Me.cmb_tipoPasaje.nombre_campo = "Tipo Pasaje"
         Me.cmb_tipoPasaje.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_tipoPasaje.TabIndex = 13
+        Me.cmb_tipoPasaje.TabIndex = 1
         Me.cmb_tipoPasaje.validable = True
         '
-        'cmb_tipoDocumento
+        'Label10
         '
-        Me.cmb_tipoDocumento.FormattingEnabled = True
-        Me.cmb_tipoDocumento.Location = New System.Drawing.Point(411, 36)
-        Me.cmb_tipoDocumento.Name = "cmb_tipoDocumento"
-        Me.cmb_tipoDocumento.nombre_campo = "Tipo Documento"
-        Me.cmb_tipoDocumento.Size = New System.Drawing.Size(58, 21)
-        Me.cmb_tipoDocumento.TabIndex = 39
-        Me.cmb_tipoDocumento.validable = True
-        '
-        'txt_nroDocumento
-        '
-        Me.txt_nroDocumento.Location = New System.Drawing.Point(500, 36)
-        Me.txt_nroDocumento.Mask = "9999999999999999"
-        Me.txt_nroDocumento.Name = "txt_nroDocumento"
-        Me.txt_nroDocumento.nombre_campo = "Numero Documento"
-        Me.txt_nroDocumento.Size = New System.Drawing.Size(129, 20)
-        Me.txt_nroDocumento.TabIndex = 38
-        Me.txt_nroDocumento.validable = True
-        '
-        'cmb_Pais
-        '
-        Me.cmb_Pais.FormattingEnabled = True
-        Me.cmb_Pais.Location = New System.Drawing.Point(243, 94)
-        Me.cmb_Pais.Name = "cmb_Pais"
-        Me.cmb_Pais.nombre_campo = "Pais"
-        Me.cmb_Pais.Size = New System.Drawing.Size(129, 21)
-        Me.cmb_Pais.TabIndex = 20
-        Me.cmb_Pais.validable = True
-        '
-        'txt_nacionalidad
-        '
-        Me.txt_nacionalidad.Location = New System.Drawing.Point(80, 95)
-        Me.txt_nacionalidad.Name = "txt_nacionalidad"
-        Me.txt_nacionalidad.nombre_campo = "Nacionalidad"
-        Me.txt_nacionalidad.Size = New System.Drawing.Size(111, 20)
-        Me.txt_nacionalidad.TabIndex = 13
-        Me.txt_nacionalidad.validable = True
-        '
-        'txt_calle
-        '
-        Me.txt_calle.Location = New System.Drawing.Point(243, 36)
-        Me.txt_calle.Name = "txt_calle"
-        Me.txt_calle.nombre_campo = "Calle"
-        Me.txt_calle.Size = New System.Drawing.Size(129, 20)
-        Me.txt_calle.TabIndex = 18
-        Me.txt_calle.validable = True
-        '
-        'txt_nroCalle
-        '
-        Me.txt_nroCalle.Location = New System.Drawing.Point(257, 61)
-        Me.txt_nroCalle.Mask = "99999999999999"
-        Me.txt_nroCalle.Name = "txt_nroCalle"
-        Me.txt_nroCalle.nombre_campo = "Nº Calle"
-        Me.txt_nroCalle.Size = New System.Drawing.Size(115, 20)
-        Me.txt_nroCalle.TabIndex = 14
-        Me.txt_nroCalle.validable = True
-        '
-        'txt_Apellido
-        '
-        Me.txt_Apellido.Location = New System.Drawing.Point(62, 64)
-        Me.txt_Apellido.Name = "txt_Apellido"
-        Me.txt_Apellido.nombre_campo = "Apellido"
-        Me.txt_Apellido.Size = New System.Drawing.Size(129, 20)
-        Me.txt_Apellido.TabIndex = 15
-        Me.txt_Apellido.validable = True
-        '
-        'txt_departamento
-        '
-        Me.txt_departamento.Location = New System.Drawing.Point(276, 126)
-        Me.txt_departamento.Name = "txt_departamento"
-        Me.txt_departamento.nombre_campo = "Departamento"
-        Me.txt_departamento.Size = New System.Drawing.Size(96, 20)
-        Me.txt_departamento.TabIndex = 16
-        Me.txt_departamento.validable = True
-        '
-        'txt_nombre
-        '
-        Me.txt_nombre.Location = New System.Drawing.Point(62, 36)
-        Me.txt_nombre.Name = "txt_nombre"
-        Me.txt_nombre.nombre_campo = "Nombre"
-        Me.txt_nombre.Size = New System.Drawing.Size(129, 20)
-        Me.txt_nombre.TabIndex = 17
-        Me.txt_nombre.validable = True
-        '
-        'cmb_sexo
-        '
-        Me.cmb_sexo.FormattingEnabled = True
-        Me.cmb_sexo.Items.AddRange(New Object() {"Masculino", "Femenino", "Sin Definir"})
-        Me.cmb_sexo.Location = New System.Drawing.Point(62, 121)
-        Me.cmb_sexo.Name = "cmb_sexo"
-        Me.cmb_sexo.nombre_campo = "Sexo"
-        Me.cmb_sexo.Size = New System.Drawing.Size(129, 21)
-        Me.cmb_sexo.TabIndex = 19
-        Me.cmb_sexo.validable = True
-        '
-        'cmb_localidad
-        '
-        Me.cmb_localidad.FormattingEnabled = True
-        Me.cmb_localidad.Location = New System.Drawing.Point(257, 152)
-        Me.cmb_localidad.Name = "cmb_localidad"
-        Me.cmb_localidad.nombre_campo = "Localidad"
-        Me.cmb_localidad.Size = New System.Drawing.Size(129, 21)
-        Me.cmb_localidad.TabIndex = 21
-        Me.cmb_localidad.validable = True
-        '
-        'cmb_motivo
-        '
-        Me.cmb_motivo.FormattingEnabled = True
-        Me.cmb_motivo.Items.AddRange(New Object() {"Ocio", "Trabajo", "Emergencia"})
-        Me.cmb_motivo.Location = New System.Drawing.Point(62, 148)
-        Me.cmb_motivo.Name = "cmb_motivo"
-        Me.cmb_motivo.nombre_campo = "Motivo"
-        Me.cmb_motivo.Size = New System.Drawing.Size(129, 21)
-        Me.cmb_motivo.TabIndex = 22
-        Me.cmb_motivo.validable = True
-        '
-        'cmb_origen
-        '
-        Me.cmb_origen.FormattingEnabled = True
-        Me.cmb_origen.Location = New System.Drawing.Point(56, 40)
-        Me.cmb_origen.Name = "cmb_origen"
-        Me.cmb_origen.nombre_campo = Nothing
-        Me.cmb_origen.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_origen.TabIndex = 8
-        Me.cmb_origen.validable = True
-        '
-        'cmb_destino
-        '
-        Me.cmb_destino.FormattingEnabled = True
-        Me.cmb_destino.Location = New System.Drawing.Point(242, 40)
-        Me.cmb_destino.Name = "cmb_destino"
-        Me.cmb_destino.nombre_campo = Nothing
-        Me.cmb_destino.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_destino.TabIndex = 7
-        Me.cmb_destino.validable = True
-        '
-        'txt_vuelo
-        '
-        Me.txt_vuelo.Location = New System.Drawing.Point(56, 78)
-        Me.txt_vuelo.Name = "txt_vuelo"
-        Me.txt_vuelo.nombre_campo = "Nº Vuelo"
-        Me.txt_vuelo.Size = New System.Drawing.Size(100, 20)
-        Me.txt_vuelo.TabIndex = 12
-        Me.txt_vuelo.validable = True
-        '
-        'fecha
-        '
-        Me.fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.fecha.Location = New System.Drawing.Point(473, 40)
-        Me.fecha.Name = "fecha"
-        Me.fecha.Size = New System.Drawing.Size(114, 20)
-        Me.fecha.TabIndex = 13
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(12, 8)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(90, 13)
+        Me.Label10.TabIndex = 0
+        Me.Label10.Text = "Venta de Pasajes"
         '
         'Venta_Pasajes
         '

@@ -44,7 +44,7 @@ Partial Class ABM_Destinos
         Me.DGV1.Location = New System.Drawing.Point(12, 199)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.Size = New System.Drawing.Size(514, 267)
-        Me.DGV1.TabIndex = 0
+        Me.DGV1.TabIndex = 7
         '
         'cmd_Nuevo
         '

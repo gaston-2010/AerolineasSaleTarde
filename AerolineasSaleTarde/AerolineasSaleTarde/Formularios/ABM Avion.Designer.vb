@@ -61,7 +61,7 @@ Partial Class ABM_Avion
         Me.DGV1.Location = New System.Drawing.Point(244, 49)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.Size = New System.Drawing.Size(366, 384)
-        Me.DGV1.TabIndex = 3
+        Me.DGV1.TabIndex = 5
         '
         'cmd_nuevo
         '
@@ -71,7 +71,7 @@ Partial Class ABM_Avion
         Me.cmd_nuevo.Location = New System.Drawing.Point(24, 139)
         Me.cmd_nuevo.Name = "cmd_nuevo"
         Me.cmd_nuevo.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_nuevo.TabIndex = 4
+        Me.cmd_nuevo.TabIndex = 3
         Me.cmd_nuevo.Text = "Nuevo"
         Me.cmd_nuevo.UseVisualStyleBackColor = True
         '

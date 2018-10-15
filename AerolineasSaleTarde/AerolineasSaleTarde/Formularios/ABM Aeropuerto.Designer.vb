@@ -77,7 +77,7 @@ Partial Class ABM_Aeropuerto
         Me.txt_salaVip.Name = "txt_salaVip"
         Me.txt_salaVip.nombre_campo = "Sala Vip"
         Me.txt_salaVip.Size = New System.Drawing.Size(100, 20)
-        Me.txt_salaVip.TabIndex = 2
+        Me.txt_salaVip.TabIndex = 3
         Me.txt_salaVip.Text = "0"
         Me.txt_salaVip.validable = False
         '
@@ -87,7 +87,7 @@ Partial Class ABM_Aeropuerto
         Me.txt_salaFumadores.Name = "txt_salaFumadores"
         Me.txt_salaFumadores.nombre_campo = "Sala Fumadores"
         Me.txt_salaFumadores.Size = New System.Drawing.Size(100, 20)
-        Me.txt_salaFumadores.TabIndex = 2
+        Me.txt_salaFumadores.TabIndex = 4
         Me.txt_salaFumadores.Text = "0"
         Me.txt_salaFumadores.validable = False
         '
@@ -99,7 +99,7 @@ Partial Class ABM_Aeropuerto
         Me.cmb_localidad.Name = "cmb_localidad"
         Me.cmb_localidad.nombre_campo = "Localidad"
         Me.cmb_localidad.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_localidad.TabIndex = 1
+        Me.cmb_localidad.TabIndex = 5
         Me.cmb_localidad.validable = True
         '
         'Label1
@@ -161,7 +161,7 @@ Partial Class ABM_Aeropuerto
         Me.cmd_Nuevo.Location = New System.Drawing.Point(24, 278)
         Me.cmd_Nuevo.Name = "cmd_Nuevo"
         Me.cmd_Nuevo.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_Nuevo.TabIndex = 4
+        Me.cmd_Nuevo.TabIndex = 6
         Me.cmd_Nuevo.Text = "Blanquear"
         Me.cmd_Nuevo.UseVisualStyleBackColor = True
         '
@@ -170,7 +170,7 @@ Partial Class ABM_Aeropuerto
         Me.cmd_Grabar.Location = New System.Drawing.Point(131, 278)
         Me.cmd_Grabar.Name = "cmd_Grabar"
         Me.cmd_Grabar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_Grabar.TabIndex = 4
+        Me.cmd_Grabar.TabIndex = 7
         Me.cmd_Grabar.Text = "Grabar"
         Me.cmd_Grabar.UseVisualStyleBackColor = True
         '
@@ -179,7 +179,7 @@ Partial Class ABM_Aeropuerto
         Me.cmd_Borrar.Location = New System.Drawing.Point(536, 278)
         Me.cmd_Borrar.Name = "cmd_Borrar"
         Me.cmd_Borrar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_Borrar.TabIndex = 4
+        Me.cmd_Borrar.TabIndex = 8
         Me.cmd_Borrar.Text = "Borrar"
         Me.cmd_Borrar.UseVisualStyleBackColor = True
         '
@@ -189,7 +189,7 @@ Partial Class ABM_Aeropuerto
         Me.DGV1.Location = New System.Drawing.Point(404, 50)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.Size = New System.Drawing.Size(301, 200)
-        Me.DGV1.TabIndex = 5
+        Me.DGV1.TabIndex = 9
         '
         'txt_id
         '

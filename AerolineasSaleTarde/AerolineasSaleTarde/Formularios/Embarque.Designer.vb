@@ -52,7 +52,7 @@ Partial Class Embarque
         Me.txt_dni.Location = New System.Drawing.Point(126, 30)
         Me.txt_dni.Name = "txt_dni"
         Me.txt_dni.Size = New System.Drawing.Size(100, 20)
-        Me.txt_dni.TabIndex = 0
+        Me.txt_dni.TabIndex = 1
         '
         'txt_peso
         '
@@ -94,7 +94,7 @@ Partial Class Embarque
         Me.chk_Especial.Location = New System.Drawing.Point(181, 20)
         Me.chk_Especial.Name = "chk_Especial"
         Me.chk_Especial.Size = New System.Drawing.Size(66, 17)
-        Me.chk_Especial.TabIndex = 2
+        Me.chk_Especial.TabIndex = 1
         Me.chk_Especial.Text = "Especial"
         Me.chk_Especial.UseVisualStyleBackColor = True
         '
@@ -111,7 +111,7 @@ Partial Class Embarque
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(800, 77)
-        Me.Panel1.TabIndex = 3
+        Me.Panel1.TabIndex = 0
         '
         'cmb_Tdni
         '
@@ -120,7 +120,7 @@ Partial Class Embarque
         Me.cmb_Tdni.Name = "cmb_Tdni"
         Me.cmb_Tdni.nombre_campo = Nothing
         Me.cmb_Tdni.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_Tdni.TabIndex = 3
+        Me.cmb_Tdni.TabIndex = 2
         Me.cmb_Tdni.validable = True
         '
         'btn_buscar
@@ -128,7 +128,7 @@ Partial Class Embarque
         Me.btn_buscar.Location = New System.Drawing.Point(461, 29)
         Me.btn_buscar.Name = "btn_buscar"
         Me.btn_buscar.Size = New System.Drawing.Size(75, 23)
-        Me.btn_buscar.TabIndex = 2
+        Me.btn_buscar.TabIndex = 3
         Me.btn_buscar.Text = "Buscar"
         Me.btn_buscar.UseVisualStyleBackColor = True
         '
@@ -137,7 +137,7 @@ Partial Class Embarque
         Me.txt_puertaEmbarque.Location = New System.Drawing.Point(663, 31)
         Me.txt_puertaEmbarque.Name = "txt_puertaEmbarque"
         Me.txt_puertaEmbarque.Size = New System.Drawing.Size(63, 20)
-        Me.txt_puertaEmbarque.TabIndex = 0
+        Me.txt_puertaEmbarque.TabIndex = 4
         '
         'Label4
         '
@@ -153,7 +153,7 @@ Partial Class Embarque
         Me.btn_agregar.Location = New System.Drawing.Point(402, 14)
         Me.btn_agregar.Name = "btn_agregar"
         Me.btn_agregar.Size = New System.Drawing.Size(75, 23)
-        Me.btn_agregar.TabIndex = 2
+        Me.btn_agregar.TabIndex = 3
         Me.btn_agregar.Text = "Agregar"
         Me.btn_agregar.UseVisualStyleBackColor = True
         '
@@ -193,7 +193,7 @@ Partial Class Embarque
         Me.Panel2.Location = New System.Drawing.Point(0, 77)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(800, 270)
-        Me.Panel2.TabIndex = 5
+        Me.Panel2.TabIndex = 1
         '
         'cmb_abordo
         '
@@ -202,7 +202,7 @@ Partial Class Embarque
         Me.cmb_abordo.Name = "cmb_abordo"
         Me.cmb_abordo.nombre_campo = Nothing
         Me.cmb_abordo.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_abordo.TabIndex = 5
+        Me.cmb_abordo.TabIndex = 2
         Me.cmb_abordo.validable = True
         '
         'btn_embarque
@@ -210,7 +210,7 @@ Partial Class Embarque
         Me.btn_embarque.Location = New System.Drawing.Point(655, 358)
         Me.btn_embarque.Name = "btn_embarque"
         Me.btn_embarque.Size = New System.Drawing.Size(119, 23)
-        Me.btn_embarque.TabIndex = 2
+        Me.btn_embarque.TabIndex = 3
         Me.btn_embarque.Text = "Realizar Embarque"
         Me.btn_embarque.UseVisualStyleBackColor = True
         '
@@ -219,7 +219,7 @@ Partial Class Embarque
         Me.cmd_nuevo.Location = New System.Drawing.Point(402, 358)
         Me.cmd_nuevo.Name = "cmd_nuevo"
         Me.cmd_nuevo.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_nuevo.TabIndex = 6
+        Me.cmd_nuevo.TabIndex = 2
         Me.cmd_nuevo.Text = "Nuevo"
         Me.cmd_nuevo.UseVisualStyleBackColor = True
         '

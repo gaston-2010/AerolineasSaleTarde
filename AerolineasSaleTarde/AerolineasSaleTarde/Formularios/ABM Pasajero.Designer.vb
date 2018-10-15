@@ -61,7 +61,7 @@ Partial Class ABM_Pasajero
         Me.txt_nroDocumento.Name = "txt_nroDocumento"
         Me.txt_nroDocumento.nombre_campo = "Numero Documento"
         Me.txt_nroDocumento.Size = New System.Drawing.Size(129, 20)
-        Me.txt_nroDocumento.TabIndex = 0
+        Me.txt_nroDocumento.TabIndex = 1
         Me.txt_nroDocumento.validable = True
         '
         'cmb_tipoDocumento
@@ -71,7 +71,7 @@ Partial Class ABM_Pasajero
         Me.cmb_tipoDocumento.Name = "cmb_tipoDocumento"
         Me.cmb_tipoDocumento.nombre_campo = "Tipo Documento"
         Me.cmb_tipoDocumento.Size = New System.Drawing.Size(58, 21)
-        Me.cmb_tipoDocumento.TabIndex = 1
+        Me.cmb_tipoDocumento.TabIndex = 0
         Me.cmb_tipoDocumento.validable = True
         '
         'txt_nacionalidad
@@ -80,7 +80,7 @@ Partial Class ABM_Pasajero
         Me.txt_nacionalidad.Name = "txt_nacionalidad"
         Me.txt_nacionalidad.nombre_campo = "Nacionalidad"
         Me.txt_nacionalidad.Size = New System.Drawing.Size(129, 20)
-        Me.txt_nacionalidad.TabIndex = 0
+        Me.txt_nacionalidad.TabIndex = 4
         Me.txt_nacionalidad.validable = True
         '
         'txt_nombre
@@ -89,7 +89,7 @@ Partial Class ABM_Pasajero
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.nombre_campo = "Nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(129, 20)
-        Me.txt_nombre.TabIndex = 0
+        Me.txt_nombre.TabIndex = 2
         Me.txt_nombre.validable = True
         '
         'txt_Apellido
@@ -98,7 +98,7 @@ Partial Class ABM_Pasajero
         Me.txt_Apellido.Name = "txt_Apellido"
         Me.txt_Apellido.nombre_campo = "Apellido"
         Me.txt_Apellido.Size = New System.Drawing.Size(129, 20)
-        Me.txt_Apellido.TabIndex = 0
+        Me.txt_Apellido.TabIndex = 3
         Me.txt_Apellido.validable = True
         '
         'cmb_sexo
@@ -109,7 +109,7 @@ Partial Class ABM_Pasajero
         Me.cmb_sexo.Name = "cmb_sexo"
         Me.cmb_sexo.nombre_campo = "Sexo"
         Me.cmb_sexo.Size = New System.Drawing.Size(129, 21)
-        Me.cmb_sexo.TabIndex = 1
+        Me.cmb_sexo.TabIndex = 5
         Me.cmb_sexo.validable = True
         '
         'txt_calle
@@ -118,7 +118,7 @@ Partial Class ABM_Pasajero
         Me.txt_calle.Name = "txt_calle"
         Me.txt_calle.nombre_campo = "Calle"
         Me.txt_calle.Size = New System.Drawing.Size(129, 20)
-        Me.txt_calle.TabIndex = 0
+        Me.txt_calle.TabIndex = 7
         Me.txt_calle.validable = True
         '
         'txt_nroCalle
@@ -128,7 +128,7 @@ Partial Class ABM_Pasajero
         Me.txt_nroCalle.Name = "txt_nroCalle"
         Me.txt_nroCalle.nombre_campo = "Nº Calle"
         Me.txt_nroCalle.Size = New System.Drawing.Size(129, 20)
-        Me.txt_nroCalle.TabIndex = 0
+        Me.txt_nroCalle.TabIndex = 8
         Me.txt_nroCalle.validable = True
         '
         'cmb_Pais
@@ -138,7 +138,7 @@ Partial Class ABM_Pasajero
         Me.cmb_Pais.Name = "cmb_Pais"
         Me.cmb_Pais.nombre_campo = "Pais"
         Me.cmb_Pais.Size = New System.Drawing.Size(129, 21)
-        Me.cmb_Pais.TabIndex = 1
+        Me.cmb_Pais.TabIndex = 9
         Me.cmb_Pais.validable = True
         '
         'cmb_motivo
@@ -149,7 +149,7 @@ Partial Class ABM_Pasajero
         Me.cmb_motivo.Name = "cmb_motivo"
         Me.cmb_motivo.nombre_campo = "Motivo"
         Me.cmb_motivo.Size = New System.Drawing.Size(129, 21)
-        Me.cmb_motivo.TabIndex = 1
+        Me.cmb_motivo.TabIndex = 6
         Me.cmb_motivo.validable = True
         '
         'Label1
@@ -248,7 +248,7 @@ Partial Class ABM_Pasajero
         Me.DGV1.Location = New System.Drawing.Point(478, 76)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.Size = New System.Drawing.Size(273, 191)
-        Me.DGV1.TabIndex = 11
+        Me.DGV1.TabIndex = 15
         '
         'Label11
         '
@@ -265,7 +265,7 @@ Partial Class ABM_Pasajero
         Me.txt_departamento.Name = "txt_departamento"
         Me.txt_departamento.nombre_campo = "Departamento"
         Me.txt_departamento.Size = New System.Drawing.Size(129, 20)
-        Me.txt_departamento.TabIndex = 0
+        Me.txt_departamento.TabIndex = 10
         Me.txt_departamento.validable = True
         '
         'Label12
@@ -284,7 +284,7 @@ Partial Class ABM_Pasajero
         Me.cmb_localidad.Name = "cmb_localidad"
         Me.cmb_localidad.nombre_campo = "Localidad"
         Me.cmb_localidad.Size = New System.Drawing.Size(129, 21)
-        Me.cmb_localidad.TabIndex = 1
+        Me.cmb_localidad.TabIndex = 11
         Me.cmb_localidad.validable = True
         '
         'cmd_Buscar
@@ -310,7 +310,7 @@ Partial Class ABM_Pasajero
         Me.cmd_Grabar.Location = New System.Drawing.Point(226, 288)
         Me.cmd_Grabar.Name = "cmd_Grabar"
         Me.cmd_Grabar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_Grabar.TabIndex = 12
+        Me.cmd_Grabar.TabIndex = 13
         Me.cmd_Grabar.Text = "Grabar"
         Me.cmd_Grabar.UseVisualStyleBackColor = True
         '
@@ -319,7 +319,7 @@ Partial Class ABM_Pasajero
         Me.cmd_Borrar.Location = New System.Drawing.Point(478, 301)
         Me.cmd_Borrar.Name = "cmd_Borrar"
         Me.cmd_Borrar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_Borrar.TabIndex = 12
+        Me.cmd_Borrar.TabIndex = 14
         Me.cmd_Borrar.Text = "Borrar"
         Me.cmd_Borrar.UseVisualStyleBackColor = True
         '
