@@ -47,7 +47,7 @@ Partial Class ABM_PersonalxAeropuerto
         Me.cmb_avion.Name = "cmb_avion"
         Me.cmb_avion.nombre_campo = Nothing
         Me.cmb_avion.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_avion.TabIndex = 0
+        Me.cmb_avion.TabIndex = 3
         Me.cmb_avion.validable = True
         '
         'cmb_puesto
@@ -57,7 +57,7 @@ Partial Class ABM_PersonalxAeropuerto
         Me.cmb_puesto.Name = "cmb_puesto"
         Me.cmb_puesto.nombre_campo = Nothing
         Me.cmb_puesto.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_puesto.TabIndex = 0
+        Me.cmb_puesto.TabIndex = 4
         Me.cmb_puesto.validable = True
         '
         'txt_Legajo
@@ -66,7 +66,7 @@ Partial Class ABM_PersonalxAeropuerto
         Me.txt_Legajo.Name = "txt_Legajo"
         Me.txt_Legajo.nombre_campo = "Legajo"
         Me.txt_Legajo.Size = New System.Drawing.Size(100, 20)
-        Me.txt_Legajo.TabIndex = 1
+        Me.txt_Legajo.TabIndex = 0
         Me.txt_Legajo.validable = True
         '
         'txt_apellido
@@ -84,7 +84,7 @@ Partial Class ABM_PersonalxAeropuerto
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.nombre_campo = "Nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(100, 20)
-        Me.txt_nombre.TabIndex = 1
+        Me.txt_nombre.TabIndex = 2
         Me.txt_nombre.validable = False
         '
         'Label1
@@ -157,7 +157,7 @@ Partial Class ABM_PersonalxAeropuerto
         Me.cmd_Nuevo.Location = New System.Drawing.Point(26, 239)
         Me.cmd_Nuevo.Name = "cmd_Nuevo"
         Me.cmd_Nuevo.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_Nuevo.TabIndex = 3
+        Me.cmd_Nuevo.TabIndex = 5
         Me.cmd_Nuevo.Text = "Nuevo"
         Me.cmd_Nuevo.UseVisualStyleBackColor = True
         '
@@ -169,7 +169,7 @@ Partial Class ABM_PersonalxAeropuerto
         Me.cmd_Grabar.Location = New System.Drawing.Point(311, 239)
         Me.cmd_Grabar.Name = "cmd_Grabar"
         Me.cmd_Grabar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_Grabar.TabIndex = 3
+        Me.cmd_Grabar.TabIndex = 6
         Me.cmd_Grabar.Text = "Grabar"
         Me.cmd_Grabar.UseVisualStyleBackColor = True
         '
@@ -181,7 +181,7 @@ Partial Class ABM_PersonalxAeropuerto
         Me.cmd_Borrar.Location = New System.Drawing.Point(540, 387)
         Me.cmd_Borrar.Name = "cmd_Borrar"
         Me.cmd_Borrar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_Borrar.TabIndex = 3
+        Me.cmd_Borrar.TabIndex = 8
         Me.cmd_Borrar.Text = "Borrar"
         Me.cmd_Borrar.UseVisualStyleBackColor = True
         '
@@ -193,7 +193,7 @@ Partial Class ABM_PersonalxAeropuerto
         Me.DGV1.Location = New System.Drawing.Point(21, 317)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.Size = New System.Drawing.Size(503, 179)
-        Me.DGV1.TabIndex = 4
+        Me.DGV1.TabIndex = 7
         '
         'ABM_PersonalxAeropuerto
         '

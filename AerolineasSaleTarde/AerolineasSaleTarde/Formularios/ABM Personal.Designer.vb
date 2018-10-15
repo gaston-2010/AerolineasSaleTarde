@@ -123,7 +123,7 @@ Partial Class ABM_Personal
         Me.DGV1.Location = New System.Drawing.Point(15, 238)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.Size = New System.Drawing.Size(583, 161)
-        Me.DGV1.TabIndex = 3
+        Me.DGV1.TabIndex = 11
         '
         'cmd_Nuevo
         '
@@ -133,7 +133,7 @@ Partial Class ABM_Personal
         Me.cmd_Nuevo.Location = New System.Drawing.Point(15, 426)
         Me.cmd_Nuevo.Name = "cmd_Nuevo"
         Me.cmd_Nuevo.Size = New System.Drawing.Size(75, 31)
-        Me.cmd_Nuevo.TabIndex = 5
+        Me.cmd_Nuevo.TabIndex = 8
         Me.cmd_Nuevo.Text = "Nuevo"
         Me.cmd_Nuevo.UseVisualStyleBackColor = True
         '
@@ -145,7 +145,7 @@ Partial Class ABM_Personal
         Me.cmd_Grabar.Location = New System.Drawing.Point(107, 426)
         Me.cmd_Grabar.Name = "cmd_Grabar"
         Me.cmd_Grabar.Size = New System.Drawing.Size(75, 31)
-        Me.cmd_Grabar.TabIndex = 5
+        Me.cmd_Grabar.TabIndex = 9
         Me.cmd_Grabar.Text = "Grabar"
         Me.cmd_Grabar.UseVisualStyleBackColor = True
         '
@@ -157,7 +157,7 @@ Partial Class ABM_Personal
         Me.cmd_Borrar.Location = New System.Drawing.Point(214, 426)
         Me.cmd_Borrar.Name = "cmd_Borrar"
         Me.cmd_Borrar.Size = New System.Drawing.Size(75, 31)
-        Me.cmd_Borrar.TabIndex = 5
+        Me.cmd_Borrar.TabIndex = 10
         Me.cmd_Borrar.Text = "Borrar"
         Me.cmd_Borrar.UseVisualStyleBackColor = True
         '
@@ -179,7 +179,7 @@ Partial Class ABM_Personal
         Me.txt_legajoBuscar.Name = "txt_legajoBuscar"
         Me.txt_legajoBuscar.nombre_campo = Nothing
         Me.txt_legajoBuscar.Size = New System.Drawing.Size(145, 20)
-        Me.txt_legajoBuscar.TabIndex = 4
+        Me.txt_legajoBuscar.TabIndex = 0
         Me.txt_legajoBuscar.validable = False
         '
         'cmb_aeropuerto
@@ -189,7 +189,7 @@ Partial Class ABM_Personal
         Me.cmb_aeropuerto.Name = "cmb_aeropuerto"
         Me.cmb_aeropuerto.nombre_campo = Nothing
         Me.cmb_aeropuerto.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_aeropuerto.TabIndex = 1
+        Me.cmb_aeropuerto.TabIndex = 6
         Me.cmb_aeropuerto.validable = True
         '
         'txt_legajo
@@ -208,7 +208,7 @@ Partial Class ABM_Personal
         Me.txt_fechanacimiento.Name = "txt_fechanacimiento"
         Me.txt_fechanacimiento.nombre_campo = "Fecha Nacimiento"
         Me.txt_fechanacimiento.Size = New System.Drawing.Size(100, 20)
-        Me.txt_fechanacimiento.TabIndex = 0
+        Me.txt_fechanacimiento.TabIndex = 7
         Me.txt_fechanacimiento.validable = True
         Me.txt_fechanacimiento.ValidatingType = GetType(Date)
         '
@@ -219,7 +219,7 @@ Partial Class ABM_Personal
         Me.txt_fechaingreso.Name = "txt_fechaingreso"
         Me.txt_fechaingreso.nombre_campo = "Fecha Ingreso"
         Me.txt_fechaingreso.Size = New System.Drawing.Size(100, 20)
-        Me.txt_fechaingreso.TabIndex = 0
+        Me.txt_fechaingreso.TabIndex = 5
         Me.txt_fechaingreso.validable = True
         Me.txt_fechaingreso.ValidatingType = GetType(Date)
         '
@@ -230,7 +230,7 @@ Partial Class ABM_Personal
         Me.txt_celular.Name = "txt_celular"
         Me.txt_celular.nombre_campo = "Celular"
         Me.txt_celular.Size = New System.Drawing.Size(100, 20)
-        Me.txt_celular.TabIndex = 0
+        Me.txt_celular.TabIndex = 3
         Me.txt_celular.validable = True
         Me.txt_celular.ValidatingType = GetType(Integer)
         '
@@ -241,7 +241,7 @@ Partial Class ABM_Personal
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.nombre_campo = "Nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(100, 20)
-        Me.txt_nombre.TabIndex = 0
+        Me.txt_nombre.TabIndex = 2
         Me.txt_nombre.validable = True
         '
         'txt_apellido
@@ -251,7 +251,7 @@ Partial Class ABM_Personal
         Me.txt_apellido.Name = "txt_apellido"
         Me.txt_apellido.nombre_campo = "Apellido"
         Me.txt_apellido.Size = New System.Drawing.Size(100, 20)
-        Me.txt_apellido.TabIndex = 0
+        Me.txt_apellido.TabIndex = 1
         Me.txt_apellido.validable = True
         '
         'txt_mail
@@ -261,7 +261,7 @@ Partial Class ABM_Personal
         Me.txt_mail.Name = "txt_mail"
         Me.txt_mail.nombre_campo = "Email"
         Me.txt_mail.Size = New System.Drawing.Size(182, 20)
-        Me.txt_mail.TabIndex = 0
+        Me.txt_mail.TabIndex = 4
         Me.txt_mail.validable = True
         '
         'ABM_Personal

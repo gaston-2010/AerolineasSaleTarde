@@ -22,7 +22,7 @@
         BD.consultaABM(sql)
     End Sub
     Public Sub borrar()
-        Dim sql As String = "DELETE FROM PersonalxVuelo WHERE id_aeropuerto= " & _id_aeropuerto & " AND tipo_servicio=" & _tipo_servicio & " AND nombre='" & _nombre & "'"
+        Dim sql As String = "DELETE FROM ServicioxAeropuerto WHERE id_aeropuerto= " & _id_aeropuerto & " AND tipo_servicio=" & _tipo_servicio & " AND nombre='" & _nombre & "'"
         BD.consultaABM(sql)
     End Sub
 

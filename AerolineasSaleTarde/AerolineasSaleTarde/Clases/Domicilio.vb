@@ -26,7 +26,7 @@
     Public Sub modificar()
         Dim sql As String = "UPDATE Domicilio 
         SET dpto = '" & _dpto & "'
-            pais = " & _pais & "
+            ,pais = " & _pais & "
         WHERE calle= '" & _calle & "' AND nroCalle= " & _nroCalle & " 
         AND localidad = " & _localidad & ""
         BD.consultaABM(sql)
