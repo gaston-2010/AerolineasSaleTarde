@@ -170,7 +170,7 @@ Partial Class ABM_ServicioxAeropuerto
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txt_nombreservicio)
         Me.Controls.Add(Me.cmb_tipoServicio)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "ABM_ServicioxAeropuerto"
         Me.Text = "ABM_ServicioxAeropuerto"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()

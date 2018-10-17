@@ -113,13 +113,13 @@
         a.Y = Button5.Location.Y
         a.X = 0
         Panel4.Location = a
-        With ABM_ServicioxAeropuerto
+        With ABM_Aeropuerto
             .Show()
             .MdiParent = Me
             .Dock = DockStyle.Fill
             .BringToFront()
         End With
-        actual = ABM_ServicioxAeropuerto
+        actual = ABM_Aeropuerto
         Panel3.Visible = False
     End Sub
 
@@ -141,5 +141,20 @@
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
         Me.Close()
+    End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        Dim asas As New Venta_Pasajes
+        asas.Show()
+    End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        Dim asas As New Embarque
+        asas.Show()
+    End Sub
+
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+        Dim asas As New ABM_ServicioxAeropuerto
+        asas.Show()
     End Sub
 End Class

@@ -37,9 +37,10 @@ Partial Class Form1
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.Button13 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
@@ -114,7 +115,7 @@ Partial Class Form1
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(182, 68)
         Me.Button5.TabIndex = 5
-        Me.Button5.Text = "Aeropuertos y Servicios"
+        Me.Button5.Text = "Aeropuertos"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Button4
@@ -220,33 +221,15 @@ Partial Class Form1
         '
         'Panel3
         '
-        Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Controls.Add(Me.Label3)
+        Me.Panel3.Controls.Add(Me.Button13)
+        Me.Panel3.Controls.Add(Me.Button12)
+        Me.Panel3.Controls.Add(Me.Button11)
         Me.Panel3.Controls.Add(Me.Button10)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(200, 10)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(644, 508)
         Me.Panel3.TabIndex = 9
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(277, 219)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(79, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "En Construcion"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft YaHei UI", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(250, 169)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(141, 50)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "HOME"
         '
         'Button10
         '
@@ -258,6 +241,33 @@ Partial Class Form1
         Me.Button10.TabIndex = 0
         Me.Button10.Text = "X"
         Me.Button10.UseVisualStyleBackColor = True
+        '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(78, 118)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(158, 73)
+        Me.Button11.TabIndex = 1
+        Me.Button11.Text = "Compra De Pasajes"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(335, 118)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(158, 73)
+        Me.Button12.TabIndex = 1
+        Me.Button12.Text = "Embarque de pasajeros"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
+        'Button13
+        '
+        Me.Button13.Location = New System.Drawing.Point(78, 284)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(158, 73)
+        Me.Button13.TabIndex = 1
+        Me.Button13.Text = "Agregar Servicio a Aeropuerto"
+        Me.Button13.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -278,7 +288,6 @@ Partial Class Form1
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -299,6 +308,7 @@ Partial Class Form1
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Button10 As Button
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents Button13 As Button
+    Friend WithEvents Button12 As Button
+    Friend WithEvents Button11 As Button
 End Class

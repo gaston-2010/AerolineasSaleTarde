@@ -58,7 +58,7 @@
                 End If
                 Dim sql As String = " INSERT INTO Equipajes (Peso, [especial/noespecial]) VALUES ( " & dgv1.Rows(c).Cells(0).Value & ", " & flag & " )"
                 _conex.consultaABM(sql)
-                Dim sql1 As String = "SELECT MAX(nroEquipaje) FROM Equipajes"
+                Dim sql1 As String = "SELECT TOP (1) nroEquipaje from Equipajes order by nroEquipaje DESC"
                 Dim tabla As New DataTable
                 tabla = _conex.consultaATabla(sql1)
                 Dim nro As String = tabla.Rows(0)(0)
@@ -85,7 +85,7 @@
             MsgBox("Ingrese Puerta de Embarque")
             Exit Sub
         End If
-        Me._conex.iniciarTransaccion()
+
         guardarlista()
         Me._Embar.nroDocumento = txt_dni.Text
         Me._Embar.nroVuelo = vuelo
@@ -99,7 +99,7 @@
         Else
             Me._Embar.modificar()
         End If
-        Me._conex.FinTransaccion()
+
     End Sub
 
     Private Sub cmd_nuevo_Click(sender As Object, e As EventArgs) Handles cmd_nuevo.Click
@@ -112,6 +112,10 @@
     End Sub
 
     Private Sub MaskedTextBox1_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
 End Class
