@@ -10,6 +10,7 @@
     Dim _detalle As New Detalle_Embarques
     Dim TE As New tratamientos_especiales
     Dim vuelo As Integer = 0
+    Dim lista(0) As Integer
     Private Sub Embarque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cmb_abordo.Items.Add("Abordo")
         cmb_abordo.Items.Add("Bodega")
@@ -25,27 +26,33 @@
     End Sub
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
-        Dim sql As String = "SELECT v.id_vuelo
+        If txt_dni.Text <> "" Then
+            Dim sql As String = "SELECT v.id_vuelo
         FROM Vuelos v JOIN Pasaje p ON p.idVuelo = v.id_vuelo 
         WHERE YEAR(v.fechaSalida) = YEAR(getdate()) AND MONTH(v.fechaSalida) = MONTH(getdate()) 
         AND DAY(v.fechaSalida) = DAY(getdate()) AND
         p.nroDocumento =" & txt_dni.Text & " AND p.tipoDocumento = " & cmb_Tdni.SelectedValue
-        Dim tabla As New DataTable
-        tabla = _conex.consultaATabla(sql)
-        If tabla.Rows.Count = 0 Then
-            MsgBox("El Pasajero no tiene pasaje para hoy")
+            Dim tabla As New DataTable
+            tabla = _conex.consultaATabla(sql)
+            If tabla.Rows.Count = 0 Then
+                MsgBox("El Pasajero no tiene pasaje para hoy")
+            Else
+                MsgBox("El Pasajero tiene un Pasaje para hoy")
+                vuelo = tabla.Rows(0)(0)
+                txt_dni.Enabled = False
+                cmb_Tdni.Enabled = False
+                btn_embarque.Visible = True
+            End If
         Else
-            MsgBox("El Pasajero tiene un Pasaje para hoy")
-            vuelo = tabla.Rows(0)(0)
-            txt_dni.Enabled = False
-            cmb_Tdni.Enabled = False
-            btn_embarque.Visible = True
+            MsgBox("Ingrese un Documento a buscar")
         End If
+
     End Sub
 
     Private Sub guardarlista()
         Dim c As Integer
         Dim cantidad As Integer = dgv1.Rows.Count - 1
+        ReDim lista(cantidad)
         If cantidad <> 0 Then
 
             For c = 0 To cantidad - 1
@@ -62,16 +69,8 @@
                 Dim tabla As New DataTable
                 tabla = _conex.consultaATabla(sql1)
                 Dim nro As String = tabla.Rows(0)(0)
-                Me._detalle.nroDocumento = txt_dni.Text
-                Me._detalle.nroVuelo = vuelo
-                Me._detalle.tipoDocumento = cmb_Tdni.SelectedValue
-                If dgv1.Rows(c).Cells(2).Value = "Abordo" Then
-                    Me._detalle.abordo_bodega = 1
-                Else
-                    Me._detalle.abordo_bodega = 2
-                End If
-                Me._detalle.nroEquipaje = nro
-                Me._detalle.insertar()
+                lista(c) = nro
+
 
             Next
 
@@ -85,8 +84,10 @@
             MsgBox("Ingrese Puerta de Embarque")
             Exit Sub
         End If
+        Me._conex.iniciarTransaccion()
 
         guardarlista()
+
         Me._Embar.nroDocumento = txt_dni.Text
         Me._Embar.nroVuelo = vuelo
         Me._Embar.PuertaEmbarque = txt_puertaEmbarque.Text
@@ -100,6 +101,12 @@
             Me._Embar.modificar()
         End If
 
+        Me._conex.FinTransaccion()
+        If comprobar("SELECT  nroEquipaje FROM Equipajes WHERE nroEquipaje =  " & lista(0)) = 1 Then
+            creardetalle()
+            dgv1.DataSource = New DataTable
+        End If
+
     End Sub
 
     Private Sub cmd_nuevo_Click(sender As Object, e As EventArgs) Handles cmd_nuevo.Click
@@ -108,7 +115,7 @@
         cmb_Tdni.Enabled = True
         btn_embarque.Visible = False
         vuelo = 0
-
+        dgv1.DataSource = New DataTable
     End Sub
 
     Private Sub MaskedTextBox1_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
@@ -118,4 +125,31 @@
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
+
+    Private Sub creardetalle()
+
+
+        For c = 0 To lista.Count - 2
+            Me._detalle.nroDocumento = txt_dni.Text
+            Me._detalle.nroVuelo = vuelo
+            Me._detalle.tipoDocumento = cmb_Tdni.SelectedValue
+            If dgv1.Rows(c).Cells(2).Value = "Abordo" Then
+                Me._detalle.abordo_bodega = 1
+            Else
+                Me._detalle.abordo_bodega = 2
+            End If
+            Me._detalle.nroEquipaje = lista(c)
+            Me._detalle.insertar()
+        Next
+
+    End Sub
+    Private Function comprobar(sql)
+        Dim tabla As New DataTable
+        tabla = _conex.consultaATabla(sql)
+        If tabla.Rows.Count = 0 Then
+            Return 0
+        Else
+            Return 1
+        End If
+    End Function
 End Class

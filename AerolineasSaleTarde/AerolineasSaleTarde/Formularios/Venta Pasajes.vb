@@ -306,13 +306,14 @@
                 cmb_motivo.Text = tabla.Rows(0)(4)
                 txt_calle.Text = tabla.Rows(0)(5)
                 txt_departamento.Text = tabla.Rows(0)(7)
+                Dim sql1 As String = " SELECT pa.id, pa.nombre FROM Pais pa JOIN Provincia pr ON pr.id_pais = pa.id JOIN Localidad l ON l.id_provincia = pr.id 
+            WHERE l.id =  " & tabla.Rows(0)(8)
+                cmb_Pais.cargar(_conex.consultaATabla(sql1), "id", "nombre")
                 cmb_localidad.cargar(Me._conex.consultaATabla("SELECT nombre,id FROM Localidad WHERE id = " & tabla.Rows(0)(8)) _
                                 , "id", "nombre")
                 cmb_localidad.SelectedValue = tabla.Rows(0)(8)
                 txt_nroCalle.Text = tabla.Rows(0)(6)
-                Dim sql1 As String = " SELECT pa.id, pa.nombre FROM Pais pa JOIN Provincia pr ON pr.id_pais = pa.id JOIN Localidad l ON l.id_provincia = pr.id 
-            WHERE l.id =  " & tabla.Rows(0)(8)
-                cmb_Pais.cargar(_conex.consultaATabla(sql1), "id", "nombre")
+
                 Me.txt_nroDocumento.Enabled = False
                 Me.cmb_tipoDocumento.Enabled = False
                 Me.cmd_Modificar.Visible = True
@@ -320,8 +321,6 @@
             Else
                 MsgBox("El pasajero no esta registrado aun")
             End If
-
-
 
         Else
                 MsgBox("Ingrese el documento a buscar ")

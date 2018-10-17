@@ -8,7 +8,8 @@
 
     Dim _bd As New BD_TRANSACCIONAL
     Public Sub insertar()
-        Dim sql As String = "INSERT INTO  DetalleEmbarques 
+        Dim sql As String = "
+            INSERT INTO  DetalleEmbarques 
            ( nroVuelo 
            ,nroDocumento 
            ,tipoDocumento 

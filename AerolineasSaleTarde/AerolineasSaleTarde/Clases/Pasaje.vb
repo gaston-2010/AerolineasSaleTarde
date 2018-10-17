@@ -27,7 +27,7 @@
     Public Sub modificar()
         Dim sql As String = "UPDATE Pasaje
    SET 
-      ,tipoPasaje = " & _tipoPasaje & "
+      tipoPasaje = " & _tipoPasaje & "
       ,atencion = " & _atencion & "
       ,nroAsiento = " & _nroAsiento & "
       ,claseTurista = " & _claseTurista & "
