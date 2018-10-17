@@ -9,7 +9,7 @@
     Dim _Pasaje As New Pasaje
     Dim _conex As New BD_TRANSACCIONAL
     Dim TE As New tratamientos_especiales
-    Dim modificar As Boolean = False
+    Dim modificar As Boolean = True
 
 
 
@@ -173,7 +173,7 @@
             If nombre = "" Then
                 Exit Sub
             End If
-            Dim Sql As String = "SELECT * FROM Localidad l JOIN Provincia p ON l.id_provincia = p.id where p.id_pais = " & nombre
+            Dim Sql As String = "SELECT l.id,l.nombre FROM Localidad l JOIN Provincia p ON l.id_provincia = p.id where p.id_pais = " & cmb_Pais.SelectedValue
             Me.cmb_localidad.cargar(Me._conex.consultaATabla(Sql), "id", "nombre")
         End If
     End Sub
@@ -258,7 +258,7 @@
             If comprobarasiento() = 0 Then
                 _conex.iniciarTransaccion()
                 transferir(Me)
-                If comprobar("SELECT * FROM Domicilio WHERE calle= " & txt_calle.Text & " 
+                If comprobar("SELECT * FROM Domicilio WHERE calle= '" & txt_calle.Text & "' 
                     AND nroCalle= " & txt_nroCalle.Text & " AND localidad= " & cmb_localidad.SelectedValue) = 1 Then
                     Me._Dom.modificar()
                 Else
@@ -291,12 +291,12 @@
 
 
     Private Sub cmd_Cargar_Click(sender As Object, e As EventArgs) Handles cmd_Cargar.Click
-        If txt_nroDocumento.Text <> "" And cmb_tipoDocumento.SelectedIndex <> -1 Then
+        If txt_nroDocumento.Text <> "" Then
             Dim tabla As New DataTable
-        Dim sql As String = "SELECT p.nombre, p.apellido, p.nacionalidad, p.sexo,p.motivo,p.calle,p.nroCalle,d.dpto,p.id_localidad FROM Pasajero p 
+            Dim sql As String = "SELECT p.nombre, p.apellido, p.nacionalidad, p.sexo,p.motivo,p.calle,p.nroCalle,d.dpto,p.id_localidad FROM Pasajero p 
             JOIN Domicilio d ON d.calle = p.calle AND d.nroCalle = p.nroCalle AND p.id_localidad = d.localidad
          WHERE nroDocumento = " & txt_nroDocumento.Text & " AND tipoDocumento= " & cmb_tipoDocumento.SelectedValue
-        tabla = _conex.consultaATabla(sql)
+            tabla = _conex.consultaATabla(sql)
             If tabla.Rows.Count = 1 Then
                 modificar = True
                 txt_nombre.Text = tabla.Rows(0)(0)
@@ -316,14 +316,20 @@
                 Me.txt_nroDocumento.Enabled = False
                 Me.cmb_tipoDocumento.Enabled = False
                 Me.cmd_Modificar.Visible = True
-
+                modificar = False
             Else
+                MsgBox("El pasajero no esta registrado aun")
+            End If
+
+
+
+        Else
                 MsgBox("Ingrese el documento a buscar ")
                 txt_nroDocumento.Focus()
 
             End If
 
-        End If
+
 
 
     End Sub
