@@ -275,9 +275,11 @@
                     AND tipoDocumento=" & cmb_tipoDocumento.SelectedValue & " AND idVuelo = " & txt_vuelo.Text) = 0 Then
                     Me._Pasaje.insertar()
                 Else
-                    Me._Pasaje.modificar()
+                    If MsgBox("Ya existe un Pasaje vendido para este pasajero en este vuelo, desea modificar? ", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                        Me._Pasaje.modificar()
+                    End If
                 End If
-                _conex.FinTransaccion()
+                    _conex.FinTransaccion()
                 Else
                     MsgBox("El Asiento ya esta ocupado")
             End If
