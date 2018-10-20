@@ -23,40 +23,25 @@ Partial Class Listados
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.rv = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.PasajeroAbordoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSet1 = New AerolineasSaleTarde.DataSet1()
         Me.btn_buscarVuelo = New System.Windows.Forms.Button()
         Me.cmb_origen = New AerolineasSaleTarde.CMB_01()
         Me.cmb_destino = New AerolineasSaleTarde.CMB_01()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        CType(Me.PasajeroAbordoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'rv
         '
-        ReportDataSource2.Name = "DataSet1"
-        ReportDataSource2.Value = Me.PasajeroAbordoBindingSource
-        Me.rv.LocalReport.DataSources.Add(ReportDataSource2)
+        ReportDataSource1.Name = "DataSet1"
+        Me.rv.LocalReport.DataSources.Add(ReportDataSource1)
         Me.rv.LocalReport.ReportEmbeddedResource = "AerolineasSaleTarde.PasajerosAbordo.rdlc"
         Me.rv.Location = New System.Drawing.Point(12, 118)
         Me.rv.Name = "rv"
         Me.rv.ServerReport.BearerToken = Nothing
         Me.rv.Size = New System.Drawing.Size(759, 297)
         Me.rv.TabIndex = 0
-        '
-        'PasajeroAbordoBindingSource
-        '
-        Me.PasajeroAbordoBindingSource.DataMember = "PasajeroAbordo"
-        Me.PasajeroAbordoBindingSource.DataSource = Me.DataSet1
-        '
-        'DataSet1
-        '
-        Me.DataSet1.DataSetName = "DataSet1"
-        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btn_buscarVuelo
         '
@@ -118,16 +103,12 @@ Partial Class Listados
         Me.Controls.Add(Me.rv)
         Me.Name = "Listados"
         Me.Text = "Listados"
-        CType(Me.PasajeroAbordoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents rv As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents PasajeroAbordoBindingSource As BindingSource
-    Friend WithEvents DataSet1 As DataSet1
     Friend WithEvents btn_buscarVuelo As Button
     Friend WithEvents cmb_origen As CMB_01
     Friend WithEvents cmb_destino As CMB_01
