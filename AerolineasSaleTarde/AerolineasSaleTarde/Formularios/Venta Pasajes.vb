@@ -349,4 +349,27 @@
 
     End Sub
 
+    Private Sub fecha_ValueChanged(sender As Object, e As EventArgs) Handles fecha.ValueChanged
+
+    End Sub
+
+    Private Sub cmb_origen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_origen.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub cmb_destino_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_destino.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
+
+    End Sub
+
+    Private Sub Label14_Click(sender As Object, e As EventArgs) Handles Label14.Click
+
+    End Sub
+
+    Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
+
+    End Sub
 End Class

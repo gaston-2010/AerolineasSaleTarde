@@ -795,7 +795,7 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddValijasEmbarcadasRow(ByVal nroEquipaje As String, ByVal peso As String, ByVal __especial_noespecial_ As String, ByVal __abordo_bodega_ As String) As ValijasEmbarcadasRow
+        Public Overloads Function AddValijasEmbarcadasRow(ByVal nroEquipaje As String, ByVal peso As String, ByVal __especial_noespecial_ As Short, ByVal __abordo_bodega_ As Short) As ValijasEmbarcadasRow
             Dim rowValijasEmbarcadasRow As ValijasEmbarcadasRow = CType(Me.NewRow,ValijasEmbarcadasRow)
             Dim columnValuesArray() As Object = New Object() {nroEquipaje, peso, __especial_noespecial_, __abordo_bodega_}
             rowValijasEmbarcadasRow.ItemArray = columnValuesArray
@@ -833,11 +833,11 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnnroEquipaje)
             Me.columnpeso = New Global.System.Data.DataColumn("peso", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnpeso)
-            Me._column_especial_noespecial_ = New Global.System.Data.DataColumn("[especial/noespecial]", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me._column_especial_noespecial_ = New Global.System.Data.DataColumn("[especial/noespecial]", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
             Me._column_especial_noespecial_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column_especial_noespecial_")
             Me._column_especial_noespecial_.ExtendedProperties.Add("Generator_UserColumnName", "[especial/noespecial]")
             MyBase.Columns.Add(Me._column_especial_noespecial_)
-            Me._column_abordo_bodega_ = New Global.System.Data.DataColumn("[abordo/bodega]", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me._column_abordo_bodega_ = New Global.System.Data.DataColumn("[abordo/bodega]", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
             Me._column_abordo_bodega_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column_abordo_bodega_")
             Me._column_abordo_bodega_.ExtendedProperties.Add("Generator_UserColumnName", "[abordo/bodega]")
             MyBase.Columns.Add(Me._column_abordo_bodega_)
@@ -1542,10 +1542,10 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property __especial_noespecial_() As String
+        Public Property __especial_noespecial_() As Short
             Get
                 Try 
-                    Return CType(Me(Me.tableValijasEmbarcadas.__especial_noespecial_Column),String)
+                    Return CType(Me(Me.tableValijasEmbarcadas.__especial_noespecial_Column),Short)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna '[especial/noespecial]' de la tabla 'ValijasEmbarcadas' es"& _ 
                             " DBNull.", e)
@@ -1558,10 +1558,10 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property __abordo_bodega_() As String
+        Public Property __abordo_bodega_() As Short
             Get
                 Try 
-                    Return CType(Me(Me.tableValijasEmbarcadas.__abordo_bodega_Column),String)
+                    Return CType(Me(Me.tableValijasEmbarcadas.__abordo_bodega_Column),Short)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna '[abordo/bodega]' de la tabla 'ValijasEmbarcadas' es DBNul"& _ 
                             "l.", e)

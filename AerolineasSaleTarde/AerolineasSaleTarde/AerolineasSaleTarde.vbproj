@@ -210,10 +210,22 @@
     <Compile Include="Listados\DataSet1.vb">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Listados\Listados.Designer.vb">
-      <DependentUpon>Listados.vb</DependentUpon>
+    <Compile Include="Listados\ListadoEmbarcados.Designer.vb">
+      <DependentUpon>ListadoEmbarcados.vb</DependentUpon>
     </Compile>
-    <Compile Include="Listados\Listados.vb">
+    <Compile Include="Listados\ListadoEmbarcados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\ListadoPasajes.Designer.vb">
+      <DependentUpon>ListadoPasajes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\ListadoPasajes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\ListadoValija.Designer.vb">
+      <DependentUpon>ListadoValija.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\ListadoValija.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -279,10 +291,18 @@
     <EmbeddedResource Include="Formularios\Venta Pasajes.resx">
       <DependentUpon>Venta Pasajes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\Listados.resx">
-      <DependentUpon>Listados.vb</DependentUpon>
+    <EmbeddedResource Include="Listados\ListadoEmbarcados.resx">
+      <DependentUpon>ListadoEmbarcados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\ListadoPasajes.resx">
+      <DependentUpon>ListadoPasajes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\ListadoValija.resx">
+      <DependentUpon>ListadoValija.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Listados\Reportes\PasajerosAbordo.rdlc" />
+    <EmbeddedResource Include="Listados\Reportes\Pasajes.rdlc" />
+    <EmbeddedResource Include="Listados\Reportes\ValijasEmbarcadas.rdlc" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>

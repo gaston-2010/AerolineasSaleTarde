@@ -1,9 +1,8 @@
-﻿Public Class Listados
+﻿Public Class ListadoValija
     Dim _conex As New BD_TRANSACCIONAL
-    Private Sub Listados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub ListadoValija_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
-        Me.rv.RefreshReport()
+        Me.ReportViewer1.RefreshReport()
     End Sub
 
     Private Sub btn_buscarVuelo_Click(sender As Object, e As EventArgs) Handles btn_buscarVuelo.Click
@@ -14,7 +13,8 @@
             If tabla.Rows.Count = 0 Then
                 MsgBox("No hay vuelos disponibles ya embarcados")
             Else
-
+                ValijasEmbarcadasBindingSource.DataSource = tabla
+                ReportViewer1.RefreshReport()
             End If
         Else
             MsgBox("Falta un dato")
