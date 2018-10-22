@@ -47,6 +47,30 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DestinoVendido" msprop:Generator_TableClassName="DestinoVendidoDataTable" msprop:Generator_TableVarName="tableDestinoVendido" msprop:Generator_RowChangedName="DestinoVendidoRowChanged" msprop:Generator_TablePropName="DestinoVendido" msprop:Generator_RowDeletingName="DestinoVendidoRowDeleting" msprop:Generator_RowChangingName="DestinoVendidoRowChanging" msprop:Generator_RowEvHandlerName="DestinoVendidoRowChangeEventHandler" msprop:Generator_RowDeletedName="DestinoVendidoRowDeleted" msprop:Generator_RowClassName="DestinoVendidoRow" msprop:Generator_UserTableName="DestinoVendido" msprop:Generator_RowEvArgName="DestinoVendidoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="destino" msprop:Generator_ColumnVarNameInTable="columndestino" msprop:Generator_ColumnPropNameInRow="destino" msprop:Generator_ColumnPropNameInTable="destinoColumn" msprop:Generator_UserColumnName="destino" type="xs:string" minOccurs="0" />
+              <xs:element name="dato" msprop:Generator_ColumnVarNameInTable="columndato" msprop:Generator_ColumnPropNameInRow="dato" msprop:Generator_ColumnPropNameInTable="datoColumn" msprop:Generator_UserColumnName="dato" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Edad_Pasajero" msprop:Generator_TableClassName="Edad_PasajeroDataTable" msprop:Generator_TableVarName="tableEdad_Pasajero" msprop:Generator_RowChangedName="Edad_PasajeroRowChanged" msprop:Generator_TablePropName="Edad_Pasajero" msprop:Generator_RowDeletingName="Edad_PasajeroRowDeleting" msprop:Generator_RowChangingName="Edad_PasajeroRowChanging" msprop:Generator_RowEvHandlerName="Edad_PasajeroRowChangeEventHandler" msprop:Generator_RowDeletedName="Edad_PasajeroRowDeleted" msprop:Generator_RowClassName="Edad_PasajeroRow" msprop:Generator_UserTableName="Edad_Pasajero" msprop:Generator_RowEvArgName="Edad_PasajeroRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Edad" msprop:Generator_ColumnVarNameInTable="columnEdad" msprop:Generator_ColumnPropNameInRow="Edad" msprop:Generator_ColumnPropNameInTable="EdadColumn" msprop:Generator_UserColumnName="Edad" type="xs:int" minOccurs="0" />
+              <xs:element name="dato" msprop:Generator_ColumnVarNameInTable="columndato" msprop:Generator_ColumnPropNameInRow="dato" msprop:Generator_ColumnPropNameInTable="datoColumn" msprop:Generator_UserColumnName="dato" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TipoAvion" msprop:Generator_TableClassName="TipoAvionDataTable" msprop:Generator_TableVarName="tableTipoAvion" msprop:Generator_RowChangedName="TipoAvionRowChanged" msprop:Generator_TablePropName="TipoAvion" msprop:Generator_RowDeletingName="TipoAvionRowDeleting" msprop:Generator_RowChangingName="TipoAvionRowChanging" msprop:Generator_RowEvHandlerName="TipoAvionRowChangeEventHandler" msprop:Generator_RowDeletedName="TipoAvionRowDeleted" msprop:Generator_RowClassName="TipoAvionRow" msprop:Generator_UserTableName="TipoAvion" msprop:Generator_RowEvArgName="TipoAvionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="dato" msprop:Generator_ColumnVarNameInTable="columndato" msprop:Generator_ColumnPropNameInRow="dato" msprop:Generator_ColumnPropNameInTable="datoColumn" msprop:Generator_UserColumnName="dato" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

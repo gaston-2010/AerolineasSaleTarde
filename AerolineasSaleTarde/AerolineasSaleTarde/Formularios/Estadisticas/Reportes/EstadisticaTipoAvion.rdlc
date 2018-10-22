@@ -2,18 +2,18 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DataSet2">
+    <DataSource Name="DataSet1">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>fd33d3d5-31da-45fb-bba2-549a7135ec2a</rd:DataSourceID>
+      <rd:DataSourceID>953a007a-3953-4a34-bf9f-b23019c70941</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet3">
+    <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>DataSet2</DataSourceName>
+        <DataSourceName>DataSet1</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -23,12 +23,12 @@
         </Field>
         <Field Name="dato">
           <DataField>dato</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DataSet2</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\gasto\source\repos\AerolineasSaleTarde\AerolineasSaleTarde\AerolineasSaleTarde\Formularios\Estadisticas\DataSet2.xsd</rd:SchemaPath>
+        <rd:DataSetName>DataSet1</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\gasto\Documents\AerolineasSaleTarde\AerolineasSaleTarde\AerolineasSaleTarde\Formularios\Listados\DataSet1.xsd</rd:SchemaPath>
         <rd:TableName>TipoAvion</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -199,9 +199,9 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSet3</DataSetName>
-            <Top>1.45204cm</Top>
-            <Left>10.5537cm</Left>
+            <DataSetName>DataSet1</DataSetName>
+            <Top>1.29329cm</Top>
+            <Left>9.25725cm</Left>
             <Height>1.2cm</Height>
             <Width>5cm</Width>
             <Style>
@@ -241,7 +241,7 @@
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Count(Fields!dato.Value)</Y>
+                        <Y>=Sum(Fields!dato.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
@@ -554,9 +554,9 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DataSet3</DataSetName>
-            <Top>1.08162cm</Top>
-            <Left>1.10807cm</Left>
+            <DataSetName>DataSet1</DataSetName>
+            <Top>0.92287cm</Top>
+            <Left>0.97578cm</Left>
             <Height>5cm</Height>
             <Width>7.5cm</Width>
             <ZIndex>1</ZIndex>
