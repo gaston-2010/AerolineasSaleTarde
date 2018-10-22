@@ -20,16 +20,16 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("DataSet2"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("_3"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class DataSet2
+Partial Public Class _3
     Inherits Global.System.Data.DataSet
     
-    Private tableDestinoVendido As DestinoVendidoDataTable
+    Private tableDestinoVen As DestinoVenDataTable
     
-    Private tableEdad_Pasajero As Edad_PasajeroDataTable
+    Private tableEdadPasajero As EdadPasajeroDataTable
     
-    Private tableTipoAvion As TipoAvionDataTable
+    Private tabletAvion As tAvionDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -60,14 +60,14 @@ Partial Public Class DataSet2
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("DestinoVendido")) Is Nothing) Then
-                MyBase.Tables.Add(New DestinoVendidoDataTable(ds.Tables("DestinoVendido")))
+            If (Not (ds.Tables("DestinoVen")) Is Nothing) Then
+                MyBase.Tables.Add(New DestinoVenDataTable(ds.Tables("DestinoVen")))
             End If
-            If (Not (ds.Tables("Edad_Pasajero")) Is Nothing) Then
-                MyBase.Tables.Add(New Edad_PasajeroDataTable(ds.Tables("Edad_Pasajero")))
+            If (Not (ds.Tables("EdadPasajero")) Is Nothing) Then
+                MyBase.Tables.Add(New EdadPasajeroDataTable(ds.Tables("EdadPasajero")))
             End If
-            If (Not (ds.Tables("TipoAvion")) Is Nothing) Then
-                MyBase.Tables.Add(New TipoAvionDataTable(ds.Tables("TipoAvion")))
+            If (Not (ds.Tables("tAvion")) Is Nothing) Then
+                MyBase.Tables.Add(New tAvionDataTable(ds.Tables("tAvion")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -90,9 +90,9 @@ Partial Public Class DataSet2
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property DestinoVendido() As DestinoVendidoDataTable
+    Public ReadOnly Property DestinoVen() As DestinoVenDataTable
         Get
-            Return Me.tableDestinoVendido
+            Return Me.tableDestinoVen
         End Get
     End Property
     
@@ -100,9 +100,9 @@ Partial Public Class DataSet2
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Edad_Pasajero() As Edad_PasajeroDataTable
+    Public ReadOnly Property EdadPasajero() As EdadPasajeroDataTable
         Get
-            Return Me.tableEdad_Pasajero
+            Return Me.tableEdadPasajero
         End Get
     End Property
     
@@ -110,9 +110,9 @@ Partial Public Class DataSet2
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property TipoAvion() As TipoAvionDataTable
+    Public ReadOnly Property tAvion() As tAvionDataTable
         Get
-            Return Me.tableTipoAvion
+            Return Me.tabletAvion
         End Get
     End Property
     
@@ -158,7 +158,7 @@ Partial Public Class DataSet2
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As DataSet2 = CType(MyBase.Clone,DataSet2)
+        Dim cln As _3 = CType(MyBase.Clone,_3)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -183,14 +183,14 @@ Partial Public Class DataSet2
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("DestinoVendido")) Is Nothing) Then
-                MyBase.Tables.Add(New DestinoVendidoDataTable(ds.Tables("DestinoVendido")))
+            If (Not (ds.Tables("DestinoVen")) Is Nothing) Then
+                MyBase.Tables.Add(New DestinoVenDataTable(ds.Tables("DestinoVen")))
             End If
-            If (Not (ds.Tables("Edad_Pasajero")) Is Nothing) Then
-                MyBase.Tables.Add(New Edad_PasajeroDataTable(ds.Tables("Edad_Pasajero")))
+            If (Not (ds.Tables("EdadPasajero")) Is Nothing) Then
+                MyBase.Tables.Add(New EdadPasajeroDataTable(ds.Tables("EdadPasajero")))
             End If
-            If (Not (ds.Tables("TipoAvion")) Is Nothing) Then
-                MyBase.Tables.Add(New TipoAvionDataTable(ds.Tables("TipoAvion")))
+            If (Not (ds.Tables("tAvion")) Is Nothing) Then
+                MyBase.Tables.Add(New tAvionDataTable(ds.Tables("tAvion")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -224,22 +224,22 @@ Partial Public Class DataSet2
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tableDestinoVendido = CType(MyBase.Tables("DestinoVendido"),DestinoVendidoDataTable)
+        Me.tableDestinoVen = CType(MyBase.Tables("DestinoVen"),DestinoVenDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableDestinoVendido) Is Nothing) Then
-                Me.tableDestinoVendido.InitVars
+            If (Not (Me.tableDestinoVen) Is Nothing) Then
+                Me.tableDestinoVen.InitVars
             End If
         End If
-        Me.tableEdad_Pasajero = CType(MyBase.Tables("Edad_Pasajero"),Edad_PasajeroDataTable)
+        Me.tableEdadPasajero = CType(MyBase.Tables("EdadPasajero"),EdadPasajeroDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableEdad_Pasajero) Is Nothing) Then
-                Me.tableEdad_Pasajero.InitVars
+            If (Not (Me.tableEdadPasajero) Is Nothing) Then
+                Me.tableEdadPasajero.InitVars
             End If
         End If
-        Me.tableTipoAvion = CType(MyBase.Tables("TipoAvion"),TipoAvionDataTable)
+        Me.tabletAvion = CType(MyBase.Tables("tAvion"),tAvionDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableTipoAvion) Is Nothing) Then
-                Me.tableTipoAvion.InitVars
+            If (Not (Me.tabletAvion) Is Nothing) Then
+                Me.tabletAvion.InitVars
             End If
         End If
     End Sub
@@ -247,34 +247,34 @@ Partial Public Class DataSet2
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "DataSet2"
+        Me.DataSetName = "3"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/DataSet2.xsd"
+        Me.Namespace = "http://tempuri.org/3.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tableDestinoVendido = New DestinoVendidoDataTable()
-        MyBase.Tables.Add(Me.tableDestinoVendido)
-        Me.tableEdad_Pasajero = New Edad_PasajeroDataTable()
-        MyBase.Tables.Add(Me.tableEdad_Pasajero)
-        Me.tableTipoAvion = New TipoAvionDataTable()
-        MyBase.Tables.Add(Me.tableTipoAvion)
+        Me.tableDestinoVen = New DestinoVenDataTable()
+        MyBase.Tables.Add(Me.tableDestinoVen)
+        Me.tableEdadPasajero = New EdadPasajeroDataTable()
+        MyBase.Tables.Add(Me.tableEdadPasajero)
+        Me.tabletAvion = New tAvionDataTable()
+        MyBase.Tables.Add(Me.tabletAvion)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeDestinoVendido() As Boolean
+    Private Function ShouldSerializeDestinoVen() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeEdad_Pasajero() As Boolean
+    Private Function ShouldSerializeEdadPasajero() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeTipoAvion() As Boolean
+    Private Function ShouldSerializetAvion() As Boolean
         Return false
     End Function
     
@@ -289,7 +289,7 @@ Partial Public Class DataSet2
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As DataSet2 = New DataSet2()
+        Dim ds As _3 = New _3()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -337,21 +337,21 @@ Partial Public Class DataSet2
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub DestinoVendidoRowChangeEventHandler(ByVal sender As Object, ByVal e As DestinoVendidoRowChangeEvent)
+    Public Delegate Sub DestinoVenRowChangeEventHandler(ByVal sender As Object, ByVal e As DestinoVenRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub Edad_PasajeroRowChangeEventHandler(ByVal sender As Object, ByVal e As Edad_PasajeroRowChangeEvent)
+    Public Delegate Sub EdadPasajeroRowChangeEventHandler(ByVal sender As Object, ByVal e As EdadPasajeroRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub TipoAvionRowChangeEventHandler(ByVal sender As Object, ByVal e As TipoAvionRowChangeEvent)
+    Public Delegate Sub tAvionRowChangeEventHandler(ByVal sender As Object, ByVal e As tAvionRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class DestinoVendidoDataTable
-        Inherits Global.System.Data.TypedTableBase(Of DestinoVendidoRow)
+    Partial Public Class DestinoVenDataTable
+        Inherits Global.System.Data.TypedTableBase(Of DestinoVenRow)
         
         Private columndestino As Global.System.Data.DataColumn
         
@@ -361,7 +361,7 @@ Partial Public Class DataSet2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "DestinoVendido"
+            Me.TableName = "DestinoVen"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -419,44 +419,44 @@ Partial Public Class DataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As DestinoVendidoRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As DestinoVenRow
             Get
-                Return CType(Me.Rows(index),DestinoVendidoRow)
+                Return CType(Me.Rows(index),DestinoVenRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event DestinoVendidoRowChanging As DestinoVendidoRowChangeEventHandler
+        Public Event DestinoVenRowChanging As DestinoVenRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event DestinoVendidoRowChanged As DestinoVendidoRowChangeEventHandler
+        Public Event DestinoVenRowChanged As DestinoVenRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event DestinoVendidoRowDeleting As DestinoVendidoRowChangeEventHandler
+        Public Event DestinoVenRowDeleting As DestinoVenRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event DestinoVendidoRowDeleted As DestinoVendidoRowChangeEventHandler
+        Public Event DestinoVenRowDeleted As DestinoVenRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddDestinoVendidoRow(ByVal row As DestinoVendidoRow)
+        Public Overloads Sub AddDestinoVenRow(ByVal row As DestinoVenRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddDestinoVendidoRow(ByVal destino As String, ByVal dato As String) As DestinoVendidoRow
-            Dim rowDestinoVendidoRow As DestinoVendidoRow = CType(Me.NewRow,DestinoVendidoRow)
+        Public Overloads Function AddDestinoVenRow(ByVal destino As String, ByVal dato As String) As DestinoVenRow
+            Dim rowDestinoVenRow As DestinoVenRow = CType(Me.NewRow,DestinoVenRow)
             Dim columnValuesArray() As Object = New Object() {destino, dato}
-            rowDestinoVendidoRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowDestinoVendidoRow)
-            Return rowDestinoVendidoRow
+            rowDestinoVenRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowDestinoVenRow)
+            Return rowDestinoVenRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As DestinoVendidoDataTable = CType(MyBase.Clone,DestinoVendidoDataTable)
+            Dim cln As DestinoVenDataTable = CType(MyBase.Clone,DestinoVenDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -464,7 +464,7 @@ Partial Public Class DataSet2
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New DestinoVendidoDataTable()
+            Return New DestinoVenDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -485,28 +485,28 @@ Partial Public Class DataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewDestinoVendidoRow() As DestinoVendidoRow
-            Return CType(Me.NewRow,DestinoVendidoRow)
+        Public Function NewDestinoVenRow() As DestinoVenRow
+            Return CType(Me.NewRow,DestinoVenRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New DestinoVendidoRow(builder)
+            Return New DestinoVenRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(DestinoVendidoRow)
+            Return GetType(DestinoVenRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.DestinoVendidoRowChangedEvent) Is Nothing) Then
-                RaiseEvent DestinoVendidoRowChanged(Me, New DestinoVendidoRowChangeEvent(CType(e.Row,DestinoVendidoRow), e.Action))
+            If (Not (Me.DestinoVenRowChangedEvent) Is Nothing) Then
+                RaiseEvent DestinoVenRowChanged(Me, New DestinoVenRowChangeEvent(CType(e.Row,DestinoVenRow), e.Action))
             End If
         End Sub
         
@@ -514,8 +514,8 @@ Partial Public Class DataSet2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.DestinoVendidoRowChangingEvent) Is Nothing) Then
-                RaiseEvent DestinoVendidoRowChanging(Me, New DestinoVendidoRowChangeEvent(CType(e.Row,DestinoVendidoRow), e.Action))
+            If (Not (Me.DestinoVenRowChangingEvent) Is Nothing) Then
+                RaiseEvent DestinoVenRowChanging(Me, New DestinoVenRowChangeEvent(CType(e.Row,DestinoVenRow), e.Action))
             End If
         End Sub
         
@@ -523,8 +523,8 @@ Partial Public Class DataSet2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.DestinoVendidoRowDeletedEvent) Is Nothing) Then
-                RaiseEvent DestinoVendidoRowDeleted(Me, New DestinoVendidoRowChangeEvent(CType(e.Row,DestinoVendidoRow), e.Action))
+            If (Not (Me.DestinoVenRowDeletedEvent) Is Nothing) Then
+                RaiseEvent DestinoVenRowDeleted(Me, New DestinoVenRowChangeEvent(CType(e.Row,DestinoVenRow), e.Action))
             End If
         End Sub
         
@@ -532,14 +532,14 @@ Partial Public Class DataSet2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.DestinoVendidoRowDeletingEvent) Is Nothing) Then
-                RaiseEvent DestinoVendidoRowDeleting(Me, New DestinoVendidoRowChangeEvent(CType(e.Row,DestinoVendidoRow), e.Action))
+            If (Not (Me.DestinoVenRowDeletingEvent) Is Nothing) Then
+                RaiseEvent DestinoVenRowDeleting(Me, New DestinoVenRowChangeEvent(CType(e.Row,DestinoVenRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveDestinoVendidoRow(ByVal row As DestinoVendidoRow)
+        Public Sub RemoveDestinoVenRow(ByVal row As DestinoVenRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -548,7 +548,7 @@ Partial Public Class DataSet2
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DataSet2 = New DataSet2()
+            Dim ds As _3 = New _3()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -566,7 +566,7 @@ Partial Public Class DataSet2
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "DestinoVendidoDataTable"
+            attribute2.FixedValue = "DestinoVenDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -615,10 +615,10 @@ Partial Public Class DataSet2
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class Edad_PasajeroDataTable
-        Inherits Global.System.Data.TypedTableBase(Of Edad_PasajeroRow)
+    Partial Public Class EdadPasajeroDataTable
+        Inherits Global.System.Data.TypedTableBase(Of EdadPasajeroRow)
         
-        Private columnEdad As Global.System.Data.DataColumn
+        Private columnedad As Global.System.Data.DataColumn
         
         Private columndato As Global.System.Data.DataColumn
         
@@ -626,7 +626,7 @@ Partial Public Class DataSet2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "Edad_Pasajero"
+            Me.TableName = "EdadPasajero"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -659,9 +659,9 @@ Partial Public Class DataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property EdadColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property edadColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnEdad
+                Return Me.columnedad
             End Get
         End Property
         
@@ -684,44 +684,44 @@ Partial Public Class DataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As Edad_PasajeroRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As EdadPasajeroRow
             Get
-                Return CType(Me.Rows(index),Edad_PasajeroRow)
+                Return CType(Me.Rows(index),EdadPasajeroRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event Edad_PasajeroRowChanging As Edad_PasajeroRowChangeEventHandler
+        Public Event EdadPasajeroRowChanging As EdadPasajeroRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event Edad_PasajeroRowChanged As Edad_PasajeroRowChangeEventHandler
+        Public Event EdadPasajeroRowChanged As EdadPasajeroRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event Edad_PasajeroRowDeleting As Edad_PasajeroRowChangeEventHandler
+        Public Event EdadPasajeroRowDeleting As EdadPasajeroRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event Edad_PasajeroRowDeleted As Edad_PasajeroRowChangeEventHandler
+        Public Event EdadPasajeroRowDeleted As EdadPasajeroRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddEdad_PasajeroRow(ByVal row As Edad_PasajeroRow)
+        Public Overloads Sub AddEdadPasajeroRow(ByVal row As EdadPasajeroRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddEdad_PasajeroRow(ByVal Edad As Integer, ByVal dato As String) As Edad_PasajeroRow
-            Dim rowEdad_PasajeroRow As Edad_PasajeroRow = CType(Me.NewRow,Edad_PasajeroRow)
-            Dim columnValuesArray() As Object = New Object() {Edad, dato}
-            rowEdad_PasajeroRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowEdad_PasajeroRow)
-            Return rowEdad_PasajeroRow
+        Public Overloads Function AddEdadPasajeroRow(ByVal edad As String, ByVal dato As String) As EdadPasajeroRow
+            Dim rowEdadPasajeroRow As EdadPasajeroRow = CType(Me.NewRow,EdadPasajeroRow)
+            Dim columnValuesArray() As Object = New Object() {edad, dato}
+            rowEdadPasajeroRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowEdadPasajeroRow)
+            Return rowEdadPasajeroRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As Edad_PasajeroDataTable = CType(MyBase.Clone,Edad_PasajeroDataTable)
+            Dim cln As EdadPasajeroDataTable = CType(MyBase.Clone,EdadPasajeroDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -729,49 +729,49 @@ Partial Public Class DataSet2
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New Edad_PasajeroDataTable()
+            Return New EdadPasajeroDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnEdad = MyBase.Columns("Edad")
+            Me.columnedad = MyBase.Columns("edad")
             Me.columndato = MyBase.Columns("dato")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnEdad = New Global.System.Data.DataColumn("Edad", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnEdad)
+            Me.columnedad = New Global.System.Data.DataColumn("edad", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnedad)
             Me.columndato = New Global.System.Data.DataColumn("dato", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndato)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewEdad_PasajeroRow() As Edad_PasajeroRow
-            Return CType(Me.NewRow,Edad_PasajeroRow)
+        Public Function NewEdadPasajeroRow() As EdadPasajeroRow
+            Return CType(Me.NewRow,EdadPasajeroRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New Edad_PasajeroRow(builder)
+            Return New EdadPasajeroRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(Edad_PasajeroRow)
+            Return GetType(EdadPasajeroRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.Edad_PasajeroRowChangedEvent) Is Nothing) Then
-                RaiseEvent Edad_PasajeroRowChanged(Me, New Edad_PasajeroRowChangeEvent(CType(e.Row,Edad_PasajeroRow), e.Action))
+            If (Not (Me.EdadPasajeroRowChangedEvent) Is Nothing) Then
+                RaiseEvent EdadPasajeroRowChanged(Me, New EdadPasajeroRowChangeEvent(CType(e.Row,EdadPasajeroRow), e.Action))
             End If
         End Sub
         
@@ -779,8 +779,8 @@ Partial Public Class DataSet2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.Edad_PasajeroRowChangingEvent) Is Nothing) Then
-                RaiseEvent Edad_PasajeroRowChanging(Me, New Edad_PasajeroRowChangeEvent(CType(e.Row,Edad_PasajeroRow), e.Action))
+            If (Not (Me.EdadPasajeroRowChangingEvent) Is Nothing) Then
+                RaiseEvent EdadPasajeroRowChanging(Me, New EdadPasajeroRowChangeEvent(CType(e.Row,EdadPasajeroRow), e.Action))
             End If
         End Sub
         
@@ -788,8 +788,8 @@ Partial Public Class DataSet2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.Edad_PasajeroRowDeletedEvent) Is Nothing) Then
-                RaiseEvent Edad_PasajeroRowDeleted(Me, New Edad_PasajeroRowChangeEvent(CType(e.Row,Edad_PasajeroRow), e.Action))
+            If (Not (Me.EdadPasajeroRowDeletedEvent) Is Nothing) Then
+                RaiseEvent EdadPasajeroRowDeleted(Me, New EdadPasajeroRowChangeEvent(CType(e.Row,EdadPasajeroRow), e.Action))
             End If
         End Sub
         
@@ -797,14 +797,14 @@ Partial Public Class DataSet2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.Edad_PasajeroRowDeletingEvent) Is Nothing) Then
-                RaiseEvent Edad_PasajeroRowDeleting(Me, New Edad_PasajeroRowChangeEvent(CType(e.Row,Edad_PasajeroRow), e.Action))
+            If (Not (Me.EdadPasajeroRowDeletingEvent) Is Nothing) Then
+                RaiseEvent EdadPasajeroRowDeleting(Me, New EdadPasajeroRowChangeEvent(CType(e.Row,EdadPasajeroRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveEdad_PasajeroRow(ByVal row As Edad_PasajeroRow)
+        Public Sub RemoveEdadPasajeroRow(ByVal row As EdadPasajeroRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -813,7 +813,7 @@ Partial Public Class DataSet2
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DataSet2 = New DataSet2()
+            Dim ds As _3 = New _3()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -831,7 +831,7 @@ Partial Public Class DataSet2
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "Edad_PasajeroDataTable"
+            attribute2.FixedValue = "EdadPasajeroDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -880,8 +880,8 @@ Partial Public Class DataSet2
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class TipoAvionDataTable
-        Inherits Global.System.Data.TypedTableBase(Of TipoAvionRow)
+    Partial Public Class tAvionDataTable
+        Inherits Global.System.Data.TypedTableBase(Of tAvionRow)
         
         Private columnnombre As Global.System.Data.DataColumn
         
@@ -891,7 +891,7 @@ Partial Public Class DataSet2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "TipoAvion"
+            Me.TableName = "tAvion"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -949,44 +949,44 @@ Partial Public Class DataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As TipoAvionRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As tAvionRow
             Get
-                Return CType(Me.Rows(index),TipoAvionRow)
+                Return CType(Me.Rows(index),tAvionRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event TipoAvionRowChanging As TipoAvionRowChangeEventHandler
+        Public Event tAvionRowChanging As tAvionRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event TipoAvionRowChanged As TipoAvionRowChangeEventHandler
+        Public Event tAvionRowChanged As tAvionRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event TipoAvionRowDeleting As TipoAvionRowChangeEventHandler
+        Public Event tAvionRowDeleting As tAvionRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event TipoAvionRowDeleted As TipoAvionRowChangeEventHandler
+        Public Event tAvionRowDeleted As tAvionRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddTipoAvionRow(ByVal row As TipoAvionRow)
+        Public Overloads Sub AddtAvionRow(ByVal row As tAvionRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddTipoAvionRow(ByVal nombre As String, ByVal dato As String) As TipoAvionRow
-            Dim rowTipoAvionRow As TipoAvionRow = CType(Me.NewRow,TipoAvionRow)
+        Public Overloads Function AddtAvionRow(ByVal nombre As String, ByVal dato As String) As tAvionRow
+            Dim rowtAvionRow As tAvionRow = CType(Me.NewRow,tAvionRow)
             Dim columnValuesArray() As Object = New Object() {nombre, dato}
-            rowTipoAvionRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowTipoAvionRow)
-            Return rowTipoAvionRow
+            rowtAvionRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowtAvionRow)
+            Return rowtAvionRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As TipoAvionDataTable = CType(MyBase.Clone,TipoAvionDataTable)
+            Dim cln As tAvionDataTable = CType(MyBase.Clone,tAvionDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -994,7 +994,7 @@ Partial Public Class DataSet2
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New TipoAvionDataTable()
+            Return New tAvionDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1015,28 +1015,28 @@ Partial Public Class DataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewTipoAvionRow() As TipoAvionRow
-            Return CType(Me.NewRow,TipoAvionRow)
+        Public Function NewtAvionRow() As tAvionRow
+            Return CType(Me.NewRow,tAvionRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New TipoAvionRow(builder)
+            Return New tAvionRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(TipoAvionRow)
+            Return GetType(tAvionRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.TipoAvionRowChangedEvent) Is Nothing) Then
-                RaiseEvent TipoAvionRowChanged(Me, New TipoAvionRowChangeEvent(CType(e.Row,TipoAvionRow), e.Action))
+            If (Not (Me.tAvionRowChangedEvent) Is Nothing) Then
+                RaiseEvent tAvionRowChanged(Me, New tAvionRowChangeEvent(CType(e.Row,tAvionRow), e.Action))
             End If
         End Sub
         
@@ -1044,8 +1044,8 @@ Partial Public Class DataSet2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.TipoAvionRowChangingEvent) Is Nothing) Then
-                RaiseEvent TipoAvionRowChanging(Me, New TipoAvionRowChangeEvent(CType(e.Row,TipoAvionRow), e.Action))
+            If (Not (Me.tAvionRowChangingEvent) Is Nothing) Then
+                RaiseEvent tAvionRowChanging(Me, New tAvionRowChangeEvent(CType(e.Row,tAvionRow), e.Action))
             End If
         End Sub
         
@@ -1053,8 +1053,8 @@ Partial Public Class DataSet2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.TipoAvionRowDeletedEvent) Is Nothing) Then
-                RaiseEvent TipoAvionRowDeleted(Me, New TipoAvionRowChangeEvent(CType(e.Row,TipoAvionRow), e.Action))
+            If (Not (Me.tAvionRowDeletedEvent) Is Nothing) Then
+                RaiseEvent tAvionRowDeleted(Me, New tAvionRowChangeEvent(CType(e.Row,tAvionRow), e.Action))
             End If
         End Sub
         
@@ -1062,14 +1062,14 @@ Partial Public Class DataSet2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.TipoAvionRowDeletingEvent) Is Nothing) Then
-                RaiseEvent TipoAvionRowDeleting(Me, New TipoAvionRowChangeEvent(CType(e.Row,TipoAvionRow), e.Action))
+            If (Not (Me.tAvionRowDeletingEvent) Is Nothing) Then
+                RaiseEvent tAvionRowDeleting(Me, New tAvionRowChangeEvent(CType(e.Row,tAvionRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveTipoAvionRow(ByVal row As TipoAvionRow)
+        Public Sub RemovetAvionRow(ByVal row As tAvionRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -1078,7 +1078,7 @@ Partial Public Class DataSet2
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DataSet2 = New DataSet2()
+            Dim ds As _3 = New _3()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1096,7 +1096,7 @@ Partial Public Class DataSet2
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "TipoAvionDataTable"
+            attribute2.FixedValue = "tAvionDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1143,16 +1143,16 @@ Partial Public Class DataSet2
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class DestinoVendidoRow
+    Partial Public Class DestinoVenRow
         Inherits Global.System.Data.DataRow
         
-        Private tableDestinoVendido As DestinoVendidoDataTable
+        Private tableDestinoVen As DestinoVenDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableDestinoVendido = CType(Me.Table,DestinoVendidoDataTable)
+            Me.tableDestinoVen = CType(Me.Table,DestinoVenDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1160,13 +1160,13 @@ Partial Public Class DataSet2
         Public Property destino() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableDestinoVendido.destinoColumn),String)
+                    Return CType(Me(Me.tableDestinoVen.destinoColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'destino' de la tabla 'DestinoVendido' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'destino' de la tabla 'DestinoVen' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableDestinoVendido.destinoColumn) = value
+                Me(Me.tableDestinoVen.destinoColumn) = value
             End Set
         End Property
         
@@ -1175,68 +1175,68 @@ Partial Public Class DataSet2
         Public Property dato() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableDestinoVendido.datoColumn),String)
+                    Return CType(Me(Me.tableDestinoVen.datoColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'dato' de la tabla 'DestinoVendido' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'dato' de la tabla 'DestinoVen' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableDestinoVendido.datoColumn) = value
+                Me(Me.tableDestinoVen.datoColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsdestinoNull() As Boolean
-            Return Me.IsNull(Me.tableDestinoVendido.destinoColumn)
+            Return Me.IsNull(Me.tableDestinoVen.destinoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetdestinoNull()
-            Me(Me.tableDestinoVendido.destinoColumn) = Global.System.Convert.DBNull
+            Me(Me.tableDestinoVen.destinoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsdatoNull() As Boolean
-            Return Me.IsNull(Me.tableDestinoVendido.datoColumn)
+            Return Me.IsNull(Me.tableDestinoVen.datoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetdatoNull()
-            Me(Me.tableDestinoVendido.datoColumn) = Global.System.Convert.DBNull
+            Me(Me.tableDestinoVen.datoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class Edad_PasajeroRow
+    Partial Public Class EdadPasajeroRow
         Inherits Global.System.Data.DataRow
         
-        Private tableEdad_Pasajero As Edad_PasajeroDataTable
+        Private tableEdadPasajero As EdadPasajeroDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableEdad_Pasajero = CType(Me.Table,Edad_PasajeroDataTable)
+            Me.tableEdadPasajero = CType(Me.Table,EdadPasajeroDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Edad() As Integer
+        Public Property edad() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableEdad_Pasajero.EdadColumn),Integer)
+                    Return CType(Me(Me.tableEdadPasajero.edadColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Edad' de la tabla 'Edad_Pasajero' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'edad' de la tabla 'EdadPasajero' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableEdad_Pasajero.EdadColumn) = value
+                Me(Me.tableEdadPasajero.edadColumn) = value
             End Set
         End Property
         
@@ -1245,54 +1245,54 @@ Partial Public Class DataSet2
         Public Property dato() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableEdad_Pasajero.datoColumn),String)
+                    Return CType(Me(Me.tableEdadPasajero.datoColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'dato' de la tabla 'Edad_Pasajero' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'dato' de la tabla 'EdadPasajero' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableEdad_Pasajero.datoColumn) = value
+                Me(Me.tableEdadPasajero.datoColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsEdadNull() As Boolean
-            Return Me.IsNull(Me.tableEdad_Pasajero.EdadColumn)
+        Public Function IsedadNull() As Boolean
+            Return Me.IsNull(Me.tableEdadPasajero.edadColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetEdadNull()
-            Me(Me.tableEdad_Pasajero.EdadColumn) = Global.System.Convert.DBNull
+        Public Sub SetedadNull()
+            Me(Me.tableEdadPasajero.edadColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsdatoNull() As Boolean
-            Return Me.IsNull(Me.tableEdad_Pasajero.datoColumn)
+            Return Me.IsNull(Me.tableEdadPasajero.datoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetdatoNull()
-            Me(Me.tableEdad_Pasajero.datoColumn) = Global.System.Convert.DBNull
+            Me(Me.tableEdadPasajero.datoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class TipoAvionRow
+    Partial Public Class tAvionRow
         Inherits Global.System.Data.DataRow
         
-        Private tableTipoAvion As TipoAvionDataTable
+        Private tabletAvion As tAvionDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableTipoAvion = CType(Me.Table,TipoAvionDataTable)
+            Me.tabletAvion = CType(Me.Table,tAvionDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1300,13 +1300,13 @@ Partial Public Class DataSet2
         Public Property nombre() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableTipoAvion.nombreColumn),String)
+                    Return CType(Me(Me.tabletAvion.nombreColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'nombre' de la tabla 'TipoAvion' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'nombre' de la tabla 'tAvion' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableTipoAvion.nombreColumn) = value
+                Me(Me.tabletAvion.nombreColumn) = value
             End Set
         End Property
         
@@ -1315,38 +1315,38 @@ Partial Public Class DataSet2
         Public Property dato() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableTipoAvion.datoColumn),String)
+                    Return CType(Me(Me.tabletAvion.datoColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'dato' de la tabla 'TipoAvion' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'dato' de la tabla 'tAvion' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableTipoAvion.datoColumn) = value
+                Me(Me.tabletAvion.datoColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsnombreNull() As Boolean
-            Return Me.IsNull(Me.tableTipoAvion.nombreColumn)
+            Return Me.IsNull(Me.tabletAvion.nombreColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetnombreNull()
-            Me(Me.tableTipoAvion.nombreColumn) = Global.System.Convert.DBNull
+            Me(Me.tabletAvion.nombreColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsdatoNull() As Boolean
-            Return Me.IsNull(Me.tableTipoAvion.datoColumn)
+            Return Me.IsNull(Me.tabletAvion.datoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetdatoNull()
-            Me(Me.tableTipoAvion.datoColumn) = Global.System.Convert.DBNull
+            Me(Me.tabletAvion.datoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1354,16 +1354,16 @@ Partial Public Class DataSet2
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class DestinoVendidoRowChangeEvent
+    Public Class DestinoVenRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As DestinoVendidoRow
+        Private eventRow As DestinoVenRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As DestinoVendidoRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As DestinoVenRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -1371,7 +1371,7 @@ Partial Public Class DataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As DestinoVendidoRow
+        Public ReadOnly Property Row() As DestinoVenRow
             Get
                 Return Me.eventRow
             End Get
@@ -1390,16 +1390,16 @@ Partial Public Class DataSet2
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class Edad_PasajeroRowChangeEvent
+    Public Class EdadPasajeroRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As Edad_PasajeroRow
+        Private eventRow As EdadPasajeroRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As Edad_PasajeroRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As EdadPasajeroRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -1407,7 +1407,7 @@ Partial Public Class DataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As Edad_PasajeroRow
+        Public ReadOnly Property Row() As EdadPasajeroRow
             Get
                 Return Me.eventRow
             End Get
@@ -1426,16 +1426,16 @@ Partial Public Class DataSet2
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class TipoAvionRowChangeEvent
+    Public Class tAvionRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As TipoAvionRow
+        Private eventRow As tAvionRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As TipoAvionRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As tAvionRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -1443,7 +1443,7 @@ Partial Public Class DataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As TipoAvionRow
+        Public ReadOnly Property Row() As tAvionRow
             Get
                 Return Me.eventRow
             End Get

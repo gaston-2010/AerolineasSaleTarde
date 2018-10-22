@@ -174,6 +174,23 @@
     <Compile Include="Formularios\Estadisticas\DataSet2.vb">
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Estadisticas\Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estadisticas\Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\TEst\3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\TEst\Form3.Designer.vb">
+      <DependentUpon>Form3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\TEst\Form3.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Transacciones\ABM ServicioxAeropuerto.Designer.vb">
       <DependentUpon>ABM ServicioxAeropuerto.vb</DependentUpon>
     </Compile>
@@ -275,9 +292,16 @@
     <EmbeddedResource Include="Formularios\ABM\ABM PersonalxVuelo.resx">
       <DependentUpon>ABM PersonalxVuelo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estadisticas\Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Estadisticas\Reportes\EstadisticaDestinos.rdlc" />
     <EmbeddedResource Include="Formularios\Estadisticas\Reportes\EstadisticaEdad.rdlc" />
     <EmbeddedResource Include="Formularios\Estadisticas\Reportes\EstadisticaTipoAvion.rdlc" />
+    <EmbeddedResource Include="Formularios\TEst\Form3.resx">
+      <DependentUpon>Form3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\TEst\Report1.rdlc" />
     <EmbeddedResource Include="Formularios\Transacciones\ABM ServicioxAeropuerto.resx">
       <DependentUpon>ABM ServicioxAeropuerto.vb</DependentUpon>
     </EmbeddedResource>
@@ -343,6 +367,17 @@
     </None>
     <None Include="Formularios\Listados\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Formularios\TEst\3.xsc">
+      <DependentUpon>3.xsd</DependentUpon>
+    </None>
+    <None Include="Formularios\TEst\3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>3.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Formularios\TEst\3.xss">
+      <DependentUpon>3.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
