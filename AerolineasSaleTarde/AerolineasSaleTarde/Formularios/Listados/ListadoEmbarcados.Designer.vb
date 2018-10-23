@@ -24,17 +24,27 @@ Partial Class ListadoEmbarcados
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.PersonasEmbarcadasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet1 = New AerolineasSaleTarde.DataSet1()
         Me.btn_buscarVuelo = New System.Windows.Forms.Button()
-        Me.cmb_origen = New AerolineasSaleTarde.CMB_01()
-        Me.cmb_destino = New AerolineasSaleTarde.CMB_01()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DataSet1 = New AerolineasSaleTarde.DataSet1()
-        Me.PersonasEmbarcadasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.cmb_origen = New AerolineasSaleTarde.CMB_01()
+        Me.cmb_destino = New AerolineasSaleTarde.CMB_01()
         CType(Me.PersonasEmbarcadasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'PersonasEmbarcadasBindingSource
+        '
+        Me.PersonasEmbarcadasBindingSource.DataMember = "PersonasEmbarcadas"
+        Me.PersonasEmbarcadasBindingSource.DataSource = Me.DataSet1
+        '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btn_buscarVuelo
         '
@@ -44,26 +54,6 @@ Partial Class ListadoEmbarcados
         Me.btn_buscarVuelo.TabIndex = 29
         Me.btn_buscarVuelo.Text = "Buscar"
         Me.btn_buscarVuelo.UseVisualStyleBackColor = True
-        '
-        'cmb_origen
-        '
-        Me.cmb_origen.FormattingEnabled = True
-        Me.cmb_origen.Location = New System.Drawing.Point(80, 27)
-        Me.cmb_origen.Name = "cmb_origen"
-        Me.cmb_origen.nombre_campo = Nothing
-        Me.cmb_origen.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_origen.TabIndex = 28
-        Me.cmb_origen.validable = True
-        '
-        'cmb_destino
-        '
-        Me.cmb_destino.FormattingEnabled = True
-        Me.cmb_destino.Location = New System.Drawing.Point(266, 27)
-        Me.cmb_destino.Name = "cmb_destino"
-        Me.cmb_destino.nombre_campo = Nothing
-        Me.cmb_destino.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_destino.TabIndex = 27
-        Me.cmb_destino.validable = True
         '
         'Label14
         '
@@ -95,15 +85,25 @@ Partial Class ListadoEmbarcados
         Me.ReportViewer1.Size = New System.Drawing.Size(749, 373)
         Me.ReportViewer1.TabIndex = 30
         '
-        'DataSet1
+        'cmb_origen
         '
-        Me.DataSet1.DataSetName = "DataSet1"
-        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.cmb_origen.FormattingEnabled = True
+        Me.cmb_origen.Location = New System.Drawing.Point(80, 27)
+        Me.cmb_origen.Name = "cmb_origen"
+        Me.cmb_origen.nombre_campo = Nothing
+        Me.cmb_origen.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_origen.TabIndex = 28
+        Me.cmb_origen.validable = True
         '
-        'PersonasEmbarcadasBindingSource
+        'cmb_destino
         '
-        Me.PersonasEmbarcadasBindingSource.DataMember = "PersonasEmbarcadas"
-        Me.PersonasEmbarcadasBindingSource.DataSource = Me.DataSet1
+        Me.cmb_destino.FormattingEnabled = True
+        Me.cmb_destino.Location = New System.Drawing.Point(266, 27)
+        Me.cmb_destino.Name = "cmb_destino"
+        Me.cmb_destino.nombre_campo = Nothing
+        Me.cmb_destino.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_destino.TabIndex = 27
+        Me.cmb_destino.validable = True
         '
         'ListadoEmbarcados
         '
@@ -118,8 +118,8 @@ Partial Class ListadoEmbarcados
         Me.Controls.Add(Me.Label13)
         Me.Name = "ListadoEmbarcados"
         Me.Text = "ListadoEmbarcados"
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PersonasEmbarcadasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -20,7 +20,9 @@
         Me.cmb_aeropuertoOrigen.cargar(Me._conex.consultaATabla("SELECT * FROM Aeropuertos a1
             join Aeropuertos a2 on a1.id =a2.id") _
                             , "id", "nombre")
-        Me.TE.blanquear_objetos(Me)
+
+        cmb_aeropuertoDestino.SelectedIndex = -1
+        cmb_aeropuertoOrigen.SelectedIndex = -1
         cmd_borrar.BackColor = Color.Chocolate
         cmd_buscar.BackColor = Color.Chocolate
         cmd_grabar.BackColor = Color.Chocolate
@@ -187,20 +189,20 @@
         Return nombre
     End Function
 
-    Private Sub cmb_aeropuertoDestino_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_aeropuertoDestino.SelectedIndexChanged
-        'Me.cmb_aeropuertoOrigen.SelectedIndex = -1
-        Dim numero As Object = cmb_aeropuertoDestino.SelectedValue
-        If (TypeOf numero Is DataRowView) Then
-            Exit Sub
-        End If
-        Dim nombre As String = Convert.ToString(numero)
-        If nombre = "" Then
-            Exit Sub
-        End If
-        Dim Sql As String = "SELECT * FROM Aeropuertos a1 join Aeropuertos a2 on a1.id=a2.id where not a2.id= " & nombre
-        Me.cmb_aeropuertoOrigen.cargar(Me._conex.consultaATabla(Sql), "id", "nombre")
+    'Private Sub cmb_aeropuertoDestino_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_aeropuertoDestino.SelectedIndexChanged
+    '    'Me.cmb_aeropuertoOrigen.SelectedIndex = -1
+    '    Dim numero As Object = cmb_aeropuertoDestino.SelectedValue
+    '    If (TypeOf numero Is DataRowView) Then
+    '        Exit Sub
+    '    End If
+    '    Dim nombre As String = Convert.ToString(numero)
+    '    If nombre = "" Then
+    '        Exit Sub
+    '    End If
+    '    Dim Sql As String = "SELECT * FROM Aeropuertos a1 join Aeropuertos a2 on a1.id=a2.id where not a2.id= " & nombre
+    '    Me.cmb_aeropuertoOrigen.cargar(Me._conex.consultaATabla(Sql), "id", "nombre")
 
-    End Sub
+    'End Sub
 
     Private Sub cmb_aeropuertoOrigen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_aeropuertoOrigen.SelectedIndexChanged
         'Me.cmb_aeropuertoDestino.SelectedIndex = -1
@@ -213,7 +215,7 @@
             Exit Sub
         End If
         Dim Sql As String = "SELECT * FROM Aeropuertos a1 join Aeropuertos a2 on a1.id=a2.id where not a2.id= " & nombre
-        Me.cmb_aeropuertoOrigen.cargar(Me._conex.consultaATabla(Sql), "id", "nombre")
+        Me.cmb_aeropuertoDestino.cargar(Me._conex.consultaATabla(Sql), "id", "nombre")
     End Sub
 
     Private Function comprobarfechas()
