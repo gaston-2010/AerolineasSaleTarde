@@ -274,7 +274,7 @@ Partial Class ABM_Vuelos
         Me.txt_fechaSalida.Name = "txt_fechaSalida"
         Me.txt_fechaSalida.Size = New System.Drawing.Size(112, 20)
         Me.txt_fechaSalida.TabIndex = 3
-        Me.txt_fechaSalida.Value = New Date(2018, 10, 12, 0, 0, 0, 0)
+        Me.txt_fechaSalida.Value = New Date(2018, 10, 22, 0, 0, 0, 0)
         '
         'txt_fechaLlegada
         '

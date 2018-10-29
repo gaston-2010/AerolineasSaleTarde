@@ -209,21 +209,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="IDespecialnoespecial">
+                    <Textbox Name="tipo">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields![especial/noespecial].Value</Value>
+                              <Value>=Fields!tipo.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>IDespecialnoespecial</rd:DefaultName>
+                      <rd:DefaultName>tipo</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -239,21 +239,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="IDabordobodega">
+                    <Textbox Name="posicion">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields![abordo/bodega].Value</Value>
+                              <Value>=Fields!posicion.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>IDabordobodega</rd:DefaultName>
+                      <rd:DefaultName>posicion</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -265,6 +265,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -422,18 +423,18 @@
           <DataField>peso</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="[especial/noespecial]">
-          <DataField>[especial/noespecial]</DataField>
+        <Field Name="tipo">
+          <DataField>tipo</DataField>
           <rd:TypeName>System.Int16</rd:TypeName>
         </Field>
-        <Field Name="[abordo/bodega]">
-          <DataField>[abordo/bodega]</DataField>
+        <Field Name="posicion">
+          <DataField>posicion</DataField>
           <rd:TypeName>System.Int16</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\gasto\Source\Repos\AerolineasSaleTarde\AerolineasSaleTarde\AerolineasSaleTarde\Listados\DataSet1.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Maxi Albert\Source\Repos\AerolineasSaleTarde\AerolineasSaleTarde\AerolineasSaleTarde\Formularios\Listados\DataSet1.xsd</rd:SchemaPath>
         <rd:TableName>ValijasEmbarcadas</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

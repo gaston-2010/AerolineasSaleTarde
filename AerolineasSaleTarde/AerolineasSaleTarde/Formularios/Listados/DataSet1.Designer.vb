@@ -458,19 +458,19 @@ Partial Public Class DataSet1
     Partial Public Class PersonasEmbarcadasDataTable
         Inherits Global.System.Data.TypedTableBase(Of PersonasEmbarcadasRow)
         
-        Private columnnro_docuemnto As Global.System.Data.DataColumn
+        Private columnnroDocumento As Global.System.Data.DataColumn
         
-        Private columntipoDocuemento As Global.System.Data.DataColumn
+        Private columntipoDocumento As Global.System.Data.DataColumn
         
         Private columnnacionalidad As Global.System.Data.DataColumn
         
         Private columnnombre As Global.System.Data.DataColumn
         
-        Private columnapellideo As Global.System.Data.DataColumn
+        Private columnapellido As Global.System.Data.DataColumn
         
         Private columnsexo As Global.System.Data.DataColumn
         
-        Private columnlocalidad As Global.System.Data.DataColumn
+        Private columnid_localidad As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -509,17 +509,17 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property nro_docuemntoColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property nroDocumentoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnnro_docuemnto
+                Return Me.columnnroDocumento
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property tipoDocuementoColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property tipoDocumentoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columntipoDocuemento
+                Return Me.columntipoDocumento
             End Get
         End Property
         
@@ -541,9 +541,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property apellideoColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property apellidoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnapellideo
+                Return Me.columnapellido
             End Get
         End Property
         
@@ -557,9 +557,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property localidadColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property id_localidadColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnlocalidad
+                Return Me.columnid_localidad
             End Get
         End Property
         
@@ -600,9 +600,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddPersonasEmbarcadasRow(ByVal nro_docuemnto As Integer, ByVal tipoDocuemento As String, ByVal nacionalidad As String, ByVal nombre As String, ByVal apellideo As String, ByVal sexo As String, ByVal localidad As String) As PersonasEmbarcadasRow
+        Public Overloads Function AddPersonasEmbarcadasRow(ByVal nroDocumento As Integer, ByVal tipoDocumento As String, ByVal nacionalidad As String, ByVal nombre As String, ByVal apellido As String, ByVal sexo As String, ByVal id_localidad As String) As PersonasEmbarcadasRow
             Dim rowPersonasEmbarcadasRow As PersonasEmbarcadasRow = CType(Me.NewRow,PersonasEmbarcadasRow)
-            Dim columnValuesArray() As Object = New Object() {nro_docuemnto, tipoDocuemento, nacionalidad, nombre, apellideo, sexo, localidad}
+            Dim columnValuesArray() As Object = New Object() {nroDocumento, tipoDocumento, nacionalidad, nombre, apellido, sexo, id_localidad}
             rowPersonasEmbarcadasRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowPersonasEmbarcadasRow)
             Return rowPersonasEmbarcadasRow
@@ -625,32 +625,32 @@ Partial Public Class DataSet1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnnro_docuemnto = MyBase.Columns("nro_docuemnto")
-            Me.columntipoDocuemento = MyBase.Columns("tipoDocuemento")
+            Me.columnnroDocumento = MyBase.Columns("nroDocumento")
+            Me.columntipoDocumento = MyBase.Columns("tipoDocumento")
             Me.columnnacionalidad = MyBase.Columns("nacionalidad")
             Me.columnnombre = MyBase.Columns("nombre")
-            Me.columnapellideo = MyBase.Columns("apellideo")
+            Me.columnapellido = MyBase.Columns("apellido")
             Me.columnsexo = MyBase.Columns("sexo")
-            Me.columnlocalidad = MyBase.Columns("localidad")
+            Me.columnid_localidad = MyBase.Columns("id_localidad")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnnro_docuemnto = New Global.System.Data.DataColumn("nro_docuemnto", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnnro_docuemnto)
-            Me.columntipoDocuemento = New Global.System.Data.DataColumn("tipoDocuemento", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columntipoDocuemento)
+            Me.columnnroDocumento = New Global.System.Data.DataColumn("nroDocumento", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnroDocumento)
+            Me.columntipoDocumento = New Global.System.Data.DataColumn("tipoDocumento", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntipoDocumento)
             Me.columnnacionalidad = New Global.System.Data.DataColumn("nacionalidad", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnacionalidad)
             Me.columnnombre = New Global.System.Data.DataColumn("nombre", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnombre)
-            Me.columnapellideo = New Global.System.Data.DataColumn("apellideo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnapellideo)
+            Me.columnapellido = New Global.System.Data.DataColumn("apellido", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnapellido)
             Me.columnsexo = New Global.System.Data.DataColumn("sexo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnsexo)
-            Me.columnlocalidad = New Global.System.Data.DataColumn("localidad", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnlocalidad)
+            Me.columnid_localidad = New Global.System.Data.DataColumn("id_localidad", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid_localidad)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -792,9 +792,9 @@ Partial Public Class DataSet1
         
         Private columnpeso As Global.System.Data.DataColumn
         
-        Private _column_especial_noespecial_ As Global.System.Data.DataColumn
+        Private columntipo As Global.System.Data.DataColumn
         
-        Private _column_abordo_bodega_ As Global.System.Data.DataColumn
+        Private columnposicion As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -849,17 +849,17 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property __especial_noespecial_Column() As Global.System.Data.DataColumn
+        Public ReadOnly Property tipoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me._column_especial_noespecial_
+                Return Me.columntipo
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property __abordo_bodega_Column() As Global.System.Data.DataColumn
+        Public ReadOnly Property posicionColumn() As Global.System.Data.DataColumn
             Get
-                Return Me._column_abordo_bodega_
+                Return Me.columnposicion
             End Get
         End Property
         
@@ -900,9 +900,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddValijasEmbarcadasRow(ByVal nroEquipaje As String, ByVal peso As String, ByVal __especial_noespecial_ As Short, ByVal __abordo_bodega_ As Short) As ValijasEmbarcadasRow
+        Public Overloads Function AddValijasEmbarcadasRow(ByVal nroEquipaje As String, ByVal peso As String, ByVal tipo As Short, ByVal posicion As Short) As ValijasEmbarcadasRow
             Dim rowValijasEmbarcadasRow As ValijasEmbarcadasRow = CType(Me.NewRow,ValijasEmbarcadasRow)
-            Dim columnValuesArray() As Object = New Object() {nroEquipaje, peso, __especial_noespecial_, __abordo_bodega_}
+            Dim columnValuesArray() As Object = New Object() {nroEquipaje, peso, tipo, posicion}
             rowValijasEmbarcadasRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowValijasEmbarcadasRow)
             Return rowValijasEmbarcadasRow
@@ -927,8 +927,8 @@ Partial Public Class DataSet1
         Friend Sub InitVars()
             Me.columnnroEquipaje = MyBase.Columns("nroEquipaje")
             Me.columnpeso = MyBase.Columns("peso")
-            Me._column_especial_noespecial_ = MyBase.Columns("[especial/noespecial]")
-            Me._column_abordo_bodega_ = MyBase.Columns("[abordo/bodega]")
+            Me.columntipo = MyBase.Columns("tipo")
+            Me.columnposicion = MyBase.Columns("posicion")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -938,14 +938,10 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnnroEquipaje)
             Me.columnpeso = New Global.System.Data.DataColumn("peso", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnpeso)
-            Me._column_especial_noespecial_ = New Global.System.Data.DataColumn("[especial/noespecial]", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
-            Me._column_especial_noespecial_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column_especial_noespecial_")
-            Me._column_especial_noespecial_.ExtendedProperties.Add("Generator_UserColumnName", "[especial/noespecial]")
-            MyBase.Columns.Add(Me._column_especial_noespecial_)
-            Me._column_abordo_bodega_ = New Global.System.Data.DataColumn("[abordo/bodega]", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
-            Me._column_abordo_bodega_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column_abordo_bodega_")
-            Me._column_abordo_bodega_.ExtendedProperties.Add("Generator_UserColumnName", "[abordo/bodega]")
-            MyBase.Columns.Add(Me._column_abordo_bodega_)
+            Me.columntipo = New Global.System.Data.DataColumn("tipo", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntipo)
+            Me.columnposicion = New Global.System.Data.DataColumn("posicion", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnposicion)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2204,33 +2200,33 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property nro_docuemnto() As Integer
+        Public Property nroDocumento() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablePersonasEmbarcadas.nro_docuemntoColumn),Integer)
+                    Return CType(Me(Me.tablePersonasEmbarcadas.nroDocumentoColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'nro_docuemnto' de la tabla 'PersonasEmbarcadas' es DBNull"& _ 
-                            ".", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'nroDocumento' de la tabla 'PersonasEmbarcadas' es DBNull."& _ 
+                            "", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePersonasEmbarcadas.nro_docuemntoColumn) = value
+                Me(Me.tablePersonasEmbarcadas.nroDocumentoColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property tipoDocuemento() As String
+        Public Property tipoDocumento() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablePersonasEmbarcadas.tipoDocuementoColumn),String)
+                    Return CType(Me(Me.tablePersonasEmbarcadas.tipoDocumentoColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'tipoDocuemento' de la tabla 'PersonasEmbarcadas' es DBNul"& _ 
-                            "l.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'tipoDocumento' de la tabla 'PersonasEmbarcadas' es DBNull"& _ 
+                            ".", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePersonasEmbarcadas.tipoDocuementoColumn) = value
+                Me(Me.tablePersonasEmbarcadas.tipoDocumentoColumn) = value
             End Set
         End Property
         
@@ -2267,16 +2263,16 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property apellideo() As String
+        Public Property apellido() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablePersonasEmbarcadas.apellideoColumn),String)
+                    Return CType(Me(Me.tablePersonasEmbarcadas.apellidoColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'apellideo' de la tabla 'PersonasEmbarcadas' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'apellido' de la tabla 'PersonasEmbarcadas' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePersonasEmbarcadas.apellideoColumn) = value
+                Me(Me.tablePersonasEmbarcadas.apellidoColumn) = value
             End Set
         End Property
         
@@ -2297,41 +2293,42 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property localidad() As String
+        Public Property id_localidad() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablePersonasEmbarcadas.localidadColumn),String)
+                    Return CType(Me(Me.tablePersonasEmbarcadas.id_localidadColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'localidad' de la tabla 'PersonasEmbarcadas' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'id_localidad' de la tabla 'PersonasEmbarcadas' es DBNull."& _ 
+                            "", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePersonasEmbarcadas.localidadColumn) = value
+                Me(Me.tablePersonasEmbarcadas.id_localidadColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function Isnro_docuemntoNull() As Boolean
-            Return Me.IsNull(Me.tablePersonasEmbarcadas.nro_docuemntoColumn)
+        Public Function IsnroDocumentoNull() As Boolean
+            Return Me.IsNull(Me.tablePersonasEmbarcadas.nroDocumentoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub Setnro_docuemntoNull()
-            Me(Me.tablePersonasEmbarcadas.nro_docuemntoColumn) = Global.System.Convert.DBNull
+        Public Sub SetnroDocumentoNull()
+            Me(Me.tablePersonasEmbarcadas.nroDocumentoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IstipoDocuementoNull() As Boolean
-            Return Me.IsNull(Me.tablePersonasEmbarcadas.tipoDocuementoColumn)
+        Public Function IstipoDocumentoNull() As Boolean
+            Return Me.IsNull(Me.tablePersonasEmbarcadas.tipoDocumentoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SettipoDocuementoNull()
-            Me(Me.tablePersonasEmbarcadas.tipoDocuementoColumn) = Global.System.Convert.DBNull
+        Public Sub SettipoDocumentoNull()
+            Me(Me.tablePersonasEmbarcadas.tipoDocumentoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2360,14 +2357,14 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsapellideoNull() As Boolean
-            Return Me.IsNull(Me.tablePersonasEmbarcadas.apellideoColumn)
+        Public Function IsapellidoNull() As Boolean
+            Return Me.IsNull(Me.tablePersonasEmbarcadas.apellidoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetapellideoNull()
-            Me(Me.tablePersonasEmbarcadas.apellideoColumn) = Global.System.Convert.DBNull
+        Public Sub SetapellidoNull()
+            Me(Me.tablePersonasEmbarcadas.apellidoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2384,14 +2381,14 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IslocalidadNull() As Boolean
-            Return Me.IsNull(Me.tablePersonasEmbarcadas.localidadColumn)
+        Public Function Isid_localidadNull() As Boolean
+            Return Me.IsNull(Me.tablePersonasEmbarcadas.id_localidadColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetlocalidadNull()
-            Me(Me.tablePersonasEmbarcadas.localidadColumn) = Global.System.Convert.DBNull
+        Public Sub Setid_localidadNull()
+            Me(Me.tablePersonasEmbarcadas.id_localidadColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -2442,33 +2439,31 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property __especial_noespecial_() As Short
+        Public Property tipo() As Short
             Get
                 Try 
-                    Return CType(Me(Me.tableValijasEmbarcadas.__especial_noespecial_Column),Short)
+                    Return CType(Me(Me.tableValijasEmbarcadas.tipoColumn),Short)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna '[especial/noespecial]' de la tabla 'ValijasEmbarcadas' es"& _ 
-                            " DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'tipo' de la tabla 'ValijasEmbarcadas' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableValijasEmbarcadas.__especial_noespecial_Column) = value
+                Me(Me.tableValijasEmbarcadas.tipoColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property __abordo_bodega_() As Short
+        Public Property posicion() As Short
             Get
                 Try 
-                    Return CType(Me(Me.tableValijasEmbarcadas.__abordo_bodega_Column),Short)
+                    Return CType(Me(Me.tableValijasEmbarcadas.posicionColumn),Short)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna '[abordo/bodega]' de la tabla 'ValijasEmbarcadas' es DBNul"& _ 
-                            "l.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'posicion' de la tabla 'ValijasEmbarcadas' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableValijasEmbarcadas.__abordo_bodega_Column) = value
+                Me(Me.tableValijasEmbarcadas.posicionColumn) = value
             End Set
         End Property
         
@@ -2498,26 +2493,26 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function Is__especial_noespecial_Null() As Boolean
-            Return Me.IsNull(Me.tableValijasEmbarcadas.__especial_noespecial_Column)
+        Public Function IstipoNull() As Boolean
+            Return Me.IsNull(Me.tableValijasEmbarcadas.tipoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub Set__especial_noespecial_Null()
-            Me(Me.tableValijasEmbarcadas.__especial_noespecial_Column) = Global.System.Convert.DBNull
+        Public Sub SettipoNull()
+            Me(Me.tableValijasEmbarcadas.tipoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function Is__abordo_bodega_Null() As Boolean
-            Return Me.IsNull(Me.tableValijasEmbarcadas.__abordo_bodega_Column)
+        Public Function IsposicionNull() As Boolean
+            Return Me.IsNull(Me.tableValijasEmbarcadas.posicionColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub Set__abordo_bodega_Null()
-            Me(Me.tableValijasEmbarcadas.__abordo_bodega_Column) = Global.System.Convert.DBNull
+        Public Sub SetposicionNull()
+            Me(Me.tableValijasEmbarcadas.posicionColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

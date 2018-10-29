@@ -23,22 +23,32 @@ Partial Class ListadoPasajes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.PasajePorClaseBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet1 = New AerolineasSaleTarde.DataSet1()
         Me.fecha = New System.Windows.Forms.DateTimePicker()
         Me.btn_buscarVuelo = New System.Windows.Forms.Button()
-        Me.cmb_origen = New AerolineasSaleTarde.CMB_01()
-        Me.cmb_destino = New AerolineasSaleTarde.CMB_01()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DataSet1 = New AerolineasSaleTarde.DataSet1()
-        Me.PasajePorClaseBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CmB_011 = New AerolineasSaleTarde.CMB_01()
         Me.Label1 = New System.Windows.Forms.Label()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CmB_011 = New AerolineasSaleTarde.CMB_01()
+        Me.cmb_origen = New AerolineasSaleTarde.CMB_01()
+        Me.cmb_destino = New AerolineasSaleTarde.CMB_01()
         CType(Me.PasajePorClaseBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'PasajePorClaseBindingSource
+        '
+        Me.PasajePorClaseBindingSource.DataMember = "PasajePorClase"
+        Me.PasajePorClaseBindingSource.DataSource = Me.DataSet1
+        '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'fecha
         '
@@ -56,26 +66,6 @@ Partial Class ListadoPasajes
         Me.btn_buscarVuelo.TabIndex = 11
         Me.btn_buscarVuelo.Text = "Buscar"
         Me.btn_buscarVuelo.UseVisualStyleBackColor = True
-        '
-        'cmb_origen
-        '
-        Me.cmb_origen.FormattingEnabled = True
-        Me.cmb_origen.Location = New System.Drawing.Point(89, 25)
-        Me.cmb_origen.Name = "cmb_origen"
-        Me.cmb_origen.nombre_campo = Nothing
-        Me.cmb_origen.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_origen.TabIndex = 6
-        Me.cmb_origen.validable = True
-        '
-        'cmb_destino
-        '
-        Me.cmb_destino.FormattingEnabled = True
-        Me.cmb_destino.Location = New System.Drawing.Point(275, 25)
-        Me.cmb_destino.Name = "cmb_destino"
-        Me.cmb_destino.nombre_campo = Nothing
-        Me.cmb_destino.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_destino.TabIndex = 8
-        Me.cmb_destino.validable = True
         '
         'Label15
         '
@@ -108,36 +98,15 @@ Partial Class ListadoPasajes
         '
         'ReportViewer1
         '
-        ReportDataSource2.Name = "DataSet1"
-        ReportDataSource2.Value = Me.PasajePorClaseBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.PasajePorClaseBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AerolineasSaleTarde.Pasajes.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(22, 105)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
         Me.ReportViewer1.Size = New System.Drawing.Size(717, 310)
         Me.ReportViewer1.TabIndex = 13
-        '
-        'DataSet1
-        '
-        Me.DataSet1.DataSetName = "DataSet1"
-        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PasajePorClaseBindingSource
-        '
-        Me.PasajePorClaseBindingSource.DataMember = "PasajePorClase"
-        Me.PasajePorClaseBindingSource.DataSource = Me.DataSet1
-        '
-        'CmB_011
-        '
-        Me.CmB_011.FormattingEnabled = True
-        Me.CmB_011.Items.AddRange(New Object() {"Primera Clase", "ClaseTurista"})
-        Me.CmB_011.Location = New System.Drawing.Point(89, 64)
-        Me.CmB_011.Name = "CmB_011"
-        Me.CmB_011.nombre_campo = Nothing
-        Me.CmB_011.Size = New System.Drawing.Size(121, 21)
-        Me.CmB_011.TabIndex = 14
-        Me.CmB_011.validable = True
         '
         'Label1
         '
@@ -147,6 +116,37 @@ Partial Class ListadoPasajes
         Me.Label1.Size = New System.Drawing.Size(33, 13)
         Me.Label1.TabIndex = 15
         Me.Label1.Text = "Clase"
+        '
+        'CmB_011
+        '
+        Me.CmB_011.FormattingEnabled = True
+        Me.CmB_011.Items.AddRange(New Object() {"Primera Clase", "Clase Turista"})
+        Me.CmB_011.Location = New System.Drawing.Point(89, 64)
+        Me.CmB_011.Name = "CmB_011"
+        Me.CmB_011.nombre_campo = Nothing
+        Me.CmB_011.Size = New System.Drawing.Size(121, 21)
+        Me.CmB_011.TabIndex = 14
+        Me.CmB_011.validable = True
+        '
+        'cmb_origen
+        '
+        Me.cmb_origen.FormattingEnabled = True
+        Me.cmb_origen.Location = New System.Drawing.Point(89, 25)
+        Me.cmb_origen.Name = "cmb_origen"
+        Me.cmb_origen.nombre_campo = Nothing
+        Me.cmb_origen.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_origen.TabIndex = 6
+        Me.cmb_origen.validable = True
+        '
+        'cmb_destino
+        '
+        Me.cmb_destino.FormattingEnabled = True
+        Me.cmb_destino.Location = New System.Drawing.Point(275, 25)
+        Me.cmb_destino.Name = "cmb_destino"
+        Me.cmb_destino.nombre_campo = Nothing
+        Me.cmb_destino.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_destino.TabIndex = 8
+        Me.cmb_destino.validable = True
         '
         'ListadoPasajes
         '
@@ -165,8 +165,8 @@ Partial Class ListadoPasajes
         Me.Controls.Add(Me.Label13)
         Me.Name = "ListadoPasajes"
         Me.Text = "ListadoPasajes"
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PasajePorClaseBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
