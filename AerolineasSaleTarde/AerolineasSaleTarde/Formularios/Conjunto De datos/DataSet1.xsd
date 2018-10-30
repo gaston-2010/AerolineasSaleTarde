@@ -3,8 +3,30 @@
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-        <Connections />
-        <Tables />
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConexionAerolineas" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConexionAerolineas (MySettings)" PropertyReference="ApplicationSettings.AerolineasSaleTarde.My.MySettings.GlobalReference.Default.ConexionAerolineas" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TipoAvion1TableAdapter" GeneratorDataComponentClassName="TipoAvion1TableAdapter" Name="TipoAvion1" UserDataComponentName="TipoAvion1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConexionAerolineas (MySettings)" DbObjectName="Aerolineas.dbo.TipoAvion" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        nombre, COUNT(nombre) AS dato
+FROM            TipoAvion
+GROUP BY nombre</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="dato" DataSetColumn="dato" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
@@ -55,10 +77,10 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Edad_Pasajero" msprop:Generator_TableClassName="Edad_PasajeroDataTable" msprop:Generator_TableVarName="tableEdad_Pasajero" msprop:Generator_RowChangedName="Edad_PasajeroRowChanged" msprop:Generator_TablePropName="Edad_Pasajero" msprop:Generator_RowDeletingName="Edad_PasajeroRowDeleting" msprop:Generator_RowChangingName="Edad_PasajeroRowChanging" msprop:Generator_RowEvHandlerName="Edad_PasajeroRowChangeEventHandler" msprop:Generator_RowDeletedName="Edad_PasajeroRowDeleted" msprop:Generator_RowClassName="Edad_PasajeroRow" msprop:Generator_UserTableName="Edad_Pasajero" msprop:Generator_RowEvArgName="Edad_PasajeroRowChangeEvent">
+        <xs:element name="Sexo_Pasajero" msprop:Generator_TableClassName="Sexo_PasajeroDataTable" msprop:Generator_TableVarName="tableSexo_Pasajero" msprop:Generator_RowChangedName="Sexo_PasajeroRowChanged" msprop:Generator_TablePropName="Sexo_Pasajero" msprop:Generator_RowDeletingName="Sexo_PasajeroRowDeleting" msprop:Generator_RowChangingName="Sexo_PasajeroRowChanging" msprop:Generator_RowEvHandlerName="Sexo_PasajeroRowChangeEventHandler" msprop:Generator_RowDeletedName="Sexo_PasajeroRowDeleted" msprop:Generator_RowClassName="Sexo_PasajeroRow" msprop:Generator_UserTableName="Sexo_Pasajero" msprop:Generator_RowEvArgName="Sexo_PasajeroRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Edad" msprop:Generator_ColumnVarNameInTable="columnEdad" msprop:Generator_ColumnPropNameInRow="Edad" msprop:Generator_ColumnPropNameInTable="EdadColumn" msprop:Generator_UserColumnName="Edad" type="xs:int" minOccurs="0" />
+              <xs:element name="sexo" msprop:Generator_ColumnVarNameInTable="columnsexo" msprop:Generator_ColumnPropNameInRow="sexo" msprop:Generator_ColumnPropNameInTable="sexoColumn" msprop:Generator_UserColumnName="sexo" type="xs:string" minOccurs="0" />
               <xs:element name="dato" msprop:Generator_ColumnVarNameInTable="columndato" msprop:Generator_ColumnPropNameInRow="dato" msprop:Generator_ColumnPropNameInTable="datoColumn" msprop:Generator_UserColumnName="dato" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
@@ -68,6 +90,20 @@
             <xs:sequence>
               <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
               <xs:element name="dato" msprop:Generator_ColumnVarNameInTable="columndato" msprop:Generator_ColumnPropNameInRow="dato" msprop:Generator_ColumnPropNameInTable="datoColumn" msprop:Generator_UserColumnName="dato" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TipoAvion1" msprop:Generator_TableClassName="TipoAvion1DataTable" msprop:Generator_TableVarName="tableTipoAvion1" msprop:Generator_TablePropName="TipoAvion1" msprop:Generator_RowDeletingName="TipoAvion1RowDeleting" msprop:Generator_RowChangingName="TipoAvion1RowChanging" msprop:Generator_RowEvHandlerName="TipoAvion1RowChangeEventHandler" msprop:Generator_RowDeletedName="TipoAvion1RowDeleted" msprop:Generator_UserTableName="TipoAvion1" msprop:Generator_RowChangedName="TipoAvion1RowChanged" msprop:Generator_RowEvArgName="TipoAvion1RowChangeEvent" msprop:Generator_RowClassName="TipoAvion1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dato" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndato" msprop:Generator_ColumnPropNameInRow="dato" msprop:Generator_ColumnPropNameInTable="datoColumn" msprop:Generator_UserColumnName="dato" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

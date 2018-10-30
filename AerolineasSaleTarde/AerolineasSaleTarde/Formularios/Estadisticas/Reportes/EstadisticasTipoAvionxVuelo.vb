@@ -4,6 +4,7 @@
     Private Sub EstadisticasTipoAvionxVuelo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Me.ReportViewer1.RefreshReport()
+        Me.ReportViewer1.RefreshReport()
     End Sub
 
     Private Sub btn_Mostrar_Click(sender As Object, e As EventArgs) Handles btn_Mostrar.Click
