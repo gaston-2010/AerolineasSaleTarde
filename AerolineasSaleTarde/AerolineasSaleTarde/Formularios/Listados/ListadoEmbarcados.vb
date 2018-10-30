@@ -10,9 +10,9 @@
 
     Private Sub btn_buscarVuelo_Click(sender As Object, e As EventArgs) Handles btn_buscarVuelo.Click
         If cmb_origen.SelectedIndex <> -1 And cmb_destino.SelectedIndex <> -1 Then
-            Dim sql As String = " SELECT *
-            FROM Pasajero pa JOIN pasaje p ON p.nroDocumento = pa.nroDocumento AND p.tipoDocumento = pa.tipoDocumento JOIN vuelos v
-               ON v.id_vuelo = p.idVuelo
+            Dim sql As String = " SELECT pa.nroDocumento, pa.tipoDocumento , pa.nacionalidad, pa.nombre , pa.apellido, pa.sexo, lo.nombre as localidad
+            FROM Pasajero pa JOIN Embarque p ON p.nroDocumento = pa.nroDocumento AND p.tipoDocumento = pa.tipoDocumento JOIN vuelos v
+               ON v.id_vuelo = p.nroVuelo join localidad lo on pa.id_localidad = lo.id
         where v.idAereopuertoDestino = " & cmb_destino.SelectedValue & " and v.idAereopuertoOrigen = " & cmb_origen.SelectedValue & "
                 and CONVERT (date, GETDATE()) = v.fechaSalida "
             Dim tabla As New DataTable

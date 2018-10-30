@@ -18,7 +18,7 @@
             Else
                 If CmB_011.Text = "Primera Clase" Then
                     sql = "Select * from Pasaje p join Pasajero pa ON p.nroDocumento = pa.nroDocumento AND p.tipoDocumento = pa.tipoDocumento   
-                where idVuelo = " & tabla.Rows(0).Item(0) & " and claseTurista = 1"
+                where idVuelo = " & tabla.Rows(0).Item(0) & " and claseTurista = 0"
                 ElseIf CmB_011.Text = "Clase Turista" Then
                     sql = "Select * from Pasaje p join Pasajero pa ON p.nroDocumento = pa.nroDocumento AND p.tipoDocumento = pa.tipoDocumento   
                 where idVuelo = " & tabla.Rows(0).Item(0) & " and claseTurista = 1"

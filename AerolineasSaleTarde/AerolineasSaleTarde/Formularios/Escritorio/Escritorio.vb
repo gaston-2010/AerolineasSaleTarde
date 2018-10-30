@@ -144,17 +144,20 @@
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
-        Dim asas As New Venta_Pasajes
+        Dim asas As New ListadoEmbarcados
+
         asas.Show()
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
-        Dim asas As New Embarque
+        Dim asas As New ListadoPasajes
+
         asas.Show()
     End Sub
 
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
-        Dim asas As New ABM_ServicioxAeropuerto
+        Dim asas As New ListadoValija
+
         asas.Show()
     End Sub
 End Class
