@@ -279,9 +279,7 @@
     <EmbeddedResource Include="Formularios\ABM\ABM PersonalxVuelo.resx">
       <DependentUpon>ABM PersonalxVuelo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Estadisticas\Reportes\EstadisticaDestinos.rdlc" />
     <EmbeddedResource Include="Formularios\Estadisticas\Reportes\Estadisticadestinovendidos.rdlc" />
-    <EmbeddedResource Include="Formularios\Estadisticas\Reportes\EstadisticaEdad.rdlc" />
     <EmbeddedResource Include="Formularios\Estadisticas\Reportes\EstadisticasDestino.resx">
       <DependentUpon>EstadisticasDestino.vb</DependentUpon>
     </EmbeddedResource>

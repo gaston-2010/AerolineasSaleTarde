@@ -18,10 +18,16 @@
             DestinoVendidoBindingSource.DataSource = _conex.leo_tabla(sql)
             ReportViewer1.RefreshReport()
         Else
-            Dim sql1 As String = "select top " & txt_cantidad.Text & " l.nombre as 'destino', count(l.id) as 'dato' from Pasaje p join vuelos v on v.id_vuelo = p.idVuelo 
+            If IsNumeric(txt_cantidad.Text) Then
+
+
+                Dim sql1 As String = "select top " & txt_cantidad.Text & " l.nombre as 'destino', count(l.id) as 'dato' from Pasaje p join vuelos v on v.id_vuelo = p.idVuelo 
               join Aeropuertos a on a.id=v.idAereopuertoDestino join localidad l on l.id=a.id_Localidad group by l.nombre order by count(l.id) DESC"
-            DestinoVendidoBindingSource.DataSource = _conex.leo_tabla(sql1)
-            ReportViewer1.RefreshReport()
+                DestinoVendidoBindingSource.DataSource = _conex.leo_tabla(sql1)
+                ReportViewer1.RefreshReport()
+            Else
+                MsgBox("Ingrese Solamente un numero")
+            End If
         End If
 
         ReportViewer1.Refresh()

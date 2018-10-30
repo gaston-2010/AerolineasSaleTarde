@@ -23,38 +23,28 @@ Partial Class EstadisticasTipoAvionxVuelo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DataSet1 = New AerolineasSaleTarde.DataSet1()
-        Me.TipoAvionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.btn_Mostrar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_cantidad = New AerolineasSaleTarde.MTB_01()
+        Me.DataSet1 = New AerolineasSaleTarde.DataSet1()
+        Me.TipoAvionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TipoAvionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ReportViewer1
         '
-        ReportDataSource2.Name = "TipoAvion"
-        ReportDataSource2.Value = Me.TipoAvionBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.TipoAvionBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AerolineasSaleTarde.EstadisticaTipoAvion.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(25, 87)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
         Me.ReportViewer1.Size = New System.Drawing.Size(724, 246)
         Me.ReportViewer1.TabIndex = 0
-        '
-        'DataSet1
-        '
-        Me.DataSet1.DataSetName = "DataSet1"
-        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TipoAvionBindingSource
-        '
-        Me.TipoAvionBindingSource.DataMember = "TipoAvion"
-        Me.TipoAvionBindingSource.DataSource = Me.DataSet1
         '
         'btn_Mostrar
         '
@@ -83,6 +73,16 @@ Partial Class EstadisticasTipoAvionxVuelo
         Me.txt_cantidad.TabIndex = 4
         Me.txt_cantidad.validable = True
         '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TipoAvionBindingSource
+        '
+        Me.TipoAvionBindingSource.DataMember = "TipoAvion"
+        Me.TipoAvionBindingSource.DataSource = Me.DataSet1
+        '
         'EstadisticasTipoAvionxVuelo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -102,9 +102,9 @@ Partial Class EstadisticasTipoAvionxVuelo
     End Sub
 
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents TipoAvionBindingSource As BindingSource
-    Friend WithEvents DataSet1 As DataSet1
     Friend WithEvents btn_Mostrar As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents txt_cantidad As MTB_01
+    Friend WithEvents TipoAvionBindingSource As BindingSource
+    Friend WithEvents DataSet1 As DataSet1
 End Class

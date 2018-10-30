@@ -14,10 +14,16 @@
             TipoAvionBindingSource.DataSource = _conex.leo_tabla(sql)
             ReportViewer1.RefreshReport()
         Else
-            Dim sql1 As String = "select top " & txt_cantidad.Text & " t.nombre,COUNT(t.nombre) as 'dato' from TipoAvion t join Aviones a on a.idTipoAvion = t.id_tipoAvion 
+            If IsNumeric(txt_cantidad.Text) Then
+                Dim sql1 As String = "select top " & txt_cantidad.Text & " t.nombre,COUNT(t.nombre) as 'dato' from TipoAvion t join Aviones a on a.idTipoAvion = t.id_tipoAvion 
                 join Vuelos v on v.id_avion = a.id group by t.nombre order by COUNT(t.nombre) DESC"
-            TipoAvionBindingSource.DataSource = _conex.leo_tabla(sql1)
-            ReportViewer1.RefreshReport()
+                TipoAvionBindingSource.DataSource = _conex.leo_tabla(sql1)
+                ReportViewer1.RefreshReport()
+            Else
+                MsgBox("Ingrese Solo Numeros")
+            End If
+
+
         End If
 
         ReportViewer1.Refresh()
