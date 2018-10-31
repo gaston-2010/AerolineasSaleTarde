@@ -2,6 +2,7 @@
 
     Dim _conex As New CONEXION_BD
     Private Sub EstadisticaSexoxPasajero_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Button1.ForeColor = Color.Chocolate
 
         Me.ReportViewer1.RefreshReport()
         Me.ReportViewer1.RefreshReport()

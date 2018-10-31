@@ -24,20 +24,31 @@ Partial Class ListadoValija
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.ValijasEmbarcadasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet1 = New AerolineasSaleTarde.DataSet1()
         Me.btn_buscarVuelo = New System.Windows.Forms.Button()
         Me.cmb_origen = New AerolineasSaleTarde.CMB_01()
         Me.cmb_destino = New AerolineasSaleTarde.CMB_01()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DataSet1 = New AerolineasSaleTarde.DataSet1()
-        Me.ValijasEmbarcadasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ValijasEmbarcadasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'ValijasEmbarcadasBindingSource
+        '
+        Me.ValijasEmbarcadasBindingSource.DataMember = "ValijasEmbarcadas"
+        Me.ValijasEmbarcadasBindingSource.DataSource = Me.DataSet1
+        '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btn_buscarVuelo
         '
+        Me.btn_buscarVuelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_buscarVuelo.Location = New System.Drawing.Point(415, 27)
         Me.btn_buscarVuelo.Name = "btn_buscarVuelo"
         Me.btn_buscarVuelo.Size = New System.Drawing.Size(75, 23)
@@ -68,6 +79,7 @@ Partial Class ListadoValija
         'Label14
         '
         Me.Label14.AutoSize = True
+        Me.Label14.ForeColor = System.Drawing.Color.DarkSalmon
         Me.Label14.Location = New System.Drawing.Point(210, 27)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(43, 13)
@@ -77,6 +89,7 @@ Partial Class ListadoValija
         'Label13
         '
         Me.Label13.AutoSize = True
+        Me.Label13.ForeColor = System.Drawing.Color.DarkSalmon
         Me.Label13.Location = New System.Drawing.Point(29, 24)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(38, 13)
@@ -85,6 +98,7 @@ Partial Class ListadoValija
         '
         'ReportViewer1
         '
+        Me.ReportViewer1.BackColor = System.Drawing.Color.Chocolate
         ReportDataSource1.Name = "DataSet1"
         ReportDataSource1.Value = Me.ValijasEmbarcadasBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
@@ -92,34 +106,26 @@ Partial Class ListadoValija
         Me.ReportViewer1.Location = New System.Drawing.Point(12, 75)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(754, 348)
+        Me.ReportViewer1.Size = New System.Drawing.Size(604, 382)
         Me.ReportViewer1.TabIndex = 25
-        '
-        'DataSet1
-        '
-        Me.DataSet1.DataSetName = "DataSet1"
-        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ValijasEmbarcadasBindingSource
-        '
-        Me.ValijasEmbarcadasBindingSource.DataMember = "ValijasEmbarcadas"
-        Me.ValijasEmbarcadasBindingSource.DataSource = Me.DataSet1
         '
         'ListadoValija
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.BackColor = System.Drawing.Color.Maroon
+        Me.ClientSize = New System.Drawing.Size(628, 469)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.btn_buscarVuelo)
         Me.Controls.Add(Me.cmb_origen)
         Me.Controls.Add(Me.cmb_destino)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Label13)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ListadoValija"
         Me.Text = "ListadoValija"
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ValijasEmbarcadasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

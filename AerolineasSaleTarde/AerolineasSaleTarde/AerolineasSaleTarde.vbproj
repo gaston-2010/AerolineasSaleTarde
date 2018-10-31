@@ -167,6 +167,18 @@
     <Compile Include="Formularios\ABM\ABM Vuelos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Escritorio\Generala.Designer.vb">
+      <DependentUpon>Generala.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Escritorio\Generala.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Escritorio\Listadinho.Designer.vb">
+      <DependentUpon>Listadinho.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Escritorio\Listadinho.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Estadisticas\Reportes\EstadisticasDestino.Designer.vb">
       <DependentUpon>EstadisticasDestino.vb</DependentUpon>
     </Compile>
@@ -285,6 +297,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM\ABM PersonalxVuelo.resx">
       <DependentUpon>ABM PersonalxVuelo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Escritorio\Generala.resx">
+      <DependentUpon>Generala.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Escritorio\Listadinho.resx">
+      <DependentUpon>Listadinho.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Estadisticas\Reportes\Estadisticadestinovendidos.rdlc" />
     <EmbeddedResource Include="Formularios\Estadisticas\Reportes\EstadisticasDestino.resx">

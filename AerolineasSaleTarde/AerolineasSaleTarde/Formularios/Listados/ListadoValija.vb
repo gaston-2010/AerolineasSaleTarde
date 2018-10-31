@@ -5,6 +5,7 @@
         cmb_origen.cargar(_conex.consultaATabla("SELECT * FROM Aeropuertos"), "id", "nombre")
         cmb_destino.SelectedIndex = -1
         cmb_origen.SelectedIndex = -1
+        btn_buscarVuelo.ForeColor = Color.Chocolate
         Me.ReportViewer1.RefreshReport()
     End Sub
 

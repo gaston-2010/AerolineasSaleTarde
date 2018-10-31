@@ -53,14 +53,15 @@ Partial Class ListadoPasajes
         'fecha
         '
         Me.fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.fecha.Location = New System.Drawing.Point(506, 25)
+        Me.fecha.Location = New System.Drawing.Point(476, 21)
         Me.fecha.Name = "fecha"
         Me.fecha.Size = New System.Drawing.Size(114, 20)
         Me.fecha.TabIndex = 10
         '
         'btn_buscarVuelo
         '
-        Me.btn_buscarVuelo.Location = New System.Drawing.Point(636, 22)
+        Me.btn_buscarVuelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_buscarVuelo.Location = New System.Drawing.Point(515, 63)
         Me.btn_buscarVuelo.Name = "btn_buscarVuelo"
         Me.btn_buscarVuelo.Size = New System.Drawing.Size(75, 23)
         Me.btn_buscarVuelo.TabIndex = 11
@@ -70,9 +71,10 @@ Partial Class ListadoPasajes
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Label15.BackColor = System.Drawing.Color.Maroon
         Me.Label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label15.Location = New System.Drawing.Point(429, 25)
+        Me.Label15.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label15.Location = New System.Drawing.Point(399, 21)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(39, 15)
         Me.Label15.TabIndex = 12
@@ -81,7 +83,9 @@ Partial Class ListadoPasajes
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(225, 25)
+        Me.Label14.BackColor = System.Drawing.Color.Maroon
+        Me.Label14.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label14.Location = New System.Drawing.Point(195, 21)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(43, 13)
         Me.Label14.TabIndex = 9
@@ -90,7 +94,9 @@ Partial Class ListadoPasajes
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(44, 22)
+        Me.Label13.BackColor = System.Drawing.Color.Maroon
+        Me.Label13.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label13.Location = New System.Drawing.Point(14, 18)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(38, 13)
         Me.Label13.TabIndex = 7
@@ -98,20 +104,24 @@ Partial Class ListadoPasajes
         '
         'ReportViewer1
         '
+        Me.ReportViewer1.BackColor = System.Drawing.Color.Chocolate
+        Me.ReportViewer1.ForeColor = System.Drawing.Color.Chocolate
         ReportDataSource1.Name = "DataSet1"
         ReportDataSource1.Value = Me.PasajePorClaseBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AerolineasSaleTarde.Pasajes.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(22, 105)
+        Me.ReportViewer1.Location = New System.Drawing.Point(12, 92)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(717, 310)
+        Me.ReportViewer1.Size = New System.Drawing.Size(604, 365)
         Me.ReportViewer1.TabIndex = 13
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(44, 72)
+        Me.Label1.BackColor = System.Drawing.Color.Maroon
+        Me.Label1.ForeColor = System.Drawing.Color.DarkSalmon
+        Me.Label1.Location = New System.Drawing.Point(14, 68)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(33, 13)
         Me.Label1.TabIndex = 15
@@ -121,7 +131,7 @@ Partial Class ListadoPasajes
         '
         Me.CmB_011.FormattingEnabled = True
         Me.CmB_011.Items.AddRange(New Object() {"Primera Clase", "Clase Turista"})
-        Me.CmB_011.Location = New System.Drawing.Point(89, 64)
+        Me.CmB_011.Location = New System.Drawing.Point(59, 60)
         Me.CmB_011.Name = "CmB_011"
         Me.CmB_011.nombre_campo = Nothing
         Me.CmB_011.Size = New System.Drawing.Size(121, 21)
@@ -131,7 +141,7 @@ Partial Class ListadoPasajes
         'cmb_origen
         '
         Me.cmb_origen.FormattingEnabled = True
-        Me.cmb_origen.Location = New System.Drawing.Point(89, 25)
+        Me.cmb_origen.Location = New System.Drawing.Point(59, 21)
         Me.cmb_origen.Name = "cmb_origen"
         Me.cmb_origen.nombre_campo = Nothing
         Me.cmb_origen.Size = New System.Drawing.Size(121, 21)
@@ -141,7 +151,7 @@ Partial Class ListadoPasajes
         'cmb_destino
         '
         Me.cmb_destino.FormattingEnabled = True
-        Me.cmb_destino.Location = New System.Drawing.Point(275, 25)
+        Me.cmb_destino.Location = New System.Drawing.Point(245, 21)
         Me.cmb_destino.Name = "cmb_destino"
         Me.cmb_destino.nombre_campo = Nothing
         Me.cmb_destino.Size = New System.Drawing.Size(121, 21)
@@ -152,7 +162,8 @@ Partial Class ListadoPasajes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.BackColor = System.Drawing.Color.Maroon
+        Me.ClientSize = New System.Drawing.Size(628, 469)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.CmB_011)
         Me.Controls.Add(Me.ReportViewer1)
@@ -163,6 +174,7 @@ Partial Class ListadoPasajes
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Label13)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ListadoPasajes"
         Me.Text = "ListadoPasajes"
         CType(Me.PasajePorClaseBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

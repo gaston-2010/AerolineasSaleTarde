@@ -24,37 +24,38 @@ Partial Class EstadisticasDestino
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DataSet1 = New AerolineasSaleTarde.DataSet1()
         Me.DestinoVendidoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet1 = New AerolineasSaleTarde.DataSet1()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.txt_cantidad = New AerolineasSaleTarde.MTB_01()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_Mostrar = New System.Windows.Forms.Button()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DestinoVendidoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ReportViewer1
+        'DestinoVendidoBindingSource
         '
-        ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Me.DestinoVendidoBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AerolineasSaleTarde.Estadisticadestinovendidos.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(89, 67)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(596, 340)
-        Me.ReportViewer1.TabIndex = 0
+        Me.DestinoVendidoBindingSource.DataMember = "DestinoVendido"
+        Me.DestinoVendidoBindingSource.DataSource = Me.DataSet1
         '
         'DataSet1
         '
         Me.DataSet1.DataSetName = "DataSet1"
         Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'DestinoVendidoBindingSource
+        'ReportViewer1
         '
-        Me.DestinoVendidoBindingSource.DataMember = "DestinoVendido"
-        Me.DestinoVendidoBindingSource.DataSource = Me.DataSet1
+        Me.ReportViewer1.BackColor = System.Drawing.Color.Chocolate
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.DestinoVendidoBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "AerolineasSaleTarde.Estadisticadestinovendidos.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(12, 59)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.ServerReport.BearerToken = Nothing
+        Me.ReportViewer1.Size = New System.Drawing.Size(604, 398)
+        Me.ReportViewer1.TabIndex = 0
         '
         'txt_cantidad
         '
@@ -68,6 +69,7 @@ Partial Class EstadisticasDestino
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.Chocolate
         Me.Label1.Location = New System.Drawing.Point(21, 21)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(95, 13)
@@ -76,6 +78,7 @@ Partial Class EstadisticasDestino
         '
         'btn_Mostrar
         '
+        Me.btn_Mostrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_Mostrar.Location = New System.Drawing.Point(249, 16)
         Me.btn_Mostrar.Name = "btn_Mostrar"
         Me.btn_Mostrar.Size = New System.Drawing.Size(75, 23)
@@ -87,15 +90,17 @@ Partial Class EstadisticasDestino
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.BackColor = System.Drawing.Color.DarkRed
+        Me.ClientSize = New System.Drawing.Size(628, 469)
         Me.Controls.Add(Me.btn_Mostrar)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txt_cantidad)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "EstadisticasDestino"
         Me.Text = "EstadisticasDestino"
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DestinoVendidoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

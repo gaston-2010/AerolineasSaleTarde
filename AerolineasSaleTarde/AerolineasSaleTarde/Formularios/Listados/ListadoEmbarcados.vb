@@ -1,6 +1,8 @@
 ﻿Public Class ListadoEmbarcados
     Dim _conex As New BD_TRANSACCIONAL
     Private Sub ListadoEmbarcados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        btn_buscarVuelo.ForeColor = Color.Chocolate
+
         cmb_destino.cargar(_conex.consultaATabla("SELECT * FROM Aeropuertos"), "id", "nombre")
         cmb_origen.cargar(_conex.consultaATabla("SELECT * FROM Aeropuertos"), "id", "nombre")
         cmb_destino.SelectedIndex = -1

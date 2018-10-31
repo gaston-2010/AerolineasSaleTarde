@@ -4,6 +4,7 @@
 
     Private Sub EstadisticasDestino_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ReportViewer1.RefreshReport()
+        btn_Mostrar.BackColor = Color.Chocolate
     End Sub
 
     Private Sub ReportViewer1_Load(sender As Object, e As EventArgs) Handles ReportViewer1.Load
