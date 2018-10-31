@@ -235,27 +235,15 @@
 
 
     Private Function comprobarasiento()
-        Dim tabla As New DataTable
-        Dim clase As Integer
-        If cmb_clase.SelectedItem = "Primera Clase" Then
-            clase = 0
-        Else
-            clase = 1
-        End If
-        Dim sql As String = " SELECT * FROM Pasaje WHERE idVuelo = " & txt_vuelo.Text & "
-        AND nroAsiento =" & txt_nroAsiento.Text & " AND claseTurista= " & clase
-        tabla = _conex.consultaATabla(sql)
-        If tabla.Rows.Count = 0 Then
-            Return 0
-        Else
-            Return 1
-        End If
+
     End Function
 
     Private Sub btn_comprar_Click(sender As Object, e As EventArgs) Handles btn_comprar.Click
 
         If ValidarCampo(Me) = 1 Then
-            If comprobarasiento() = 0 Then
+            Dim comprobarasiento As Integer = comprobarasientosdisponibles()
+
+            If comprobarasiento = 0 Then
                 _conex.iniciarTransaccion()
                 transferir(Me)
                 If comprobar("SELECT * FROM Domicilio WHERE calle= '" & txt_calle.Text & "' 
@@ -279,9 +267,9 @@
                         Me._Pasaje.modificar()
                     End If
                 End If
-                    _conex.FinTransaccion()
-                Else
-                    MsgBox("El Asiento ya esta ocupado")
+                _conex.FinTransaccion()
+            ElseIf comprobarasiento = 1 Then
+                MsgBox("El Asiento ya esta ocupado")
             End If
 
         End If
@@ -349,27 +337,49 @@
 
     End Sub
 
-    Private Sub fecha_ValueChanged(sender As Object, e As EventArgs) Handles fecha.ValueChanged
+    Private Function comprobarasientosdisponibles()
+        Dim sql As String = " Select t.capacidadPasajerosClaseAlta,t.capacidadPasajerosClaseTurista 
+        from Vuelos v join Aviones a on v.id_avion = a.id join TipoAvion t on a.idTipoAvion = t.id_tipoAvion where v.id_vuelo= " & txt_vuelo.Text
+        Dim tabla As New DataTable
+        tabla = _conex.consultaATabla(sql)
+        Dim capacidadclasealta As Integer = tabla.Rows(0)(0)
+        Dim capacidadclaseturista As Integer = tabla.Rows(0)(1)
+        Dim tabla1 As New DataTable
+        Dim clase As Integer
 
-    End Sub
+        If cmb_clase.SelectedItem = "Primera Clase" Then
+            clase = 0
+            If txt_nroAsiento.Text > capacidadclasealta Then
+                MsgBox("La cantidad de asientos para primera clase es de: " & capacidadclasealta)
+                Return 2
+            End If
+        Else
+            clase = 1
+            If txt_nroAsiento.Text > capacidadclaseturista Then
+                MsgBox("La cantidad de asientos para clase turista es de : " & capacidadclaseturista)
+                Return 2
+            End If
+        End If
 
-    Private Sub cmb_origen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_origen.SelectedIndexChanged
+        Dim sql1 As String = " SELECT * FROM Pasaje WHERE idVuelo = " & txt_vuelo.Text & "
+        AND nroAsiento =" & txt_nroAsiento.Text & " AND claseTurista= " & clase
+        tabla1 = _conex.consultaATabla(sql1)
+        If tabla1.Rows.Count = 0 Then
+            Return 0
+        Else
+            Dim sql2 As String = " SELECT nroAsiento FROM Pasaje WHERE idVuelo = " & txt_vuelo.Text & "
+        AND claseTurista= " & clase
+            tabla1 = _conex.consultaATabla(sql2)
+            Dim listado As String = ""
+            Dim c As Integer = 0
+            For c = 0 To tabla1.Rows.Count - 1
+                listado &= "[ " & tabla1.Rows(0)(c) & " ]"
+            Next
 
-    End Sub
+            MsgBox("Asientos Ocupados: " & listado)
+            Return 1
+        End If
 
-    Private Sub cmb_destino_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_destino.SelectedIndexChanged
+    End Function
 
-    End Sub
-
-    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
-
-    End Sub
-
-    Private Sub Label14_Click(sender As Object, e As EventArgs) Handles Label14.Click
-
-    End Sub
-
-    Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
-
-    End Sub
 End Class

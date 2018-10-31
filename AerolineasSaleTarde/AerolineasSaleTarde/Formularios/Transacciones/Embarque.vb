@@ -11,17 +11,32 @@
     Dim TE As New tratamientos_especiales
     Dim vuelo As Integer = 0
     Dim lista(0) As Integer
+    Dim capacidad As Integer = 0
     Private Sub Embarque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cmb_abordo.Items.Add("Abordo")
         cmb_abordo.Items.Add("Bodega")
         cmb_Tdni.cargar(_conex.consultaATabla("SELECT * FROM TipoDocumento"), "id", "nombre")
         btn_embarque.Visible = False
+        Panel2.Enabled = False
 
     End Sub
 
     Private Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_agregar.Click
-        Dim row As String() = New String() {txt_peso.Text, chk_Especial.Checked, cmb_abordo.Text}
-        dgv1.Rows.Add(row)
+
+
+        If capacidad > 0 Then
+            If txt_peso.Text <= capacidad Then
+                Dim row As String() = New String() {txt_peso.Text, chk_Especial.Checked, cmb_abordo.Text}
+                dgv1.Rows.Add(row)
+                capacidad -= txt_peso.Text
+            Else
+                MsgBox("EL Peso Del Equipaje Debe ser menor a: " & capacidad)
+            End If
+        Else
+            MsgBox("El avion no posee mas capacidad de equipaje")
+        End If
+
+
 
     End Sub
 
@@ -42,6 +57,8 @@
                 txt_dni.Enabled = False
                 cmb_Tdni.Enabled = False
                 btn_embarque.Visible = True
+                Panel2.Enabled = True
+                comprobarpeso()
             End If
         Else
             MsgBox("Ingrese un Documento a buscar")
@@ -118,13 +135,7 @@
         dgv1.DataSource = New DataTable
     End Sub
 
-    Private Sub MaskedTextBox1_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
 
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
 
     Private Sub creardetalle()
 
@@ -151,5 +162,29 @@
         Else
             Return 1
         End If
+    End Function
+
+    Private Function comprobarpeso()
+        Dim cargado As Integer = 0
+        Dim sql As String = "select COUNT(e.peso)  from Equipajes e 
+        join DetalleEmbarques d on d.nroEquipaje=e.nroEquipaje 
+        join Vuelos v on v.id_vuelo = d.nroVuelo where nroVuelo = " & vuelo
+        Dim tabla As New DataTable
+        tabla = _conex.consultaATabla(sql)
+        If tabla.Rows(0)(0) > 0 Then
+            Dim sql1 As String = "select sum(e.peso)  from Equipajes e 
+        join DetalleEmbarques d on d.nroEquipaje=e.nroEquipaje 
+        join Vuelos v on v.id_vuelo = d.nroVuelo where nroVuelo = " & vuelo
+            tabla = _conex.consultaATabla(sql1)
+            cargado = tabla.Rows(0)(0)
+        End If
+        Dim sql2 As String = "select t.capacidadKGEquipaje from  Embarque e  
+          join Vuelos v on e.nroVuelo= v.id_vuelo join Aviones a on a.id=v.id_avion 
+          join TipoAvion t on a.idTipoAvion =t.id_tipoAvion where e.nroVuelo = " & vuelo
+        tabla = _conex.consultaATabla(sql2)
+        Dim capacidadavion As Integer = tabla.Rows(0)(0)
+        Dim disponible As Integer = capacidadavion - cargado
+        capacidad = disponible
+        Return disponible
     End Function
 End Class
