@@ -37,10 +37,10 @@ Partial Class Form1
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
         Me.Button13 = New System.Windows.Forms.Button()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
@@ -231,6 +231,33 @@ Partial Class Form1
         Me.Panel3.Size = New System.Drawing.Size(644, 508)
         Me.Panel3.TabIndex = 9
         '
+        'Button13
+        '
+        Me.Button13.Location = New System.Drawing.Point(78, 284)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(158, 73)
+        Me.Button13.TabIndex = 1
+        Me.Button13.Text = "Listado de valijas a bordo"
+        Me.Button13.UseVisualStyleBackColor = True
+        '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(335, 118)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(158, 73)
+        Me.Button12.TabIndex = 1
+        Me.Button12.Text = "Listado de Pasajes por Clase"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(78, 118)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(158, 73)
+        Me.Button11.TabIndex = 1
+        Me.Button11.Text = "Listado de Embarcados"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
         'Button10
         '
         Me.Button10.FlatAppearance.BorderSize = 2
@@ -241,33 +268,6 @@ Partial Class Form1
         Me.Button10.TabIndex = 0
         Me.Button10.Text = "X"
         Me.Button10.UseVisualStyleBackColor = True
-        '
-        'Button11
-        '
-        Me.Button11.Location = New System.Drawing.Point(78, 118)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(158, 73)
-        Me.Button11.TabIndex = 1
-        Me.Button11.Text = "Compra De Pasajes"
-        Me.Button11.UseVisualStyleBackColor = True
-        '
-        'Button12
-        '
-        Me.Button12.Location = New System.Drawing.Point(335, 118)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(158, 73)
-        Me.Button12.TabIndex = 1
-        Me.Button12.Text = "Embarque de pasajeros"
-        Me.Button12.UseVisualStyleBackColor = True
-        '
-        'Button13
-        '
-        Me.Button13.Location = New System.Drawing.Point(78, 284)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(158, 73)
-        Me.Button13.TabIndex = 1
-        Me.Button13.Text = "Agregar Servicio a Aeropuerto"
-        Me.Button13.UseVisualStyleBackColor = True
         '
         'Form1
         '

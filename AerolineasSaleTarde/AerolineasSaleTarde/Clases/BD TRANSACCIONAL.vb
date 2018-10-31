@@ -17,7 +17,7 @@
     Public Property conexion As New OleDb.OleDbConnection
     Dim cmd As New OleDb.OleDbCommand
     Dim transaccion As OleDb.OleDbTransaction
-    Dim _cadena_conexion As String = "Provider=SQLNCLI11;Data Source=PCESCRITORIO\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=Aerolineas;Connect Timeout=0"
+    Dim _cadena_conexion As String = "Provider=SQLNCLI11;Data Source=NETBOOK\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=Aerolineas;Connect Timeout=0"
     Private Function conectar() As estado_proceso
 
         If control_conexion = tipo_conexion.transaccion Then
