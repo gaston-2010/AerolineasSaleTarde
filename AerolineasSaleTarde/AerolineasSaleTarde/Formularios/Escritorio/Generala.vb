@@ -7,14 +7,8 @@
         a.X = 0
         Panel4.Location = a
         actual.Close()
-        With Form1
-            .Show()
-            .MdiParent = Me
-            .Dock = DockStyle.Fill
-            .BringToFront()
-        End With
-        actual = ABM_Avion
-        Panel3.Visible = False
+        Dim b As Form1
+        b.Show()
     End Sub
 
     Private Sub Generala_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -28,14 +22,9 @@
         a.X = 0
         Panel4.Location = a
         actual.Close()
-        With Listadinho
-            .Show()
-            .MdiParent = Me
-            .Dock = DockStyle.Fill
-            .BringToFront()
-        End With
-        actual = ABM_Avion
-        Panel3.Visible = False
+        Dim b As Listadinho
+        b.Show()
+
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -87,5 +76,9 @@
         End With
         actual = ABM_Avion
         Panel3.Visible = False
+    End Sub
+
+    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
     End Sub
 End Class
