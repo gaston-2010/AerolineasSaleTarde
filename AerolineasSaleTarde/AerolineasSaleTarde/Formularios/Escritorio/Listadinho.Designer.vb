@@ -232,6 +232,7 @@ Partial Class Listadinho
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.IsMdiContainer = True
         Me.Name = "Listadinho"
         Me.Text = "Generala"
         Me.Panel3.ResumeLayout(False)
